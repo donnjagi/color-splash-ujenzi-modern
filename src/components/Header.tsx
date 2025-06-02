@@ -18,6 +18,13 @@ const Header = () => {
 
   const isActive = (path: string) => location.pathname === path;
 
+  const handleWhatsAppClick = () => {
+    const phoneNumber = "254700123456";
+    const message = "Hello Ujenzi Solutions! I'm interested in your piping and infrastructure services.";
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+    window.open(whatsappUrl, '_blank');
+  };
+
   return (
     <>
       {/* Top bar */}
@@ -34,7 +41,7 @@ const Header = () => {
             </div>
           </div>
           <div className="hidden md:block">
-            <span>Building Excellence Since 2010</span>
+            <span>Piping & Infrastructure Specialists Since 2010</span>
           </div>
         </div>
       </div>
@@ -49,7 +56,7 @@ const Header = () => {
               </div>
               <div>
                 <h1 className="text-xl font-bold text-primary">Ujenzi Solutions</h1>
-                <p className="text-xs text-muted-foreground">Construction & Engineering</p>
+                <p className="text-xs text-muted-foreground">Piping & Infrastructure</p>
               </div>
             </Link>
 
@@ -66,7 +73,9 @@ const Header = () => {
                   {item.name}
                 </Link>
               ))}
-              <Button>Get Quote</Button>
+              <Button onClick={handleWhatsAppClick} className="bg-green-500 hover:bg-green-600">
+                WhatsApp Quote
+              </Button>
             </nav>
 
             {/* Mobile menu button */}
@@ -97,7 +106,9 @@ const Header = () => {
                   </Link>
                 ))}
                 <div className="px-4 pt-2">
-                  <Button className="w-full">Get Quote</Button>
+                  <Button className="w-full bg-green-500 hover:bg-green-600" onClick={handleWhatsAppClick}>
+                    WhatsApp Quote
+                  </Button>
                 </div>
               </nav>
             </div>
