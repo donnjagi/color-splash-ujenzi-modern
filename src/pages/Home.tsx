@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -56,7 +55,7 @@ const Home = () => {
 
   const handleWhatsAppClick = () => {
     const phoneNumber = "254700123456";
-    const message = "Hello Ujenzi Solutions! I'm interested in your piping and construction services.";
+    const message = "Hello Afristone! I'm interested in your piping and construction services.";
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
   };
@@ -91,7 +90,7 @@ const Home = () => {
                 </span>
               </h1>
               <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-                Ujenzi Solutions specializes in piping systems, building works, waterworks, and civil engineering projects. Delivering reliable infrastructure solutions across Kenya.
+                Afristone specializes in piping systems, building works, waterworks, and civil engineering projects. Delivering reliable infrastructure solutions across Kenya.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button size="lg" className="text-lg px-8 py-6" asChild>
@@ -172,7 +171,7 @@ const Home = () => {
         <div className="max-w-6xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-3xl md:text-4xl font-bold mb-6">Why Choose Ujenzi Solutions?</h2>
+              <h2 className="text-3xl md:text-4xl font-bold mb-6">Why Choose Afristone?</h2>
               <div className="space-y-4">
                 {[
                   "Licensed piping and infrastructure specialists",

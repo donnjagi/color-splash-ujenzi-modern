@@ -20,7 +20,7 @@ const Header = () => {
 
   const handleWhatsAppClick = () => {
     const phoneNumber = "254700123456";
-    const message = "Hello Ujenzi Solutions! I'm interested in your piping and infrastructure services.";
+    const message = "Hello Afristone! I'm interested in your piping and infrastructure services.";
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
   };
@@ -37,7 +37,7 @@ const Header = () => {
             </div>
             <div className="flex items-center gap-2">
               <Mail className="w-4 h-4" />
-              <span>info@ujenzisolutions.co.ke</span>
+              <span>info@afristone.co.ke</span>
             </div>
           </div>
           <div className="hidden md:block">
@@ -52,10 +52,10 @@ const Header = () => {
           <div className="flex items-center justify-between h-16">
             <Link to="/" className="flex items-center space-x-2">
               <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
-                <span className="text-primary-foreground font-bold text-xl">U</span>
+                <span className="text-primary-foreground font-bold text-xl">A</span>
               </div>
               <div>
-                <h1 className="text-xl font-bold text-primary">Ujenzi Solutions</h1>
+                <h1 className="text-xl font-bold text-primary">Afristone</h1>
                 <p className="text-xs text-muted-foreground">Piping & Infrastructure</p>
               </div>
             </Link>

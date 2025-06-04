@@ -1,11 +1,10 @@
-
 import { Link } from "react-router-dom";
 import { Phone, Mail, MapPin, Facebook, Twitter, Instagram, Linkedin } from "lucide-react";
 
 const Footer = () => {
   const handleWhatsAppClick = () => {
     const phoneNumber = "254700123456";
-    const message = "Hello Ujenzi Solutions! I'm interested in your services.";
+    const message = "Hello Afristone! I'm interested in your services.";
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
   };
@@ -18,10 +17,10 @@ const Footer = () => {
           <div>
             <div className="flex items-center space-x-2 mb-4">
               <div className="w-8 h-8 bg-primary-foreground rounded-lg flex items-center justify-center">
-                <span className="text-primary font-bold">U</span>
+                <span className="text-primary font-bold">A</span>
               </div>
               <div>
-                <h3 className="font-bold">Ujenzi Solutions</h3>
+                <h3 className="font-bold">Afristone</h3>
                 <p className="text-xs opacity-80">Piping & Infrastructure</p>
               </div>
             </div>
@@ -81,14 +80,14 @@ const Footer = () => {
               </div>
               <div className="flex items-center space-x-2">
                 <Mail className="w-4 h-4 opacity-80" />
-                <span className="opacity-80">info@ujenzisolutions.co.ke</span>
+                <span className="opacity-80">info@afristone.co.ke</span>
               </div>
             </div>
           </div>
         </div>
 
         <div className="border-t border-primary-foreground/20 mt-8 pt-8 text-center text-sm opacity-80">
-          <p>&copy; 2024 Ujenzi Solutions. All rights reserved. | Privacy Policy | Terms of Service</p>
+          <p>&copy; 2024 Afristone. All rights reserved. | Privacy Policy | Terms of Service</p>
         </div>
       </div>
     </footer>

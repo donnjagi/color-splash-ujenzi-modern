@@ -1,4 +1,3 @@
-
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -51,7 +50,7 @@ const About = () => {
       <section className="modern-gradient py-20 px-6">
         <div className="max-w-6xl mx-auto text-center">
           <Badge variant="secondary" className="mb-6">
-            About Ujenzi Solutions
+            About Afristone
           </Badge>
           <h1 className="text-4xl md:text-6xl font-bold mb-6 text-foreground">
             Building Excellence
@@ -72,7 +71,7 @@ const About = () => {
             <div>
               <h2 className="text-3xl md:text-4xl font-bold mb-6">Our Story</h2>
               <p className="text-muted-foreground mb-6 leading-relaxed">
-                Founded in 2010 by a team of experienced engineers and construction professionals, Ujenzi Solutions began with a simple mission: to transform the construction landscape in Kenya through quality, innovation, and exceptional service.
+                Founded in 2010 by a team of experienced engineers and construction professionals, Afristone began with a simple mission: to transform the construction landscape in Kenya through quality, innovation, and exceptional service.
               </p>
               <p className="text-muted-foreground mb-6 leading-relaxed">
                 Over the years, we have grown from a small local contractor to one of Kenya's most trusted construction companies, completing over 500 projects across residential, commercial, and industrial sectors.
