@@ -13,6 +13,7 @@ import Projects from "./pages/Projects";
 import Products from "./pages/Products";
 import ProductDetail from "./pages/ProductDetail";
 import Contact from "./pages/Contact";
+import QuotationCalculator from "./pages/QuotationCalculator";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -34,6 +35,7 @@ const App = () => (
               <Route path="/products" element={<Products />} />
               <Route path="/products/:productId" element={<ProductDetail />} />
               <Route path="/contact" element={<Contact />} />
+              <Route path="/quotation" element={<QuotationCalculator />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
           </main>
