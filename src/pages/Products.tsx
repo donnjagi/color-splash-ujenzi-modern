@@ -1,4 +1,3 @@
-
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -12,7 +11,7 @@ const Products = () => {
       name: "Tanga Yellow Stone",
       price: "Ksh. 5,500/M²",
       shortDescription: "Timeless elegance with warm, earthy tones and rugged refined surface.",
-      image: "photo-1544027993-37dbfe43562a",
+      image: "/Afristone-All things Stone/Tanga Yellow Stone/2025053121292496.jpg",
       category: "Premium Natural Stone",
       color: "yellow"
     },
@@ -21,7 +20,7 @@ const Products = () => {
       name: "Silver Stone",
       price: "Ksh. 3,800/M²",
       shortDescription: "Sleek sophistication with cool grey tones and subtle metallic sheen.",
-      image: "photo-1615971677499-5467cbab01c0",
+      image: "/Afristone-All things Stone/Silver Stone/2025060723500450.jpg",
       category: "Modern Natural Stone",
       color: "silver"
     },
@@ -30,7 +29,7 @@ const Products = () => {
       name: "Half Facing Red Bricks",
       price: "Ksh. 3,800/M²",
       shortDescription: "Classic brick look with modern convenience and lightweight design.",
-      image: "photo-1558618666-fcd25c85cd64",
+      image: "/Afristone-All things Stone/Half facing bricks/2025060507530922.jpg",
       category: "Classic Bricks",
       color: "red"
     },
@@ -39,7 +38,7 @@ const Products = () => {
       name: "Stacked/Mosaic Pattern Stone",
       price: "Ksh. 6,500/M²",
       shortDescription: "Dynamic arrangement with varied shapes creating striking visual impact.",
-      image: "photo-1600298881974-6be191ceeda1",
+      image: "/Afristone-All things Stone/Irregular wall stack/2025060821474553.jpg",
       category: "Textured Natural Stone",
       color: "mixed"
     },
@@ -48,7 +47,7 @@ const Products = () => {
       name: "Grey Stone",
       price: "Ksh. 3,300/M²",
       shortDescription: "Modern elegance with cool, neutral tones and refined texture.",
-      image: "photo-1600298882105-b2e8b8d18178",
+      image: "/Afristone-All things Stone/Grey stone/Grey Mazeras/2025061310304692.jpg",
       category: "Contemporary Natural Stone",
       color: "grey"
     },
@@ -57,7 +56,7 @@ const Products = () => {
       name: "Army Green Stone",
       price: "Ksh. 3,300/M²",
       shortDescription: "Bold, earthy statement with rich mossy green tones and rugged texture.",
-      image: "photo-1600298882041-b8dbad13c15c",
+      image: "/Afristone-All things Stone/Grey stone/Army green(grey) stone/2025060722110055.jpg",
       category: "Unique Natural Stone",
       color: "green"
     },
@@ -66,7 +65,7 @@ const Products = () => {
       name: "Black Stone",
       price: "Ksh. 3,300/M²",
       shortDescription: "Bold elegance with deep, rich tones and contemporary appeal.",
-      image: "photo-1600298881886-8e3b6b5b2e6e",
+      image: "/Afristone-All things Stone/Black stone/Black Irregular stacked/2025053018334056.jpg",
       category: "Elegant Natural Stone",
       color: "black"
     },
@@ -75,7 +74,7 @@ const Products = () => {
       name: "Sky Blue Stone",
       price: "Ksh. 4,200/M²",
       shortDescription: "Fresh, calming touch with soft blue tones and smooth texture.",
-      image: "photo-1600298882229-7d93b6f7b6e6",
+      image: "/Afristone-All things Stone/Blue Stone/2025061307282178.jpg",
       category: "Coastal Natural Stone",
       color: "blue"
     }
@@ -123,7 +122,7 @@ const Products = () => {
               <Card key={product.id} className="border-2 hover:shadow-xl transition-all duration-300 group">
                 <div className="aspect-video overflow-hidden rounded-t-lg">
                   <img
-                    src={`https://images.unsplash.com/${product.image}?auto=format&fit=crop&w=400&h=250`}
+                    src={product.image}
                     alt={product.name}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                   />

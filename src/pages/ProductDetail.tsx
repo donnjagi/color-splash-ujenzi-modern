@@ -17,7 +17,11 @@ const ProductDetail = () => {
       description: "Bring timeless elegance and natural charm to your spaces with Tanga Natural Stone. Sourced from premium quarries, this richly textured stone features warm, earthy tones and a rugged yet refined surface—perfect for both interior and exterior wall cladding. Its durability, low maintenance, and authentic aesthetic make it a top choice for adding depth and character to any architectural style. Whether you're designing a feature wall, fireplace surround, or outdoor façade, Tanga stone offers a striking and lasting impression.",
       uses: ["Interior wall cladding", "Exterior wall cladding", "Feature walls", "Fireplace surrounds", "Outdoor façades"],
       features: ["Premium quarry sourced", "Warm earthy tones", "Rugged refined surface", "Durable construction", "Low maintenance", "Weather resistant"],
-      images: ["photo-1544027993-37dbfe43562a", "photo-1600298881974-6be191ceeda1", "photo-1615971677499-5467cbab01c0"],
+      images: [
+        "/Afristone-All things Stone/Tanga Yellow Stone/2025053121292496.jpg",
+        "/Afristone-All things Stone/Tanga Yellow Stone/2025053121295949.jpg",
+        "/Afristone-All things Stone/Tanga Yellow Stone/2025053121304356.jpg"
+      ],
       specifications: {
         "Finish": "Natural textured",
         "Application": "Interior & Exterior",
@@ -33,7 +37,11 @@ const ProductDetail = () => {
       description: "Elevate your design with the sleek sophistication of Silver Natural Stone. With its cool grey tones and subtle metallic sheen, this premium stone adds a modern, upscale look to any wall cladding project. Ideal for both interior and exterior applications, Silver stone combines natural beauty with lasting strength. Its clean lines and contemporary feel make it perfect for feature walls, facades, and stylish accents that demand attention. Durable, versatile, and effortlessly elegant—Silver Natural Stone is where design meets distinction.",
       uses: ["Feature walls", "Building facades", "Stylish accents", "Interior cladding", "Exterior applications"],
       features: ["Cool grey tones", "Subtle metallic sheen", "Modern upscale look", "Clean lines", "Contemporary feel", "Durable and versatile"],
-      images: ["photo-1615971677499-5467cbab01c0", "photo-1600298882105-b2e8b8d18178", "photo-1544027993-37dbfe43562a"],
+      images: [
+        "/Afristone-All things Stone/Silver Stone/2025060723500450.jpg",
+        "/Afristone-All things Stone/Silver Stone/2025060723505803.jpg",
+        "/Afristone-All things Stone/Silver Stone/2025060723554758.jpg"
+      ],
       specifications: {
         "Finish": "Metallic sheen",
         "Application": "Interior & Exterior",
@@ -49,7 +57,11 @@ const ProductDetail = () => {
       description: "Achieve a classic brick look with the convenience of modern design using Half Facing Bricks. Ideal for wall cladding, these slim, lightweight bricks offer the authentic appearance of full bricks without the added bulk. Perfect for both interior and exterior applications, they bring warmth, texture, and character to feature walls, facades, and decorative surfaces. Durable, easy to install, and available in a range of traditional and contemporary finishes, Half Facing Bricks are a smart choice for timeless style and lasting performance.",
       uses: ["Wall cladding", "Feature walls", "Building facades", "Decorative surfaces", "Interior applications", "Exterior applications"],
       features: ["Classic brick appearance", "Lightweight design", "Easy installation", "Authentic look", "Traditional finishes", "Contemporary options"],
-      images: ["photo-1558618666-fcd25c85cd64", "photo-1600298881974-6be191ceeda1", "photo-1615971677499-5467cbab01c0"],
+      images: [
+        "/Afristone-All things Stone/Half facing bricks/2025060507530922.jpg",
+        "/Afristone-All things Stone/Half facing bricks/2025060507534678.jpg",
+        "/Afristone-All things Stone/Half facing bricks/2025060507543745.jpg"
+      ],
       specifications: {
         "Finish": "Traditional brick",
         "Application": "Interior & Exterior",
@@ -65,7 +77,11 @@ const ProductDetail = () => {
       description: "Add texture, depth, and natural beauty to your outdoor and indoor spaces with Stacked/Mosaic Pattern Natural Stone. Perfect for wall cladding and garden planter construction, this versatile stone features a dynamic arrangement of varied shapes and sizes, creating a striking visual impact. Its natural color variations and rugged surface bring a handcrafted, organic feel to any project. Durable and weather-resistant, it's ideal for enhancing facades, feature walls, and custom planters with a timeless, earthy elegance.",
       uses: ["Wall cladding", "Garden planter construction", "Feature walls", "Building facades", "Custom planters", "Decorative accents"],
       features: ["Dynamic arrangement", "Varied shapes and sizes", "Natural color variations", "Rugged surface", "Handcrafted feel", "Weather-resistant"],
-      images: ["photo-1600298881974-6be191ceeda1", "photo-1544027993-37dbfe43562a", "photo-1615971677499-5467cbab01c0"],
+      images: [
+        "/Afristone-All things Stone/Irregular wall stack/2025060821474553.jpg",
+        "/Afristone-All things Stone/Irregular wall stack/2025060821483385.jpg",
+        "/Afristone-All things Stone/Irregular wall stack/2025060821490339.jpg"
+      ],
       specifications: {
         "Finish": "Mosaic pattern",
         "Application": "Interior & Exterior",
@@ -81,7 +97,11 @@ const ProductDetail = () => {
       description: "Bring modern elegance and natural strength to your project with Grey Natural Stone. Featuring cool, neutral tones and a refined texture, this stone is perfect for contemporary and classic wall cladding designs. Its durable composition and weather-resistant properties make it ideal for both interior and exterior use. Whether enhancing a feature wall, fireplace, or building façade, Grey Natural Stone offers a sleek, sophisticated look that stands the test of time.",
       uses: ["Feature walls", "Fireplace surrounds", "Building facades", "Interior cladding", "Exterior applications", "Contemporary designs"],
       features: ["Cool neutral tones", "Refined texture", "Durable composition", "Weather-resistant", "Sleek appearance", "Sophisticated look"],
-      images: ["photo-1600298882105-b2e8b8d18178", "photo-1615971677499-5467cbab01c0", "photo-1544027993-37dbfe43562a"],
+      images: [
+        "/Afristone-All things Stone/Grey stone/Grey Mazeras/2025061310304692.jpg",
+        "/Afristone-All things Stone/Grey stone/Grey Mazeras/2025061310312037.jpg",
+        "/Afristone-All things Stone/Grey stone/Grey Mazeras/2025061310315704.jpg"
+      ],
       specifications: {
         "Finish": "Refined natural",
         "Application": "Interior & Exterior",
@@ -97,7 +117,11 @@ const ProductDetail = () => {
       description: "Make a bold, earthy statement with Army Green Natural Stone. Featuring rich, mossy green tones and a rugged, natural texture, this unique stone adds depth and character to any wall cladding project. Ideal for both interior and exterior applications, it blends beautifully with natural landscapes and architectural elements. Durable, weather-resistant, and visually striking, Army Green stone brings a touch of the outdoors into any space—perfect for feature walls, facades, and garden accents.",
       uses: ["Feature walls", "Building facades", "Garden accents", "Interior applications", "Exterior cladding", "Landscape integration"],
       features: ["Rich mossy green tones", "Rugged natural texture", "Unique appearance", "Weather-resistant", "Visually striking", "Natural integration"],
-      images: ["photo-1600298882041-b8dbad13c15c", "photo-1544027993-37dbfe43562a", "photo-1615971677499-5467cbab01c0"],
+      images: [
+        "/Afristone-All things Stone/Grey stone/Army green(grey) stone/2025060722110055.jpg",
+        "/Afristone-All things Stone/Grey stone/Army green(grey) stone/2025060722112676.jpg",
+        "/Afristone-All things Stone/Grey stone/Army green(grey) stone/2025060722120345.jpg"
+      ],
       specifications: {
         "Finish": "Natural rugged",
         "Application": "Interior & Exterior",
@@ -113,7 +137,11 @@ const ProductDetail = () => {
       description: "Add bold elegance and timeless durability to your space with Black Natural Stone. With its deep, rich tones and natural texture, this stone is perfect for striking wall cladding and stylish garden planter construction. Whether used indoors or outdoors, it offers a sleek, contemporary look that enhances any design. Weather-resistant and low-maintenance, Black Natural Stone combines beauty and strength—ideal for creating modern facades, feature walls, and statement planters that stand out.",
       uses: ["Wall cladding", "Garden planter construction", "Feature walls", "Modern facades", "Statement planters", "Contemporary designs"],
       features: ["Deep rich tones", "Natural texture", "Sleek contemporary look", "Weather-resistant", "Low-maintenance", "Bold elegance"],
-      images: ["photo-1600298881886-8e3b6b5b2e6e", "photo-1615971677499-5467cbab01c0", "photo-1544027993-37dbfe43562a"],
+      images: [
+        "/Afristone-All things Stone/Black stone/Black Irregular stacked/2025053018334056.jpg",
+        "/Afristone-All things Stone/Black stone/Black Irregular stacked/2025053018341611.jpg",
+        "/Afristone-All things Stone/Black stone/Black chiseled stone/2025060721163646.jpg"
+      ],
       specifications: {
         "Finish": "Natural deep",
         "Application": "Interior & Exterior",
@@ -129,7 +157,11 @@ const ProductDetail = () => {
       description: "Bring a fresh, calming touch to your design with Sky Blue Natural Stone. Featuring soft blue tones and a smooth, natural texture, this unique stone adds a serene, contemporary feel to wall cladding and garden planter projects. Ideal for both indoor and outdoor use, it pairs beautifully with modern and coastal designs. Durable, weather-resistant, and visually refreshing, Sky Blue Natural Stone transforms walls and planters into elegant, eye-catching features.",
       uses: ["Wall cladding", "Garden planter projects", "Feature walls", "Coastal designs", "Modern applications", "Contemporary spaces"],
       features: ["Soft blue tones", "Smooth natural texture", "Serene contemporary feel", "Weather-resistant", "Visually refreshing", "Coastal appeal"],
-      images: ["photo-1600298882229-7d93b6f7b6e6", "photo-1615971677499-5467cbab01c0", "photo-1544027993-37dbfe43562a"],
+      images: [
+        "/Afristone-All things Stone/Blue Stone/2025061307282178.jpg",
+        "/Afristone-All things Stone/Blue Stone/2025061307300870.jpg",
+        "/Afristone-All things Stone/Blue Stone/2025061307314754.jpg"
+      ],
       specifications: {
         "Finish": "Smooth natural",
         "Application": "Interior & Exterior",
@@ -184,7 +216,7 @@ const ProductDetail = () => {
             <div>
               <div className="aspect-square overflow-hidden rounded-2xl mb-4">
                 <img
-                  src={`https://images.unsplash.com/${product.images[0]}?auto=format&fit=crop&w=600&h=600`}
+                  src={product.images[0]}
                   alt={product.name}
                   className="w-full h-full object-cover"
                 />
@@ -193,7 +225,7 @@ const ProductDetail = () => {
                 {product.images.slice(1).map((image, index) => (
                   <div key={index} className="aspect-square overflow-hidden rounded-lg">
                     <img
-                      src={`https://images.unsplash.com/${image}?auto=format&fit=crop&w=200&h=200`}
+                      src={image}
                       alt={`${product.name} ${index + 2}`}
                       className="w-full h-full object-cover hover:scale-105 transition-transform cursor-pointer"
                     />
