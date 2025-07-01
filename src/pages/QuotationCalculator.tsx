@@ -16,7 +16,6 @@ interface QuotationData {
   quantity: number;
   productType: string;
   productPrice: number;
-  logisticsCost: number;
 }
 
 const QuotationCalculator = () => {
@@ -27,7 +26,6 @@ const QuotationCalculator = () => {
     quantity: 1,
     productType: '',
     productPrice: 0,
-    logisticsCost: 0,
   });
 
   const [showQuotation, setShowQuotation] = useState(false);
@@ -52,12 +50,8 @@ const QuotationCalculator = () => {
     }));
   };
 
-  const calculateSubtotal = () => {
-    return quotationData.quantity * quotationData.productPrice;
-  };
-
   const calculateTotal = () => {
-    return calculateSubtotal() + quotationData.logisticsCost;
+    return quotationData.quantity * quotationData.productPrice;
   };
 
   const generateQuotation = () => {
@@ -91,6 +85,10 @@ const QuotationCalculator = () => {
             .total-section { margin-top: 20px; text-align: right; }
             .total-line { margin: 5px 0; }
             .grand-total { font-size: 18px; font-weight: bold; color: #1e40af; }
+            .disclaimer { margin-top: 40px; font-size: 12px; color: #666; }
+            .disclaimer h3 { font-size: 14px; font-weight: bold; margin-bottom: 10px; color: #333; }
+            .disclaimer ol { margin-left: 20px; }
+            .disclaimer li { margin-bottom: 8px; line-height: 1.4; }
             .footer { margin-top: 40px; text-align: center; color: #666; font-size: 12px; }
           </style>
         </head>
@@ -123,21 +121,21 @@ const QuotationCalculator = () => {
                 <td>${quotationData.productType}</td>
                 <td>${quotationData.quantity} M²</td>
                 <td>${quotationData.productPrice.toLocaleString()}</td>
-                <td>${calculateSubtotal().toLocaleString()}</td>
-              </tr>
-              <tr>
-                <td>Logistics & Delivery</td>
-                <td>1</td>
-                <td>${quotationData.logisticsCost.toLocaleString()}</td>
-                <td>${quotationData.logisticsCost.toLocaleString()}</td>
+                <td>${calculateTotal().toLocaleString()}</td>
               </tr>
             </tbody>
           </table>
           
           <div class="total-section">
-            <div class="total-line">Subtotal: Ksh ${calculateSubtotal().toLocaleString()}</div>
-            <div class="total-line">Logistics: Ksh ${quotationData.logisticsCost.toLocaleString()}</div>
             <div class="total-line grand-total">Total: Ksh ${calculateTotal().toLocaleString()}</div>
+          </div>
+          
+          <div class="disclaimer">
+            <h3>Disclaimer:</h3>
+            <ol>
+              <li>Cost of logistics shall be confirmed with delivery address provided by the Customer.</li>
+              <li>If you have any questions about this invoice, please contact Collins Githinji, +254 729 304 190, githinjicollins@travauxlimited.com</li>
+            </ol>
           </div>
           
           <div class="footer">
@@ -220,27 +218,15 @@ const QuotationCalculator = () => {
                 </Select>
               </div>
 
-              <div className="grid grid-cols-2 gap-4">
-                <div>
-                  <Label htmlFor="quantity">Quantity (M²)</Label>
-                  <Input
-                    id="quantity"
-                    type="number"
-                    min="1"
-                    value={quotationData.quantity}
-                    onChange={(e) => setQuotationData(prev => ({ ...prev, quantity: parseInt(e.target.value) || 1 }))}
-                  />
-                </div>
-                <div>
-                  <Label htmlFor="logisticsCost">Logistics Cost (Ksh)</Label>
-                  <Input
-                    id="logisticsCost"
-                    type="number"
-                    min="0"
-                    value={quotationData.logisticsCost}
-                    onChange={(e) => setQuotationData(prev => ({ ...prev, logisticsCost: parseInt(e.target.value) || 0 }))}
-                  />
-                </div>
+              <div>
+                <Label htmlFor="quantity">Quantity (M²)</Label>
+                <Input
+                  id="quantity"
+                  type="number"
+                  min="1"
+                  value={quotationData.quantity}
+                  onChange={(e) => setQuotationData(prev => ({ ...prev, quantity: parseInt(e.target.value) || 1 }))}
+                />
               </div>
 
               <Button onClick={generateQuotation} className="w-full" size="lg">
@@ -303,14 +289,6 @@ const QuotationCalculator = () => {
                     <div className="flex justify-between">
                       <span className="font-medium">Unit Price:</span>
                       <span>Ksh {quotationData.productPrice.toLocaleString()}</span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span className="font-medium">Subtotal:</span>
-                      <span>Ksh {calculateSubtotal().toLocaleString()}</span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span className="font-medium">Logistics:</span>
-                      <span>Ksh {quotationData.logisticsCost.toLocaleString()}</span>
                     </div>
                   </div>
 
