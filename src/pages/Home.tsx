@@ -106,7 +106,8 @@ const Home = () => {
               <img
                 src="/Afristone-All things Stone/Tanga Yellow Stone/2025053121292496.jpg"
                 alt="Tanga Yellow Stone natural stone cladding"
-                className="rounded-2xl shadow-2xl"
+                className="rounded-2xl shadow-2xl object-cover"
+                style={{ width: '600px', height: '400px' }}
               />
               <div className="absolute -bottom-6 -left-6 bg-card p-6 rounded-xl shadow-lg border">
                 <div className="flex items-center gap-3">
