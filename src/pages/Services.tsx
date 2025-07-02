@@ -9,44 +9,44 @@ const Services = () => {
   const mainServices = [
     {
       icon: Wrench,
-      title: "Piping Systems",
-      description: "Complete piping solutions including design, installation, and maintenance of industrial and residential systems.",
-      features: ["Industrial pipe installation", "Residential plumbing", "Gas line installation", "Pipe system design", "Emergency repairs"],
+      title: "Stone Cladding Systems",
+      description: "Professional mechanical fixing of natural stone claddings with precision installation techniques.",
+      features: ["Wall cladding installation", "Facade cladding systems", "Interior stone panels", "Ventilated facades", "Structural glazing"],
       image: "photo-1721322800607-8c38375eef04"
     },
     {
       icon: Building2,
-      title: "Building Works",
-      description: "Comprehensive building construction services from foundation to finishing.",
-      features: ["Foundation construction", "Structural building", "Renovations", "Building maintenance", "Interior finishing"],
+      title: "Marble & Travertine",
+      description: "Expert installation of marble and travertine surfaces with specialized mechanical fixing.",
+      features: ["Marble wall installation", "Travertine flooring", "Countertop fixing", "Bathroom installations", "Decorative panels"],
       image: "photo-1605810230434-7631ac76ec81"
     },
     {
       icon: Droplets,
-      title: "Waterworks",
-      description: "Water infrastructure development including supply systems and treatment facilities.",
-      features: ["Water supply systems", "Treatment plant construction", "Borehole drilling", "Water storage tanks", "Distribution networks"],
+      title: "Water Features & Fountains",
+      description: "Custom-made indoor and outdoor fountains with professional stone mechanical fixing.",
+      features: ["Indoor fountains", "Outdoor water features", "Garden fountains", "Water wall installations", "Pond surrounds"],
       image: "photo-1649972904349-6e44c42644a7"
     },
     {
       icon: Hammer,
-      title: "Civil Works",
-      description: "Essential civil engineering projects including roads, drainage, and infrastructure.",
-      features: ["Road construction", "Drainage systems", "Site preparation", "Earthworks", "Infrastructure development"],
+      title: "Architectural Elements",
+      description: "Bespoke architectural stone elements including fireplaces and custom features.",
+      features: ["Fireplace installation", "Custom stone features", "Architectural details", "Decorative elements", "Stone sculptures"],
       image: "photo-1488590528505-98d2b5aba04b"
     },
     {
       icon: Settings,
-      title: "Pipe Systems (Products)",
-      description: "Supply and installation of high-quality pipe systems for various applications.",
-      features: ["PVC pipe systems", "Steel pipe installation", "HDPE pipe systems", "Copper piping", "Specialized industrial pipes"],
+      title: "Sintered Stone & Paving",
+      description: "Professional installation of sintered stone surfaces and paving solutions.",
+      features: ["Sintered stone panels", "Paving installation", "Outdoor terraces", "Pathway construction", "Driveway paving"],
       image: "photo-1721322800607-8c38375eef04"
     },
     {
       icon: HardHat,
       title: "Project Management",
-      description: "Comprehensive project management services ensuring timely and budget-friendly completion.",
-      features: ["Project planning", "Budget management", "Timeline coordination", "Quality assurance", "Client communication"],
+      description: "Comprehensive project management for all stone installation and mechanical fixing projects.",
+      features: ["Project planning", "Installation coordination", "Quality control", "Timeline management", "Client communication"],
       image: "photo-1605810230434-7631ac76ec81"
     }
   ];
@@ -55,27 +55,27 @@ const Services = () => {
     {
       step: "01",
       title: "Site Assessment",
-      description: "We evaluate your site and infrastructure requirements thoroughly."
+      description: "We evaluate your site and mechanical fixing requirements thoroughly."
     },
     {
       step: "02",
-      title: "System Design",
-      description: "Our engineers create detailed designs for piping and infrastructure systems."
+      title: "Design & Planning",
+      description: "Our engineers create detailed plans for stone installation and fixing systems."
     },
     {
       step: "03",
-      title: "Permits & Approvals",
-      description: "We handle all necessary permits and regulatory approvals."
+      title: "Material Selection",
+      description: "Choose from our premium stone collection and fixing systems."
     },
     {
       step: "04",
       title: "Installation",
-      description: "Our skilled team executes the project with precision and quality."
+      description: "Our skilled team executes mechanical fixing with precision and quality."
     },
     {
       step: "05",
-      title: "Testing & Commissioning",
-      description: "Comprehensive testing to ensure all systems function perfectly."
+      title: "Quality Testing",
+      description: "Comprehensive testing to ensure all installations meet safety standards."
     },
     {
       step: "06",
@@ -86,7 +86,7 @@ const Services = () => {
 
   const handleWhatsAppClick = () => {
     const phoneNumber = "254700123456";
-    const message = "Hello! I'm interested in your piping and infrastructure services.";
+    const message = "Hello! I'm interested in your stone mechanical fixing and installation services.";
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
   };
@@ -100,13 +100,13 @@ const Services = () => {
             Our Services
           </Badge>
           <h1 className="text-4xl md:text-6xl font-bold mb-6 text-foreground">
-            Comprehensive
+            Stone Installation &
             <span className="block bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-              Infrastructure Services
+              Mechanical Fixing Services
             </span>
           </h1>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            From piping systems to civil works, we offer specialized infrastructure solutions to meet all your construction and engineering needs.
+            We specialize in mechanical fixing of claddings, travertine, wall claddings, marble, sintered stone, paving, custom-made architectural elements, indoor and outdoor fountains, fireplaces and much more.
           </p>
         </div>
       </section>
@@ -117,7 +117,7 @@ const Services = () => {
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">What We Do</h2>
             <p className="text-lg text-muted-foreground">
-              Specialized infrastructure services tailored to your needs
+              Expert stone installation and mechanical fixing services
             </p>
           </div>
           
@@ -174,7 +174,7 @@ const Services = () => {
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Our Process</h2>
             <p className="text-lg text-muted-foreground">
-              A systematic approach to ensure infrastructure project success
+              A systematic approach to ensure perfect stone installation
             </p>
           </div>
           
@@ -206,8 +206,8 @@ const Services = () => {
                     <CheckCircle className="w-4 h-4 text-primary-foreground" />
                   </div>
                   <div>
-                    <h3 className="font-semibold mb-2">Specialized Expertise</h3>
-                    <p className="text-muted-foreground">Our team specializes in piping systems, waterworks, and civil engineering with certified professionals.</p>
+                    <h3 className="font-semibold mb-2">Mechanical Fixing Expertise</h3>
+                    <p className="text-muted-foreground">Our team specializes in precision mechanical fixing of all stone types with certified professionals and proven techniques.</p>
                   </div>
                 </div>
                 <div className="flex gap-4">
@@ -215,8 +215,8 @@ const Services = () => {
                     <CheckCircle className="w-4 h-4 text-primary-foreground" />
                   </div>
                   <div>
-                    <h3 className="font-semibold mb-2">Quality Pipe Systems</h3>
-                    <p className="text-muted-foreground">We supply and install high-quality pipe systems with guaranteed performance and durability.</p>
+                    <h3 className="font-semibold mb-2">Premium Stone Materials</h3>
+                    <p className="text-muted-foreground">We work with the finest marble, travertine, sintered stone, and natural cladding materials from trusted suppliers.</p>
                   </div>
                 </div>
                 <div className="flex gap-4">
@@ -224,8 +224,8 @@ const Services = () => {
                     <CheckCircle className="w-4 h-4 text-primary-foreground" />
                   </div>
                   <div>
-                    <h3 className="font-semibold mb-2">24/7 Emergency Support</h3>
-                    <p className="text-muted-foreground">Round-the-clock emergency services for critical infrastructure and piping system failures.</p>
+                    <h3 className="font-semibold mb-2">Custom Solutions</h3>
+                    <p className="text-muted-foreground">From architectural elements to water features and fireplaces, we create bespoke solutions for every project.</p>
                   </div>
                 </div>
               </div>
@@ -233,7 +233,7 @@ const Services = () => {
             <div>
               <img
                 src="https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?auto=format&fit=crop&w=600&h=400"
-                alt="Infrastructure quality control"
+                alt="Stone installation quality control"
                 className="rounded-2xl shadow-xl"
               />
             </div>
@@ -242,13 +242,13 @@ const Services = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="brown-gradient py-20 px-6">
+      <section className="black-gradient py-20 px-6">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-6 text-primary-foreground">
             Ready to Get Started?
           </h2>
           <p className="text-lg text-primary-foreground/80 mb-8">
-            Contact us today to discuss your piping, waterworks, or infrastructure project requirements.
+            Contact us today to discuss your stone installation and mechanical fixing project requirements.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button size="lg" variant="secondary" asChild>

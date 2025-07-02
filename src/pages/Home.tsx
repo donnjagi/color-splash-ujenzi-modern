@@ -10,22 +10,22 @@ const Home = () => {
     {
       icon: Wrench,
       title: "Natural Stone Cladding",
-      description: "Professional installation of premium natural stone wall cladding for interior and exterior applications."
+      description: "Professional mechanical fixing of premium natural stone wall cladding for interior and exterior applications."
     },
     {
       icon: Building2,
-      title: "Stone Construction",
-      description: "Complete stone construction services including feature walls, facades, and architectural elements."
+      title: "Marble & Travertine",
+      description: "Expert installation of marble and travertine surfaces with precision mechanical fixing techniques."
     },
     {
       icon: Droplets,
-      title: "Sealing & Protection",
-      description: "Protective sealing treatments and weatherproofing for long-lasting stone installations."
+      title: "Fountains & Water Features",
+      description: "Custom-made indoor and outdoor fountains with professional stone mechanical fixing and installation."
     },
     {
       icon: Hammer,
-      title: "Custom Stonework",
-      description: "Bespoke stone solutions including planters, fireplaces, and decorative stone features."
+      title: "Architectural Elements",
+      description: "Bespoke stone solutions including fireplaces, paving, and custom-made architectural elements."
     }
   ];
 
@@ -56,7 +56,7 @@ const Home = () => {
 
   const handleWhatsAppClick = () => {
     const phoneNumber = "254700123456";
-    const message = "Hello Afristone! I'm interested in your natural stone cladding services.";
+    const message = "Hello Afristone! I'm interested in your mechanical fixing and stone cladding services.";
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
   };
@@ -82,16 +82,16 @@ const Home = () => {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
               <Badge variant="secondary" className="mb-4">
-                Natural Stone Specialists Since 2010
+                Mechanical Fixing Specialists Since 2010
               </Badge>
               <h1 className="text-4xl md:text-6xl font-bold mb-6 text-foreground">
-                Premium Natural Stone
+                Mechanical Fixing of
                 <span className="block bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-                  Cladding Solutions
+                  Stone Claddings & More
                 </span>
               </h1>
               <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-                Afristone specializes in natural stone wall cladding, offering premium materials with professional installation and sealing services across Kenya.
+                We specialize in mechanical fixing of claddings, travertine, wall claddings, marble, sintered stone, paving, custom-made architectural elements, indoor and outdoor fountains, fireplaces and much more.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button size="lg" className="text-lg px-8 py-6" asChild>
@@ -113,7 +113,7 @@ const Home = () => {
                   <Award className="w-8 h-8 text-primary" />
                   <div>
                     <p className="font-semibold">Certified</p>
-                    <p className="text-sm text-muted-foreground">Natural Stone Specialists</p>
+                    <p className="text-sm text-muted-foreground">Stone Fixing Specialists</p>
                   </div>
                 </div>
               </div>
@@ -142,7 +142,7 @@ const Home = () => {
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Our Specialties</h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Comprehensive natural stone cladding and installation services
+              Expert mechanical fixing services for all your stone and architectural needs
             </p>
           </div>
           
@@ -176,10 +176,10 @@ const Home = () => {
               <div className="space-y-4">
                 {[
                   "Premium natural stone from certified quarries",
-                  "Professional installation with sealing included",
-                  "On-time project delivery guaranteed",
-                  "Competitive pricing for all stone types",
-                  "10-year warranty on all installations",
+                  "Expert mechanical fixing with precision installation",
+                  "Custom-made architectural elements and fountains",
+                  "Marble, travertine, and sintered stone specialists",
+                  "Professional paving and fireplace installation",
                   "Free consultation and site assessment"
                 ].map((item, index) => (
                   <div key={index} className="flex items-center gap-3">
@@ -209,7 +209,7 @@ const Home = () => {
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Recent Projects</h2>
             <p className="text-lg text-muted-foreground">
-              Discover our latest natural stone installations
+              Discover our latest mechanical fixing installations
             </p>
           </div>
           
@@ -240,13 +240,13 @@ const Home = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="brown-gradient py-20 px-6">
+      <section className="black-gradient py-20 px-6">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-6 text-primary-foreground">
             Ready to Transform Your Space?
           </h2>
           <p className="text-lg text-primary-foreground/80 mb-8 max-w-2xl mx-auto">
-            Get in touch with our expert team today for a free consultation and quote for your natural stone cladding project.
+            Get in touch with our expert team today for a free consultation and quote for your stone mechanical fixing project.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button size="lg" variant="secondary" asChild>
