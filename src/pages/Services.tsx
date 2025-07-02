@@ -12,42 +12,42 @@ const Services = () => {
       title: "Stone Cladding Systems",
       description: "Professional mechanical fixing of natural stone claddings with precision installation techniques.",
       features: ["Wall cladding installation", "Facade cladding systems", "Interior stone panels", "Ventilated facades", "Structural glazing"],
-      image: "photo-1721322800607-8c38375eef04"
+      image: "/Afristone-All things Stone/Tanga Yellow Stone/2025053121292496.jpg"
     },
     {
       icon: Building2,
       title: "Marble & Travertine",
       description: "Expert installation of marble and travertine surfaces with specialized mechanical fixing.",
       features: ["Marble wall installation", "Travertine flooring", "Countertop fixing", "Bathroom installations", "Decorative panels"],
-      image: "photo-1605810230434-7631ac76ec81"
+      image: "/Afristone-All things Stone/Silver Stone/2025060723500450.jpg"
     },
     {
       icon: Droplets,
       title: "Water Features & Fountains",
       description: "Custom-made indoor and outdoor fountains with professional stone mechanical fixing.",
       features: ["Indoor fountains", "Outdoor water features", "Garden fountains", "Water wall installations", "Pond surrounds"],
-      image: "photo-1649972904349-6e44c42644a7"
+      image: "/Afristone-All things Stone/Blue Stone/2025061307282178.jpg"
     },
     {
       icon: Hammer,
       title: "Architectural Elements",
       description: "Bespoke architectural stone elements including fireplaces and custom features.",
       features: ["Fireplace installation", "Custom stone features", "Architectural details", "Decorative elements", "Stone sculptures"],
-      image: "photo-1488590528505-98d2b5aba04b"
+      image: "/Afristone-All things Stone/Black stone/Black Irregular stacked/2025053018334056.jpg"
     },
     {
       icon: Settings,
       title: "Sintered Stone & Paving",
       description: "Professional installation of sintered stone surfaces and paving solutions.",
       features: ["Sintered stone panels", "Paving installation", "Outdoor terraces", "Pathway construction", "Driveway paving"],
-      image: "photo-1721322800607-8c38375eef04"
+      image: "/Afristone-All things Stone/Grey stone/Army green(grey) stone/2025060722110055.jpg"
     },
     {
       icon: HardHat,
       title: "Project Management",
       description: "Comprehensive project management for all stone installation and mechanical fixing projects.",
       features: ["Project planning", "Installation coordination", "Quality control", "Timeline management", "Client communication"],
-      image: "photo-1605810230434-7631ac76ec81"
+      image: "/Afristone-All things Stone/Half facing bricks/2025060507530922.jpg"
     }
   ];
 
@@ -126,7 +126,7 @@ const Services = () => {
               <Card key={index} className="border-2 hover:shadow-xl transition-all duration-300">
                 <div className="aspect-video overflow-hidden rounded-t-lg">
                   <img
-                    src={`https://images.unsplash.com/${service.image}?auto=format&fit=crop&w=600&h=300`}
+                    src={service.image}
                     alt={service.title}
                     className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
                   />
@@ -232,9 +232,10 @@ const Services = () => {
             </div>
             <div>
               <img
-                src="https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?auto=format&fit=crop&w=600&h=400"
-                alt="Stone installation quality control"
-                className="rounded-2xl shadow-xl"
+                src="/Afristone-All things Stone/Yellow-beige-cream Stone/2025060400201377.jpg"
+                alt="Yellow-beige-cream stone mechanical fixing quality control"
+                className="rounded-2xl shadow-xl object-cover"
+                style={{ width: '600px', height: '400px' }}
               />
             </div>
           </div>

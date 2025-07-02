@@ -197,7 +197,8 @@ const Home = () => {
               <img
                 src="/Afristone-All things Stone/Silver Stone/2025060723500450.jpg"
                 alt="Silver Stone installation showcase"
-                className="rounded-2xl shadow-xl"
+                className="rounded-2xl shadow-xl object-cover"
+                style={{ width: '600px', height: '400px' }}
               />
             </div>
           </div>

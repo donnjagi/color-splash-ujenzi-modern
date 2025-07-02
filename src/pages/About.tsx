@@ -1,3 +1,4 @@
+
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -90,9 +91,10 @@ const About = () => {
             </div>
             <div className="space-y-6">
               <img
-                src="https://images.unsplash.com/photo-1721322800607-8c38375eef04?auto=format&fit=crop&w=600&h=300"
-                alt="Our construction site"
-                className="rounded-2xl shadow-xl"
+                src="/Afristone-All things Stone/Tanga Yellow Stone/2025053121292496.jpg"
+                alt="Tanga Yellow Stone cladding installation showcase"
+                className="rounded-2xl shadow-xl object-cover"
+                style={{ width: '600px', height: '300px' }}
               />
               <div className="grid grid-cols-2 gap-4">
                 <div className="bg-card p-4 rounded-xl border text-center">
@@ -207,9 +209,10 @@ const About = () => {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
               <img
-                src="https://images.unsplash.com/photo-1605810230434-7631ac76ec81?auto=format&fit=crop&w=600&h=400"
-                alt="Construction team meeting"
-                className="rounded-2xl shadow-xl"
+                src="/Afristone-All things Stone/Black stone/Black Irregular stacked/2025053018334056.jpg"
+                alt="Black stone mechanical fixing installation"
+                className="rounded-2xl shadow-xl object-cover"
+                style={{ width: '600px', height: '400px' }}
               />
             </div>
             <div>
