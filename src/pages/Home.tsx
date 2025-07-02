@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -8,23 +9,23 @@ const Home = () => {
   const services = [
     {
       icon: Wrench,
-      title: "Piping Systems",
-      description: "Professional installation and maintenance of industrial and residential piping systems."
+      title: "Natural Stone Cladding",
+      description: "Professional installation of premium natural stone wall cladding for interior and exterior applications."
     },
     {
       icon: Building2,
-      title: "Building Works",
-      description: "Comprehensive building construction and renovation services for all types of structures."
+      title: "Stone Construction",
+      description: "Complete stone construction services including feature walls, facades, and architectural elements."
     },
     {
       icon: Droplets,
-      title: "Waterworks",
-      description: "Water supply systems, treatment plants, and water infrastructure development."
+      title: "Sealing & Protection",
+      description: "Protective sealing treatments and weatherproofing for long-lasting stone installations."
     },
     {
       icon: Hammer,
-      title: "Civil Works",
-      description: "Road construction, drainage systems, and other essential civil engineering projects."
+      title: "Custom Stonework",
+      description: "Bespoke stone solutions including planters, fireplaces, and decorative stone features."
     }
   ];
 
@@ -32,30 +33,30 @@ const Home = () => {
     { number: "500+", label: "Projects Completed" },
     { number: "15+", label: "Years Experience" },
     { number: "100+", label: "Happy Clients" },
-    { number: "50+", label: "Expert Team" }
+    { number: "8+", label: "Stone Varieties" }
   ];
 
   const projects = [
     {
-      title: "Nairobi Water Supply Project",
-      category: "Waterworks",
-      image: "photo-1721322800607-8c38375eef04"
+      title: "Tanga Yellow Stone Feature Wall",
+      category: "Premium Natural Stone",
+      image: "/Afristone-All things Stone/Tanga Yellow Stone/2025053121292496.jpg"
     },
     {
-      title: "Industrial Piping Installation",
-      category: "Piping Systems",
-      image: "photo-1605810230434-7631ac76ec81"
+      title: "Silver Stone Modern Facade",
+      category: "Contemporary Cladding",
+      image: "/Afristone-All things Stone/Silver Stone/2025060723500450.jpg"
     },
     {
-      title: "Westlands Infrastructure",
-      category: "Civil Works",
-      image: "photo-1649972904349-6e44c42644a7"
+      title: "Black Stone Elegant Installation",
+      category: "Luxury Stonework",
+      image: "/Afristone-All things Stone/Black stone/Black Irregular stacked/2025053018334056.jpg"
     }
   ];
 
   const handleWhatsAppClick = () => {
     const phoneNumber = "254700123456";
-    const message = "Hello Afristone! I'm interested in your piping and construction services.";
+    const message = "Hello Afristone! I'm interested in your natural stone cladding services.";
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
   };
@@ -81,30 +82,30 @@ const Home = () => {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
               <Badge variant="secondary" className="mb-4">
-                Piping & Infrastructure Specialists Since 2010
+                Natural Stone Specialists Since 2010
               </Badge>
               <h1 className="text-4xl md:text-6xl font-bold mb-6 text-foreground">
-                Expert Piping &
+                Premium Natural Stone
                 <span className="block bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-                  Infrastructure Solutions
+                  Cladding Solutions
                 </span>
               </h1>
               <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-                Afristone specializes in piping systems, building works, waterworks, and civil engineering projects. Delivering reliable infrastructure solutions across Kenya.
+                Afristone specializes in natural stone wall cladding, offering premium materials with professional installation and sealing services across Kenya.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button size="lg" className="text-lg px-8 py-6" asChild>
                   <Link to="/contact">Get Free Quote</Link>
                 </Button>
                 <Button variant="outline" size="lg" className="text-lg px-8 py-6" asChild>
-                  <Link to="/projects">View Projects</Link>
+                  <Link to="/products">View Stone Collection</Link>
                 </Button>
               </div>
             </div>
             <div className="relative">
               <img
-                src={`https://images.unsplash.com/photo-1721322800607-8c38375eef04?auto=format&fit=crop&w=600&h=400`}
-                alt="Industrial piping project"
+                src="/Afristone-All things Stone/Tanga Yellow Stone/2025053121292496.jpg"
+                alt="Tanga Yellow Stone natural stone cladding"
                 className="rounded-2xl shadow-2xl"
               />
               <div className="absolute -bottom-6 -left-6 bg-card p-6 rounded-xl shadow-lg border">
@@ -112,7 +113,7 @@ const Home = () => {
                   <Award className="w-8 h-8 text-primary" />
                   <div>
                     <p className="font-semibold">Certified</p>
-                    <p className="text-sm text-muted-foreground">Piping & Infrastructure</p>
+                    <p className="text-sm text-muted-foreground">Natural Stone Specialists</p>
                   </div>
                 </div>
               </div>
@@ -141,7 +142,7 @@ const Home = () => {
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Our Specialties</h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Comprehensive piping, building, waterworks, and civil engineering services
+              Comprehensive natural stone cladding and installation services
             </p>
           </div>
           
@@ -174,12 +175,12 @@ const Home = () => {
               <h2 className="text-3xl md:text-4xl font-bold mb-6">Why Choose Afristone?</h2>
               <div className="space-y-4">
                 {[
-                  "Licensed piping and infrastructure specialists",
-                  "Quality materials and certified installations",
+                  "Premium natural stone from certified quarries",
+                  "Professional installation with sealing included",
                   "On-time project delivery guaranteed",
-                  "Competitive pricing for all services",
-                  "24/7 emergency repair services",
-                  "10-year warranty on piping systems"
+                  "Competitive pricing for all stone types",
+                  "10-year warranty on all installations",
+                  "Free consultation and site assessment"
                 ].map((item, index) => (
                   <div key={index} className="flex items-center gap-3">
                     <CheckCircle className="w-5 h-5 text-primary" />
@@ -193,8 +194,8 @@ const Home = () => {
             </div>
             <div>
               <img
-                src={`https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?auto=format&fit=crop&w=600&h=400`}
-                alt="Infrastructure team at work"
+                src="/Afristone-All things Stone/Silver Stone/2025060723500450.jpg"
+                alt="Silver Stone installation showcase"
                 className="rounded-2xl shadow-xl"
               />
             </div>
@@ -208,7 +209,7 @@ const Home = () => {
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Recent Projects</h2>
             <p className="text-lg text-muted-foreground">
-              Discover our latest piping and infrastructure achievements
+              Discover our latest natural stone installations
             </p>
           </div>
           
@@ -217,7 +218,7 @@ const Home = () => {
               <Card key={index} className="overflow-hidden hover:shadow-xl transition-all duration-300">
                 <div className="aspect-video overflow-hidden">
                   <img
-                    src={`https://images.unsplash.com/${project.image}?auto=format&fit=crop&w=400&h=300`}
+                    src={project.image}
                     alt={project.title}
                     className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
                   />
@@ -232,7 +233,7 @@ const Home = () => {
           
           <div className="text-center mt-12">
             <Button variant="outline" size="lg" asChild>
-              <Link to="/projects">View All Projects</Link>
+              <Link to="/products">View All Stone Types</Link>
             </Button>
           </div>
         </div>
@@ -242,10 +243,10 @@ const Home = () => {
       <section className="brown-gradient py-20 px-6">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-6 text-primary-foreground">
-            Ready to Start Your Infrastructure Project?
+            Ready to Transform Your Space?
           </h2>
           <p className="text-lg text-primary-foreground/80 mb-8 max-w-2xl mx-auto">
-            Get in touch with our expert team today for a free consultation and quote for your piping, waterworks, or civil engineering project.
+            Get in touch with our expert team today for a free consultation and quote for your natural stone cladding project.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button size="lg" variant="secondary" asChild>
