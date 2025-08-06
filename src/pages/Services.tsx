@@ -9,22 +9,22 @@ const Services = () => {
   const mainServices = [
     {
       icon: Wrench,
-      title: "Stone Cladding Systems",
-      description: "Professional mechanical fixing of natural stone claddings with precision installation techniques.",
-      features: ["Wall cladding installation", "Facade cladding systems", "Interior stone panels", "Ventilated facades", "Structural glazing"],
+      title: "Wall Cladding Systems",
+      description: "Professional supply and installation of natural stone wall claddings with precision installation techniques.",
+      features: ["Wall cladding installation", "Facade cladding systems", "Interior stone panels", "Exterior stone walls", "Natural stone facades"],
       image: "/Afristone-All things Stone/Tanga Yellow Stone/2025053121292496.jpg"
     },
     {
       icon: Building2,
       title: "Marble & Travertine",
-      description: "Expert installation of marble and travertine surfaces with specialized mechanical fixing.",
-      features: ["Marble wall installation", "Travertine flooring", "Countertop fixing", "Bathroom installations", "Decorative panels"],
+      description: "Expert supply and installation of marble and travertine surfaces with specialized installation.",
+      features: ["Marble wall installation", "Travertine flooring", "Countertop installation", "Bathroom installations", "Decorative panels"],
       image: "/Afristone-All things Stone/Silver Stone/2025060723500450.jpg"
     },
     {
       icon: Droplets,
       title: "Water Features & Fountains",
-      description: "Custom-made indoor and outdoor fountains with professional stone mechanical fixing.",
+      description: "Custom-made indoor and outdoor fountains with professional stone supply and installation.",
       features: ["Indoor fountains", "Outdoor water features", "Garden fountains", "Water wall installations", "Pond surrounds"],
       image: "/Afristone-All things Stone/Blue Stone/2025061307282178.jpg"
     },
@@ -37,16 +37,16 @@ const Services = () => {
     },
     {
       icon: Settings,
-      title: "Sintered Stone & Paving",
-      description: "Professional installation of sintered stone surfaces and paving solutions.",
-      features: ["Sintered stone panels", "Paving installation", "Outdoor terraces", "Pathway construction", "Driveway paving"],
+      title: "Sinks, Countertops & Paving",
+      description: "Professional supply and installation of stone sinks, countertops and paving solutions.",
+      features: ["Stone sinks and countertops", "Paving installation", "Outdoor terraces", "Pathway construction", "Driveway paving"],
       image: "/Afristone-All things Stone/Grey stone/Army green(grey) stone/2025060722110055.jpg"
     },
     {
       icon: HardHat,
-      title: "Project Management",
-      description: "Comprehensive project management for all stone installation and mechanical fixing projects.",
-      features: ["Project planning", "Installation coordination", "Quality control", "Timeline management", "Client communication"],
+      title: "Landscapes",
+      description: "Beautiful landscape stone installations and natural stone landscaping solutions.",
+      features: ["Garden stone features", "Landscape installations", "Stone pathways", "Retaining walls", "Natural stone borders"],
       image: "/Afristone-All things Stone/Half facing bricks/2025060507530922.jpg"
     }
   ];
@@ -60,17 +60,17 @@ const Services = () => {
     {
       step: "02",
       title: "Design & Planning",
-      description: "Our engineers create detailed plans for stone installation and fixing systems."
+      description: "Our experts create detailed plans for stone supply and installation systems."
     },
     {
       step: "03",
       title: "Material Selection",
-      description: "Choose from our premium stone collection and fixing systems."
+      description: "Choose from our premium stone collection and installation systems."
     },
     {
       step: "04",
       title: "Installation",
-      description: "Our skilled team executes mechanical fixing with precision and quality."
+      description: "Our skilled team executes stone installation with precision and quality."
     },
     {
       step: "05",
@@ -86,7 +86,7 @@ const Services = () => {
 
   const handleWhatsAppClick = () => {
     const phoneNumber = "254700123456";
-    const message = "Hello! I'm interested in your stone mechanical fixing and installation services.";
+    const message = "Hello! I'm interested in your stone supply and installation services.";
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
   };
@@ -100,13 +100,13 @@ const Services = () => {
             Our Services
           </Badge>
           <h1 className="text-4xl md:text-6xl font-bold mb-6 text-foreground">
-            Stone Installation &
+            Stone Supply &
             <span className="block bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-              Mechanical Fixing Services
+              Installation Services
             </span>
           </h1>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            We specialize in mechanical fixing of claddings, travertine, wall claddings, marble, sintered stone, paving, custom-made architectural elements, indoor and outdoor fountains, fireplaces and much more.
+            Supply and installation of premium stone products for your project finishes, including wall claddings, travertine, wet Mazeras, marble, sintered stone, pavings, custom-made architectural elements, indoor and outdoor fountains, fireplaces and much more.
           </p>
         </div>
       </section>
@@ -117,7 +117,7 @@ const Services = () => {
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">What We Do</h2>
             <p className="text-lg text-muted-foreground">
-              Expert stone installation and mechanical fixing services
+              Expert stone supply and installation of natural stone finishes
             </p>
           </div>
           
@@ -206,8 +206,8 @@ const Services = () => {
                     <CheckCircle className="w-4 h-4 text-primary-foreground" />
                   </div>
                   <div>
-                    <h3 className="font-semibold mb-2">Mechanical Fixing Expertise</h3>
-                    <p className="text-muted-foreground">Our team specializes in precision mechanical fixing of all stone types with certified professionals and proven techniques.</p>
+                    <h3 className="font-semibold mb-2">Stone Supply & Installation Expertise</h3>
+                    <p className="text-muted-foreground">Our team specializes in premium stone supply and precision installation of all stone types with certified professionals and proven techniques.</p>
                   </div>
                 </div>
                 <div className="flex gap-4">
@@ -249,7 +249,7 @@ const Services = () => {
             Ready to Get Started?
           </h2>
           <p className="text-lg text-primary-foreground/80 mb-8">
-            Contact us today to discuss your stone installation and mechanical fixing project requirements.
+            Contact us today to discuss your stone supply and installation project requirements.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button size="lg" variant="secondary" asChild>

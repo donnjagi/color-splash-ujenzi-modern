@@ -8,24 +8,24 @@ import { Link } from "react-router-dom";
 const Home = () => {
   const services = [
     {
-      icon: Wrench,
-      title: "Natural Stone Cladding",
-      description: "Professional mechanical fixing of premium natural stone wall cladding for interior and exterior applications."
-    },
-    {
       icon: Building2,
-      title: "Marble & Travertine",
-      description: "Expert installation of marble and travertine surfaces with precision mechanical fixing techniques."
+      title: "Wall Cladding",
+      description: "Professional supply and installation of premium natural stone wall cladding for interior and exterior applications."
     },
     {
       icon: Droplets,
-      title: "Fountains & Water Features",
-      description: "Custom-made indoor and outdoor fountains with professional stone mechanical fixing and installation."
+      title: "Water Features & Fountains",
+      description: "Custom-made indoor and outdoor fountains with professional stone supply and installation."
+    },
+    {
+      icon: Wrench,
+      title: "Landscapes",
+      description: "Beautiful landscape stone installations and natural stone landscaping solutions."
     },
     {
       icon: Hammer,
-      title: "Architectural Elements",
-      description: "Bespoke stone solutions including fireplaces, paving, and custom-made architectural elements."
+      title: "Sinks and Countertops",
+      description: "Premium stone sinks and countertops with expert supply and installation services."
     }
   ];
 
@@ -56,7 +56,7 @@ const Home = () => {
 
   const handleWhatsAppClick = () => {
     const phoneNumber = "254700123456";
-    const message = "Hello Afristone! I'm interested in your mechanical fixing and stone cladding services.";
+    const message = "Hello Afritone! I'm interested in your stone supply and installation services.";
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
   };
@@ -82,16 +82,16 @@ const Home = () => {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
               <Badge variant="secondary" className="mb-4">
-                Mechanical Fixing Specialists Since 2010
+                ALL THINGS STONE
               </Badge>
               <h1 className="text-4xl md:text-6xl font-bold mb-6 text-foreground">
-                Mechanical Fixing of
+                Afritone - 
                 <span className="block bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-                  Stone Claddings & More
+                  ALL THINGS STONE
                 </span>
               </h1>
               <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-                We specialize in mechanical fixing of claddings, travertine, wall claddings, marble, sintered stone, paving, custom-made architectural elements, indoor and outdoor fountains, fireplaces and much more.
+                A leading natural stone finishes supplier and installer. Specializing in External and internal wall cladding and natural floor finishes since 2010.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button size="lg" className="text-lg px-8 py-6" asChild>
@@ -141,9 +141,9 @@ const Home = () => {
       <section className="py-20 px-6">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Our Specialties</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Our Services</h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Expert mechanical fixing services for all your stone and architectural needs
+              Expert stone supply and installation services for all your natural stone needs
             </p>
           </div>
           
@@ -173,14 +173,14 @@ const Home = () => {
         <div className="max-w-6xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-3xl md:text-4xl font-bold mb-6">Why Choose Afristone?</h2>
+              <h2 className="text-3xl md:text-4xl font-bold mb-6">Why Choose Afritone?</h2>
               <div className="space-y-4">
                 {[
                   "Premium natural stone from certified quarries",
-                  "Expert mechanical fixing with precision installation",
-                  "Custom-made architectural elements and fountains",
-                  "Marble, travertine, and sintered stone specialists",
-                  "Professional paving and fireplace installation",
+                  "Expert supply and installation services",
+                  "Wall cladding and natural floor finishes",
+                  "Water features, fountains and landscapes",
+                  "Sinks, countertops and custom stone work",
                   "Free consultation and site assessment"
                 ].map((item, index) => (
                   <div key={index} className="flex items-center gap-3">
@@ -211,7 +211,7 @@ const Home = () => {
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Recent Projects</h2>
             <p className="text-lg text-muted-foreground">
-              Discover our latest mechanical fixing installations
+              Discover our latest stone supply and installation projects
             </p>
           </div>
           
@@ -248,7 +248,7 @@ const Home = () => {
             Ready to Transform Your Space?
           </h2>
           <p className="text-lg text-primary-foreground/80 mb-8 max-w-2xl mx-auto">
-            Get in touch with our expert team today for a free consultation and quote for your stone mechanical fixing project.
+            Get in touch with our expert team today for a free consultation and quote for your stone supply and installation project.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button size="lg" variant="secondary" asChild>
