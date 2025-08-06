@@ -71,76 +71,311 @@ const QuotationCalculator = () => {
         <head>
           <title>Quotation - ${quotationData.clientName}</title>
           <style>
-            body { font-family: Arial, sans-serif; margin: 40px; }
-            .header { text-align: center; margin-bottom: 30px; }
-            .company-logo { background: #1e40af; color: white; width: 60px; height: 60px; border-radius: 12px; display: inline-flex; align-items: center; justify-content: center; font-size: 24px; font-weight: bold; margin-bottom: 10px; }
-            .company-name { font-size: 24px; font-weight: bold; color: #1e40af; margin: 0; }
-            .company-tagline { font-size: 14px; color: #666; margin: 0; }
-            .quotation-title { font-size: 20px; font-weight: bold; margin: 30px 0 20px 0; }
-            .client-info { margin-bottom: 30px; }
-            .client-info div { margin-bottom: 8px; }
-            .items-table { width: 100%; border-collapse: collapse; margin: 20px 0; }
-            .items-table th, .items-table td { padding: 12px; text-align: left; border-bottom: 1px solid #ddd; }
-            .items-table th { background-color: #f8f9fa; font-weight: bold; }
-            .total-section { margin-top: 20px; text-align: right; }
-            .total-line { margin: 5px 0; }
-            .grand-total { font-size: 18px; font-weight: bold; color: #1e40af; }
-            .disclaimer { margin-top: 40px; font-size: 12px; color: #666; }
-            .disclaimer h3 { font-size: 14px; font-weight: bold; margin-bottom: 10px; color: #333; }
-            .disclaimer ol { margin-left: 20px; }
-            .disclaimer li { margin-bottom: 8px; line-height: 1.4; }
-            .footer { margin-top: 40px; text-align: center; color: #666; font-size: 12px; }
+            * { box-sizing: border-box; }
+            body { 
+              font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+              margin: 0; 
+              padding: 40px; 
+              background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+              color: #1a202c;
+              line-height: 1.6;
+            }
+            .invoice-container {
+              max-width: 800px;
+              margin: 0 auto;
+              background: white;
+              border-radius: 16px;
+              box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+              overflow: hidden;
+            }
+            .header {
+              background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+              color: white;
+              padding: 40px;
+              text-align: center;
+              position: relative;
+            }
+            .header::before {
+              content: '';
+              position: absolute;
+              top: 0;
+              left: 0;
+              right: 0;
+              bottom: 0;
+              background: url('/public/Afristone-All things Stone/Afristone letterheads/W1-01.png') center/contain no-repeat;
+              opacity: 0.1;
+            }
+            .company-logo {
+              width: 80px;
+              height: 80px;
+              margin: 0 auto 20px;
+              background: rgba(255, 255, 255, 0.2);
+              border-radius: 20px;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              font-size: 32px;
+              font-weight: bold;
+              backdrop-filter: blur(10px);
+              border: 2px solid rgba(255, 255, 255, 0.3);
+            }
+            .company-name {
+              font-size: 32px;
+              font-weight: 700;
+              margin: 0 0 8px 0;
+              letter-spacing: -0.5px;
+            }
+            .company-tagline {
+              font-size: 16px;
+              opacity: 0.9;
+              margin: 0;
+              font-weight: 300;
+            }
+            .content {
+              padding: 40px;
+            }
+            .quotation-header {
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+              margin-bottom: 40px;
+              padding-bottom: 20px;
+              border-bottom: 2px solid #e2e8f0;
+            }
+            .quotation-title {
+              font-size: 28px;
+              font-weight: 700;
+              color: #1e40af;
+              margin: 0;
+            }
+            .quotation-number {
+              font-size: 14px;
+              color: #64748b;
+              background: #f1f5f9;
+              padding: 8px 16px;
+              border-radius: 8px;
+            }
+            .info-grid {
+              display: grid;
+              grid-template-columns: 1fr 1fr;
+              gap: 30px;
+              margin-bottom: 40px;
+            }
+            .info-section h3 {
+              font-size: 16px;
+              font-weight: 600;
+              color: #475569;
+              margin: 0 0 15px 0;
+              text-transform: uppercase;
+              letter-spacing: 0.5px;
+            }
+            .info-item {
+              display: flex;
+              justify-content: space-between;
+              padding: 8px 0;
+              border-bottom: 1px solid #f1f5f9;
+            }
+            .info-item:last-child {
+              border-bottom: none;
+            }
+            .info-label {
+              font-weight: 500;
+              color: #64748b;
+            }
+            .info-value {
+              font-weight: 600;
+              color: #1a202c;
+            }
+            .items-table {
+              width: 100%;
+              border-collapse: separate;
+              border-spacing: 0;
+              margin: 30px 0;
+              border-radius: 12px;
+              overflow: hidden;
+              box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            }
+            .items-table th {
+              background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+              padding: 20px;
+              text-align: left;
+              font-weight: 600;
+              color: #475569;
+              text-transform: uppercase;
+              letter-spacing: 0.5px;
+              font-size: 12px;
+            }
+            .items-table td {
+              padding: 20px;
+              background: white;
+              border-top: 1px solid #f1f5f9;
+              font-size: 14px;
+            }
+            .amount-cell {
+              font-weight: 600;
+              color: #1e40af;
+            }
+            .total-section {
+              margin-top: 30px;
+              padding: 30px;
+              background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+              border-radius: 12px;
+              text-align: right;
+            }
+            .total-line {
+              display: flex;
+              justify-content: space-between;
+              margin: 10px 0;
+              font-size: 16px;
+            }
+            .grand-total {
+              font-size: 24px;
+              font-weight: 700;
+              color: #1e40af;
+              padding-top: 15px;
+              border-top: 2px solid #cbd5e1;
+              margin-top: 15px;
+            }
+            .location-section {
+              margin: 30px 0;
+              padding: 20px;
+              background: #f8fafc;
+              border-radius: 12px;
+              border-left: 4px solid #1e40af;
+            }
+            .location-title {
+              font-weight: 600;
+              color: #1e40af;
+              margin-bottom: 8px;
+            }
+            .disclaimer {
+              margin-top: 40px;
+              padding: 25px;
+              background: #fffbeb;
+              border-radius: 12px;
+              border: 1px solid #fbbf24;
+            }
+            .disclaimer h3 {
+              font-size: 16px;
+              font-weight: 600;
+              margin-bottom: 15px;
+              color: #92400e;
+            }
+            .disclaimer ol {
+              margin: 0;
+              padding-left: 20px;
+            }
+            .disclaimer li {
+              margin-bottom: 8px;
+              color: #78350f;
+              font-size: 13px;
+            }
+            .footer {
+              margin-top: 40px;
+              text-align: center;
+              padding: 30px;
+              background: #1e40af;
+              color: white;
+              border-radius: 12px;
+            }
+            .footer-contact {
+              font-size: 16px;
+              font-weight: 500;
+              margin-bottom: 10px;
+            }
+            .footer-message {
+              font-size: 14px;
+              opacity: 0.9;
+              margin: 0;
+            }
           </style>
         </head>
         <body>
-          <div class="header">
-            <div class="company-logo">A</div>
-            <h1 class="company-name">Afristone</h1>
-            <p class="company-tagline">Piping & Infrastructure Specialists</p>
-          </div>
-          
-          <h2 class="quotation-title">QUOTATION</h2>
-          
-          <div class="client-info">
-            <div><strong>Date:</strong> ${format(new Date(quotationData.date), 'MMMM dd, yyyy')}</div>
-            <div><strong>Client:</strong> ${quotationData.clientName}</div>
-            <div><strong>Location:</strong> ${quotationData.clientLocation}</div>
-          </div>
-          
-          <table class="items-table">
-            <thead>
-              <tr>
-                <th>Product</th>
-                <th>Quantity</th>
-                <th>Unit Price (Ksh)</th>
-                <th>Amount (Ksh)</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>${quotationData.productType}</td>
-                <td>${quotationData.quantity} M²</td>
-                <td>${quotationData.productPrice.toLocaleString()}</td>
-                <td>${calculateTotal().toLocaleString()}</td>
-              </tr>
-            </tbody>
-          </table>
-          
-          <div class="total-section">
-            <div class="total-line grand-total">Total: Ksh ${calculateTotal().toLocaleString()}</div>
-          </div>
-          
-          <div class="disclaimer">
-            <h3>Disclaimer:</h3>
-            <ol>
-              <li>Cost of logistics shall be confirmed with delivery address provided by the Customer.</li>
-              <li>If you have any questions about this invoice, please contact Collins Githinji, +254 729 304 190, githinjicollins@travauxlimited.com</li>
-            </ol>
-          </div>
-          
-          <div class="footer">
-            <p>Contact: +254 700 123 456 | info@afristone.co.ke</p>
-            <p>Thank you for choosing Afristone for your piping and infrastructure needs.</p>
+          <div class="invoice-container">
+            <div class="header">
+              <div class="company-logo">A</div>
+              <h1 class="company-name">Afristone</h1>
+              <p class="company-tagline">ALL THINGS STONE</p>
+            </div>
+            
+            <div class="content">
+              <div class="quotation-header">
+                <h2 class="quotation-title">QUOTATION</h2>
+                <div class="quotation-number">Quote #${Date.now().toString().slice(-6)}</div>
+              </div>
+              
+              <div class="info-grid">
+                <div class="info-section">
+                  <h3>Quote Details</h3>
+                  <div class="info-item">
+                    <span class="info-label">Date:</span>
+                    <span class="info-value">${format(new Date(quotationData.date), 'MMMM dd, yyyy')}</span>
+                  </div>
+                  <div class="info-item">
+                    <span class="info-label">Valid Until:</span>
+                    <span class="info-value">${format(new Date(Date.now() + 30 * 24 * 60 * 60 * 1000), 'MMMM dd, yyyy')}</span>
+                  </div>
+                </div>
+                
+                <div class="info-section">
+                  <h3>Client Information</h3>
+                  <div class="info-item">
+                    <span class="info-label">Client:</span>
+                    <span class="info-value">${quotationData.clientName}</span>
+                  </div>
+                  <div class="info-item">
+                    <span class="info-label">Location:</span>
+                    <span class="info-value">${quotationData.clientLocation}</span>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="location-section">
+                <div class="location-title">Our Location</div>
+                <div>Nairobi, Kenya - Serving nationwide with quality stone finishes</div>
+              </div>
+              
+              <table class="items-table">
+                <thead>
+                  <tr>
+                    <th>Product Description</th>
+                    <th>Quantity</th>
+                    <th>Unit Price (Ksh)</th>
+                    <th>Amount (Ksh)</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>${quotationData.productType}</td>
+                    <td>${quotationData.quantity} M²</td>
+                    <td>${quotationData.productPrice.toLocaleString()}</td>
+                    <td class="amount-cell">${calculateTotal().toLocaleString()}</td>
+                  </tr>
+                </tbody>
+              </table>
+              
+              <div class="total-section">
+                <div class="total-line grand-total">
+                  <span>Total Amount:</span>
+                  <span>Ksh ${calculateTotal().toLocaleString()}</span>
+                </div>
+              </div>
+              
+              <div class="disclaimer">
+                <h3>Terms & Conditions</h3>
+                <ol>
+                  <li>Cost of logistics shall be confirmed with delivery address provided by the Customer.</li>
+                  <li>For any questions about this quotation, please contact us using the telephone number below.</li>
+                  <li>Prices are valid for 30 days from the date of this quotation.</li>
+                  <li>All work will be completed to the highest standards of craftsmanship.</li>
+                </ol>
+              </div>
+            </div>
+            
+            <div class="footer">
+              <div class="footer-contact">Contact: +254 729 304 190</div>
+              <p class="footer-message">Thank you for choosing Afristone for all your stone finishes.</p>
+            </div>
           </div>
         </body>
       </html>
@@ -255,7 +490,7 @@ const QuotationCalculator = () => {
                       <span className="text-primary-foreground font-bold text-xl">A</span>
                     </div>
                     <h2 className="text-xl font-bold text-primary">Afristone</h2>
-                    <p className="text-sm text-muted-foreground">Piping & Infrastructure</p>
+                    <p className="text-sm text-muted-foreground">ALL THINGS STONE</p>
                   </div>
 
                   <Separator />
