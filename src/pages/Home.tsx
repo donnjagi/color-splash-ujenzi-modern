@@ -4,6 +4,8 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge";
 import { Building, Users, Award, CheckCircle, ArrowRight, Hammer, Wrench, Droplets, Building2 } from "lucide-react";
 import { Link } from "react-router-dom";
+import SEOHead from "@/components/SEOHead";
+import LazyImage from "@/components/LazyImage";
 
 const Home = () => {
   const services = [
@@ -61,8 +63,49 @@ const Home = () => {
     window.open(whatsappUrl, '_blank');
   };
 
+  // Structured data for SEO
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Afristone",
+    "alternateName": "Afristone - All Things Stone",
+    "url": "https://afristone.lovable.app",
+    "logo": "https://afristone.lovable.app/Afristone-All%20things%20Stone/Afristone%20letterheads/W1-01.png",
+    "description": "Leading natural stone supplier in Kenya since 2010. Expert wall cladding, floor finishes, water features & stone installation.",
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "KE",
+      "addressRegion": "Kenya"
+    },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+254700123456",
+      "contactType": "customer service",
+      "availableLanguage": ["English", "Swahili"]
+    },
+    "founder": {
+      "@type": "Person",
+      "name": "Afristone Team"
+    },
+    "foundingDate": "2010",
+    "sameAs": [
+      "https://wa.me/254700123456"
+    ],
+    "offers": {
+      "@type": "Offer",
+      "category": "Natural Stone Supply and Installation",
+      "description": "Premium natural stone supply and installation services including wall cladding, floor finishes, water features, and landscaping."
+    }
+  };
+
   return (
     <div className="min-h-screen">
+      <SEOHead 
+        title="Afristone - Premium Natural Stone Supply & Installation Services Kenya"
+        description="Leading natural stone supplier in Kenya since 2010. Expert wall cladding, floor finishes, water features & stone installation. Premium Tanga Yellow, Black, Silver & Grey stone varieties. Free quotes available."
+        keywords="natural stone supplier Kenya, stone cladding installation, Tanga Yellow stone, stone wall cladding, natural stone finishes, stone supplier Nairobi, stone installation services, premium stone Kenya"
+        structuredData={structuredData}
+      />
       {/* WhatsApp Floating Button */}
       <div className="fixed bottom-6 right-6 z-50">
         <Button
@@ -77,7 +120,7 @@ const Home = () => {
       </div>
 
       {/* Hero Section */}
-      <section className="modern-gradient py-20 px-6">
+      <header className="modern-gradient py-20 px-6 hero-section">
         <div className="max-w-6xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
@@ -103,11 +146,12 @@ const Home = () => {
               </div>
             </div>
             <div className="relative">
-              <img
+              <LazyImage
                 src="/Afristone-All things Stone/Tanga Yellow Stone/2025053121292496.jpg"
-                alt="Tanga Yellow Stone natural stone cladding"
-                className="rounded-2xl shadow-2xl object-cover"
+                alt="Premium Tanga Yellow natural stone wall cladding installation by Afristone Kenya - showcasing expert craftsmanship in stone supply and installation services"
+                className="rounded-2xl shadow-2xl"
                 style={{ width: '600px', height: '400px' }}
+                loading="eager"
               />
               <div className="absolute -bottom-6 -left-6 bg-card p-6 rounded-xl shadow-lg border">
                 <div className="flex items-center gap-3">
@@ -121,7 +165,7 @@ const Home = () => {
             </div>
           </div>
         </div>
-      </section>
+      </header>
 
       {/* Stats Section */}
       <section className="py-16 px-6 bg-card">
@@ -149,7 +193,7 @@ const Home = () => {
           
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {services.map((service, index) => (
-              <Card key={index} className="border-2 hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+              <Card key={index} className="border-2 hover:shadow-xl transition-all duration-300 hover-optimized">
                 <CardHeader>
                   <div className="w-12 h-12 bg-primary rounded-xl mb-4 flex items-center justify-center">
                     <service.icon className="w-6 h-6 text-primary-foreground" />
@@ -194,10 +238,10 @@ const Home = () => {
               </Button>
             </div>
             <div>
-              <img
+              <LazyImage
                 src="/Afristone-All things Stone/Silver Stone/2025060723500450.jpg"
-                alt="Silver Stone installation showcase"
-                className="rounded-2xl shadow-xl object-cover"
+                alt="Professional Silver Stone installation showcase - premium natural stone cladding services by Afristone Kenya specialists"
+                className="rounded-2xl shadow-xl"
                 style={{ width: '600px', height: '400px' }}
               />
             </div>
@@ -217,19 +261,21 @@ const Home = () => {
           
           <div className="grid md:grid-cols-3 gap-8">
             {projects.map((project, index) => (
-              <Card key={index} className="overflow-hidden hover:shadow-xl transition-all duration-300">
+              <article key={index}>
+                <Card className="overflow-hidden hover:shadow-xl transition-all duration-300 hover-optimized">
                 <div className="aspect-video overflow-hidden">
-                  <img
+                  <LazyImage
                     src={project.image}
-                    alt={project.title}
-                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                    alt={`${project.title} - Professional ${project.category.toLowerCase()} stone installation by Afristone Kenya stone supply specialists`}
+                    className="w-full h-full hover:scale-105 transition-transform duration-300"
                   />
                 </div>
                 <CardHeader>
                   <Badge variant="secondary" className="w-fit">{project.category}</Badge>
                   <CardTitle className="text-lg">{project.title}</CardTitle>
                 </CardHeader>
-              </Card>
+                </Card>
+              </article>
             ))}
           </div>
           
