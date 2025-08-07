@@ -13,7 +13,7 @@ const Footer = () => {
   return (
     <footer className="bg-primary text-primary-foreground">
       <div className="max-w-6xl mx-auto px-6 py-12">
-        <div className="grid md:grid-cols-4 gap-8">
+        <div className="grid md:grid-cols-3 gap-8">
           {/* Company Info */}
           <div>
             <div className="flex items-center space-x-2 mb-4">
@@ -53,18 +53,6 @@ const Footer = () => {
               <li><Link to="/products" className="opacity-80 hover:opacity-100">Products</Link></li>
               <li><Link to="/projects" className="opacity-80 hover:opacity-100">Projects</Link></li>
               <li><Link to="/contact" className="opacity-80 hover:opacity-100">Contact</Link></li>
-            </ul>
-          </div>
-
-          {/* Services */}
-          <div>
-            <h4 className="font-semibold mb-4">Our Services</h4>
-            <ul className="space-y-2 text-sm">
-              <li className="opacity-80">Piping Systems</li>
-              <li className="opacity-80">Building Works</li>
-              <li className="opacity-80">Waterworks</li>
-              <li className="opacity-80">Civil Works</li>
-              <li className="opacity-80">Pipe Systems (Products)</li>
             </ul>
           </div>
 
