@@ -22,7 +22,7 @@ const Header = () => {
 
   const handleWhatsAppClick = () => {
     const phoneNumber = "254700123456";
-    const message = "Hello Afritone! I'm interested in your stone supply and installation services.";
+    const message = "Hello Afristone! I'm interested in your stone supply and installation services.";
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
   };
@@ -57,7 +57,7 @@ const Header = () => {
                 <span className="text-primary-foreground font-bold text-xl">A</span>
               </div>
               <div>
-                <h1 className="text-xl font-bold text-primary">Afritone</h1>
+                <h1 className="text-xl font-bold text-primary">Afristone</h1>
                 <p className="text-xs text-muted-foreground">ALL THINGS STONE</p>
               </div>
             </Link>

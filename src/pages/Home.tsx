@@ -56,7 +56,7 @@ const Home = () => {
 
   const handleWhatsAppClick = () => {
     const phoneNumber = "254700123456";
-    const message = "Hello Afritone! I'm interested in your stone supply and installation services.";
+    const message = "Hello Afristone! I'm interested in your stone supply and installation services.";
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
   };
@@ -85,7 +85,7 @@ const Home = () => {
                 ALL THINGS STONE
               </Badge>
               <h1 className="text-4xl md:text-6xl font-bold mb-6 text-foreground">
-                Afritone - 
+                Afristone - 
                 <span className="block bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
                   ALL THINGS STONE
                 </span>
@@ -173,7 +173,7 @@ const Home = () => {
         <div className="max-w-6xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-3xl md:text-4xl font-bold mb-6">Why Choose Afritone?</h2>
+              <h2 className="text-3xl md:text-4xl font-bold mb-6">Why Choose Afristone?</h2>
               <div className="space-y-4">
                 {[
                   "Premium natural stone from certified quarries",
