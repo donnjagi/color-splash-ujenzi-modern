@@ -76,21 +76,21 @@ const QuotationCalculator = () => {
               font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
               margin: 0; 
               padding: 40px; 
-              background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
-              color: #1a202c;
+              background: hsl(210 40% 98%);
+              color: hsl(222.2 84% 4.9%);
               line-height: 1.6;
             }
             .invoice-container {
               max-width: 800px;
               margin: 0 auto;
-              background: white;
+              background: hsl(0 0% 100%);
               border-radius: 16px;
               box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
               overflow: hidden;
             }
             .header {
-              background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
-              color: white;
+              background: linear-gradient(135deg, hsl(221.2 83.2% 53.3%) 0%, hsl(217.2 91.2% 59.8%) 100%);
+              color: hsl(210 40% 98%);
               padding: 40px;
               text-align: center;
               position: relative;
@@ -145,13 +145,13 @@ const QuotationCalculator = () => {
             .quotation-title {
               font-size: 28px;
               font-weight: 700;
-              color: #1e40af;
+              color: hsl(221.2 83.2% 53.3%);
               margin: 0;
             }
             .quotation-number {
               font-size: 14px;
-              color: #64748b;
-              background: #f1f5f9;
+              color: hsl(215.4 16.3% 46.9%);
+              background: hsl(210 40% 96%);
               padding: 8px 16px;
               border-radius: 8px;
             }
@@ -164,7 +164,7 @@ const QuotationCalculator = () => {
             .info-section h3 {
               font-size: 16px;
               font-weight: 600;
-              color: #475569;
+              color: hsl(215.4 16.3% 46.9%);
               margin: 0 0 15px 0;
               text-transform: uppercase;
               letter-spacing: 0.5px;
@@ -173,18 +173,18 @@ const QuotationCalculator = () => {
               display: flex;
               justify-content: space-between;
               padding: 8px 0;
-              border-bottom: 1px solid #f1f5f9;
+              border-bottom: 1px solid hsl(210 40% 96%);
             }
             .info-item:last-child {
               border-bottom: none;
             }
             .info-label {
               font-weight: 500;
-              color: #64748b;
+              color: hsl(215.4 16.3% 46.9%);
             }
             .info-value {
               font-weight: 600;
-              color: #1a202c;
+              color: hsl(222.2 84% 4.9%);
             }
             .items-table {
               width: 100%;
@@ -196,29 +196,29 @@ const QuotationCalculator = () => {
               box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
             }
             .items-table th {
-              background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+              background: linear-gradient(135deg, hsl(210 40% 98%) 0%, hsl(214.3 31.8% 91.4%) 100%);
               padding: 20px;
               text-align: left;
               font-weight: 600;
-              color: #475569;
+              color: hsl(215.4 16.3% 46.9%);
               text-transform: uppercase;
               letter-spacing: 0.5px;
               font-size: 12px;
             }
             .items-table td {
               padding: 20px;
-              background: white;
-              border-top: 1px solid #f1f5f9;
+              background: hsl(0 0% 100%);
+              border-top: 1px solid hsl(210 40% 96%);
               font-size: 14px;
             }
             .amount-cell {
               font-weight: 600;
-              color: #1e40af;
+              color: hsl(221.2 83.2% 53.3%);
             }
             .total-section {
               margin-top: 30px;
               padding: 30px;
-              background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+              background: linear-gradient(135deg, hsl(210 40% 98%) 0%, hsl(214.3 31.8% 91.4%) 100%);
               border-radius: 12px;
               text-align: right;
             }
@@ -231,21 +231,21 @@ const QuotationCalculator = () => {
             .grand-total {
               font-size: 24px;
               font-weight: 700;
-              color: #1e40af;
+              color: hsl(221.2 83.2% 53.3%);
               padding-top: 15px;
-              border-top: 2px solid #cbd5e1;
+              border-top: 2px solid hsl(215.3 25% 88.7%);
               margin-top: 15px;
             }
             .location-section {
               margin: 30px 0;
               padding: 20px;
-              background: #f8fafc;
+              background: hsl(210 40% 98%);
               border-radius: 12px;
-              border-left: 4px solid #1e40af;
+              border-left: 4px solid hsl(221.2 83.2% 53.3%);
             }
             .location-title {
               font-weight: 600;
-              color: #1e40af;
+              color: hsl(221.2 83.2% 53.3%);
               margin-bottom: 8px;
             }
             .disclaimer {
@@ -274,8 +274,8 @@ const QuotationCalculator = () => {
               margin-top: 40px;
               text-align: center;
               padding: 30px;
-              background: #1e40af;
-              color: white;
+              background: hsl(221.2 83.2% 53.3%);
+              color: hsl(210 40% 98%);
               border-radius: 12px;
             }
             .footer-contact {
