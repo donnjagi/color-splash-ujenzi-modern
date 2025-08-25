@@ -161,6 +161,12 @@ const QuotationCalculator = () => {
               gap: 30px;
               margin-bottom: 40px;
             }
+            @media (max-width: 768px) {
+              .info-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+              }
+            }
             .info-section h3 {
               font-size: 16px;
               font-weight: 600;

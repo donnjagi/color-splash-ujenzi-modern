@@ -149,8 +149,7 @@ const Home = () => {
               <LazyImage
                 src="/Afristone-All things Stone/Tanga Yellow Stone/2025053121292496.jpg"
                 alt="Premium Tanga Yellow natural stone wall cladding installation by Afristone Kenya - showcasing expert craftsmanship in stone supply and installation services"
-                className="rounded-2xl shadow-2xl"
-                style={{ width: '600px', height: '400px' }}
+                className="rounded-2xl shadow-2xl w-full max-w-full h-auto aspect-[3/2] object-cover"
                 loading="eager"
               />
               <div className="absolute -bottom-6 -left-6 bg-card p-6 rounded-xl shadow-lg border">
@@ -241,8 +240,7 @@ const Home = () => {
               <LazyImage
                 src="/Afristone-All things Stone/Silver Stone/2025060723500450.jpg"
                 alt="Professional Silver Stone installation showcase - premium natural stone cladding services by Afristone Kenya specialists"
-                className="rounded-2xl shadow-xl"
-                style={{ width: '600px', height: '400px' }}
+                className="rounded-2xl shadow-xl w-full max-w-full h-auto aspect-[3/2] object-cover"
               />
             </div>
           </div>
