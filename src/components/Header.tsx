@@ -1,7 +1,7 @@
 
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Menu, X, Phone, Mail } from "lucide-react";
+import { Menu, X, Phone, Mail, MessageCircle } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 
 const Header = () => {
@@ -21,7 +21,7 @@ const Header = () => {
   const isActive = (path: string) => location.pathname === path;
 
   const handleWhatsAppClick = () => {
-    const phoneNumber = "254700123456";
+    const phoneNumber = "254729304190";
     const message = "Hello Afristone! I'm interested in your stone supply and installation services.";
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
@@ -31,15 +31,15 @@ const Header = () => {
     <>
       {/* Top bar */}
       <div className="bg-primary text-primary-foreground py-2">
-        <div className="max-w-6xl mx-auto px-6 flex justify-between items-center text-sm">
-          <div className="flex items-center gap-6">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 flex justify-between items-center text-sm">
+          <div className="flex items-center gap-3 sm:gap-6">
             <div className="flex items-center gap-2">
-              <Phone className="w-4 h-4" />
-              <span>+254 700 123 456</span>
+              <Phone className="w-4 h-4 flex-shrink-0" />
+              <span className="text-xs sm:text-sm">0729 304 190</span>
             </div>
             <div className="flex items-center gap-2">
-              <Mail className="w-4 h-4" />
-              <span>info@afritone.co.ke</span>
+              <Mail className="w-4 h-4 flex-shrink-0" />
+              <span className="text-xs sm:text-sm truncate">travauxlimited@gmail.com</span>
             </div>
           </div>
           <div className="hidden md:block">
@@ -50,7 +50,7 @@ const Header = () => {
 
       {/* Main header */}
       <header className="bg-background border-b sticky top-0 z-50">
-        <div className="max-w-6xl mx-auto px-6">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6">
           <div className="flex items-center justify-between h-16">
             <Link to="/" className="flex items-center space-x-2">
               <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
@@ -75,8 +75,10 @@ const Header = () => {
                   {item.name}
                 </Link>
               ))}
-              <Button onClick={handleWhatsAppClick} className="bg-green-500 hover:bg-green-600">
-                WhatsApp Quote
+              <Button onClick={handleWhatsAppClick} className="bg-green-500 hover:bg-green-600 flex items-center gap-2">
+                <MessageCircle className="w-4 h-4" />
+                <span className="hidden sm:inline">WhatsApp Quote</span>
+                <span className="sm:hidden">WhatsApp</span>
               </Button>
             </nav>
 
@@ -108,7 +110,8 @@ const Header = () => {
                   </Link>
                 ))}
                 <div className="px-4 pt-2">
-                  <Button className="w-full bg-green-500 hover:bg-green-600" onClick={handleWhatsAppClick}>
+                  <Button className="w-full bg-green-500 hover:bg-green-600 flex items-center justify-center gap-2" onClick={handleWhatsAppClick}>
+                    <MessageCircle className="w-4 h-4" />
                     WhatsApp Quote
                   </Button>
                 </div>
