@@ -81,7 +81,7 @@ const Products = () => {
   ];
 
   const handleWhatsAppClick = (productName: string) => {
-    const phoneNumber = "254700123456";
+    const phoneNumber = "254729304190";
     const message = `Hello Afristone! I'm interested in ${productName}. Could you provide more details and a quote?`;
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');

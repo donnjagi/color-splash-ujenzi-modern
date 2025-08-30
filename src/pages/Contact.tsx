@@ -44,19 +44,19 @@ const Contact = () => {
     {
       icon: Phone,
       title: "Phone",
-      details: ["+254 700 123 456", "+254 722 987 654"],
+      details: ["+254 729 304 190", "0729 304 190"],
       description: "Call us for immediate assistance"
     },
     {
       icon: Mail,
       title: "Email",
-      details: ["info@ujenzisolutions.co.ke", "projects@ujenzisolutions.co.ke"],
+      details: ["travauxlimited@gmail.com", "info@afristone.co.ke"],
       description: "Send us your project details"
     },
     {
       icon: MapPin,
       title: "Office Location",
-      details: ["Westlands Business District", "Nairobi, Kenya"],
+      details: ["Western Heights, Skyrise Business Center", "Nairobi, Kenya"],
       description: "Visit our main office"
     },
     {
@@ -225,21 +225,26 @@ const Contact = () => {
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <div className="aspect-video bg-muted rounded-lg flex items-center justify-center mb-4">
-                    <div className="text-center">
-                      <MapPin className="w-12 h-12 text-primary mx-auto mb-2" />
-                      <p className="text-muted-foreground">Interactive Map</p>
-                      <p className="text-sm text-muted-foreground">Westlands Business District, Nairobi</p>
-                    </div>
+                  <div className="aspect-video bg-muted rounded-lg overflow-hidden mb-4">
+                    <iframe
+                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.819737319994!2d36.8219!3d-1.2921!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f10d22f4c4c5b%3A0x4c4c4c4c4c4c4c4c!2sWestlands%2C%20Nairobi!5e0!3m2!1sen!2ske!4v1640000000000!5m2!1sen!2ske"
+                      width="100%"
+                      height="100%"
+                      style={{ border: 0 }}
+                      allowFullScreen
+                      loading="lazy"
+                      referrerPolicy="no-referrer-when-downgrade"
+                      title="Afristone Office Location - Western Heights, Skyrise Business Center"
+                    />
                   </div>
                   <div className="space-y-2">
                     <p className="font-semibold">Address:</p>
                     <p className="text-muted-foreground">
-                      Ujenzi Solutions Limited<br />
-                      Westlands Business District<br />
-                      Ring Road, Westlands<br />
-                      P.O. Box 12345-00100<br />
-                      Nairobi, Kenya
+                      Afristone - All Things Stone<br />
+                      Western Heights, Skyrise Business Center<br />
+                      Nairobi, Kenya<br />
+                      Phone: +254 729 304 190<br />
+                      Email: travauxlimited@gmail.com
                     </p>
                   </div>
                 </CardContent>
@@ -325,14 +330,18 @@ const Contact = () => {
       <section className="brown-gradient py-16 px-6">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-2xl md:text-3xl font-bold mb-4 text-primary-foreground">
-            Emergency Construction Services
+            Emergency Stone Installation Services
           </h2>
           <p className="text-primary-foreground/80 mb-6">
-            Need urgent construction or repair services? We offer 24/7 emergency response.
+            Need urgent stone installation or repair services? We offer 24/7 emergency response for stone-related emergencies.
           </p>
-          <Button size="lg" variant="secondary">
+          <Button 
+            size="lg" 
+            variant="secondary"
+            onClick={() => window.open('tel:+254729304190', '_self')}
+          >
             <Phone className="w-4 h-4 mr-2" />
-            Call Emergency Line: +254 700 URGENT
+            Call Emergency: +254 729 304 190
           </Button>
         </div>
       </section>

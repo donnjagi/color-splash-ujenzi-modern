@@ -85,7 +85,7 @@ const Services = () => {
   ];
 
   const handleWhatsAppClick = () => {
-    const phoneNumber = "254700123456";
+    const phoneNumber = "254729304190";
     const message = "Hello! I'm interested in your stone supply and installation services.";
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
@@ -234,8 +234,7 @@ const Services = () => {
               <img
                 src="/Afristone-All things Stone/Yellow-beige-cream Stone/2025060400201377.jpg"
                 alt="Yellow-beige-cream stone mechanical fixing quality control"
-                className="rounded-2xl shadow-xl object-cover"
-                style={{ width: '600px', height: '400px' }}
+                className="rounded-2xl shadow-xl w-full max-w-full h-auto aspect-[3/2] object-cover"
               />
             </div>
           </div>

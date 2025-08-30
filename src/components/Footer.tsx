@@ -4,7 +4,7 @@ import { Phone, Mail, MapPin, Facebook, Twitter, Instagram, Linkedin } from "luc
 
 const Footer = () => {
   const handleWhatsAppClick = () => {
-    const phoneNumber = "254700123456";
+    const phoneNumber = "254729304190";
     const message = "Hello Afristone! I'm interested in your services.";
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
@@ -22,11 +22,11 @@ const Footer = () => {
               </div>
               <div>
                 <h3 className="font-bold">Afristone</h3>
-                <p className="text-xs opacity-80">Piping & Infrastructure</p>
+                <p className="text-xs opacity-80">All Things Stone</p>
               </div>
             </div>
             <p className="text-sm opacity-80 mb-4">
-              Leading piping and infrastructure company in Kenya, specializing in waterworks, civil works, and building projects since 2010.
+              Leading natural stone supplier and installer in Kenya, specializing in wall cladding, floor finishes, water features, and architectural stone elements since 2010.
             </p>
             <div className="flex space-x-3">
               <Facebook className="w-5 h-5 opacity-80 hover:opacity-100 cursor-pointer" />
@@ -62,15 +62,15 @@ const Footer = () => {
             <div className="space-y-3 text-sm">
               <div className="flex items-start space-x-2">
                 <MapPin className="w-4 h-4 mt-1 opacity-80" />
-                <span className="opacity-80">Nairobi, Kenya<br />Westlands Business District</span>
+                <span className="opacity-80">Western Heights, Skyrise Business Center<br />Nairobi, Kenya</span>
               </div>
               <div className="flex items-center space-x-2">
                 <Phone className="w-4 h-4 opacity-80" />
-                <span className="opacity-80">+254 700 123 456</span>
+                <span className="opacity-80">+254 729 304 190</span>
               </div>
               <div className="flex items-center space-x-2">
                 <Mail className="w-4 h-4 opacity-80" />
-                <span className="opacity-80">info@afristone.co.ke</span>
+                <span className="opacity-80">travauxlimited@gmail.com</span>
               </div>
             </div>
           </div>

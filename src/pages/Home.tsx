@@ -57,7 +57,7 @@ const Home = () => {
   ];
 
   const handleWhatsAppClick = () => {
-    const phoneNumber = "254700123456";
+    const phoneNumber = "254729304190";
     const message = "Hello Afristone! I'm interested in your stone supply and installation services.";
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
@@ -79,7 +79,7 @@ const Home = () => {
     },
     "contactPoint": {
       "@type": "ContactPoint",
-      "telephone": "+254700123456",
+      "telephone": "+254729304190",
       "contactType": "customer service",
       "availableLanguage": ["English", "Swahili"]
     },
@@ -89,7 +89,7 @@ const Home = () => {
     },
     "foundingDate": "2010",
     "sameAs": [
-      "https://wa.me/254700123456"
+      "https://wa.me/254729304190"
     ],
     "offers": {
       "@type": "Offer",

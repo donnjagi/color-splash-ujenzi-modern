@@ -188,7 +188,7 @@ const ProductDetail = () => {
   }
 
   const handleWhatsAppClick = () => {
-    const phoneNumber = "254700123456";
+    const phoneNumber = "254729304190";
     const message = `Hello Afristone! I'm interested in ${product.name} at ${product.price}. Could you provide a detailed quote including installation?`;
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
@@ -209,11 +209,11 @@ const ProductDetail = () => {
       </div>
 
       {/* Product Header */}
-      <section className="py-12 px-6">
+      <section className="py-8 px-6 md:py-12">
         <div className="max-w-6xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-12">
+          <div className="grid lg:grid-cols-2 gap-8 md:gap-12">
             {/* Image Gallery */}
-            <div>
+            <div className="order-2 lg:order-1">
               <div className="aspect-square overflow-hidden rounded-2xl mb-4">
                 <img
                   src={product.images[0]}
@@ -235,18 +235,18 @@ const ProductDetail = () => {
             </div>
 
             {/* Product Information */}
-            <div>
+            <div className="order-1 lg:order-2">
               <Badge variant="outline" className="mb-4">
                 {product.category}
               </Badge>
-              <h1 className="text-4xl font-bold mb-4">{product.name}</h1>
-              <div className="text-3xl font-bold text-primary mb-6">{product.price}</div>
+              <h1 className="text-3xl md:text-4xl font-bold mb-4">{product.name}</h1>
+              <div className="text-2xl md:text-3xl font-bold text-primary mb-6">{product.price}</div>
               
-              <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
+              <p className="text-base md:text-lg text-muted-foreground mb-8 leading-relaxed">
                 {product.description}
               </p>
 
-              <div className="flex gap-4 mb-8">
+              <div className="flex flex-col sm:flex-row gap-4 mb-8">
                 <Button size="lg" className="flex-1" onClick={handleWhatsAppClick}>
                   Get Quote via WhatsApp
                 </Button>
@@ -273,9 +273,9 @@ const ProductDetail = () => {
       </section>
 
       {/* Product Details */}
-      <section className="py-12 px-6 bg-muted">
+      <section className="py-8 px-6 bg-muted md:py-12">
         <div className="max-w-6xl mx-auto">
-          <div className="grid lg:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
             {/* Uses */}
             <Card>
               <CardHeader>
@@ -343,10 +343,10 @@ const ProductDetail = () => {
       </section>
 
       {/* Contact Section */}
-      <section className="py-16 px-6">
+      <section className="py-12 px-6 md:py-16">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl font-bold mb-6">Ready to Get Started?</h2>
-          <p className="text-lg text-muted-foreground mb-8">
+          <h2 className="text-2xl md:text-3xl font-bold mb-6">Ready to Get Started?</h2>
+          <p className="text-base md:text-lg text-muted-foreground mb-8">
             Contact our team for a personalized quote and professional consultation for your {product.name} project.
           </p>
           
@@ -355,14 +355,14 @@ const ProductDetail = () => {
               <Phone className="w-5 h-5 text-primary" />
               <div className="text-left">
                 <div className="font-semibold">Call Us</div>
-                <div className="text-sm text-muted-foreground">+254 700 123 456</div>
+                <div className="text-sm text-muted-foreground">+254 729 304 190</div>
               </div>
             </div>
             <div className="flex items-center justify-center gap-3 p-4 bg-muted rounded-lg">
               <Mail className="w-5 h-5 text-primary" />
               <div className="text-left">
                 <div className="font-semibold">Email Us</div>
-                <div className="text-sm text-muted-foreground">info@afristone.co.ke</div>
+                <div className="text-sm text-muted-foreground">travauxlimited@gmail.com</div>
               </div>
             </div>
           </div>
