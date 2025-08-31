@@ -227,14 +227,14 @@ const Contact = () => {
                 <CardContent>
                   <div className="aspect-video bg-muted rounded-lg overflow-hidden mb-4">
                     <iframe
-                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.819737319994!2d36.8219!3d-1.2921!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f10d22f4c4c5b%3A0x4c4c4c4c4c4c4c4c!2sWestlands%2C%20Nairobi!5e0!3m2!1sen!2ske!4v1640000000000!5m2!1sen!2ske"
+                      src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBFw0Qbyq9zTFTd-tUY6dO-BJ5vKbHyU1s&q=Skyrise+Business+Centre,Westlands,Nairobi,Kenya&zoom=16&maptype=roadmap"
                       width="100%"
                       height="100%"
                       style={{ border: 0 }}
                       allowFullScreen
                       loading="lazy"
                       referrerPolicy="no-referrer-when-downgrade"
-                      title="Afristone Office Location - Western Heights, Skyrise Business Center"
+                      title="Afristone Office Location - Skyrise Business Centre, Westlands"
                     />
                   </div>
                   <div className="space-y-2">
