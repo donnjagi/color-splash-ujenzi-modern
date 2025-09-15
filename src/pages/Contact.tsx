@@ -233,7 +233,7 @@ const Contact = () => {
                         <p className="text-muted-foreground mb-4">Western Heights, Karuna Rd, Nairobi</p>
                         <Button 
                           variant="outline" 
-                          onClick={() => window.open('https://www.google.com/maps/place/Western+Heights,+Karuna+Rd,+Nairobi', '_blank')}
+                          onClick={() => window.open('https://www.google.com/maps?gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIHCAEQIRigAdIBCDExNDhqMGo3qAIAsAIA&um=1&ie=UTF-8&fb=1&gl=ke&sa=X&geocode=KaH8LppSFy8YMX11mi5J1X4q&daddr=Western+Heights,+Karuna+Rd,+Nairobi', '_blank')}
                         >
                           <MapPin className="w-4 h-4 mr-2" />
                           View on Google Maps
