@@ -155,7 +155,7 @@ const Services = () => {
                       <>
                         <Button 
                           variant="default" 
-                          className="flex-1 bg-primary hover:bg-primary/90 text-primary-foreground"
+                          className="flex-1 bg-gradient-to-r from-primary to-accent hover:from-primary/90 hover:to-accent/90 text-primary-foreground shadow-lg"
                           asChild
                         >
                           <Link to="/contact">Learn More</Link>
