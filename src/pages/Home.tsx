@@ -201,9 +201,28 @@ const Home = () => {
                   <CardDescription>{service.description}</CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <Link to="/services" className="inline-flex items-center text-primary hover:text-primary/80 transition-colors">
-                    Learn More <ArrowRight className="w-4 h-4 ml-1" />
-                  </Link>
+                  {index === 0 ? (
+                    // Wall Cladding - More visible Learn More button
+                    <Button 
+                      variant="default"
+                      className="bg-gradient-to-r from-primary to-accent hover:from-primary/90 hover:to-accent/90 text-primary-foreground shadow-lg"
+                      asChild
+                    >
+                      <Link to="/services" className="inline-flex items-center">
+                        Learn More <ArrowRight className="w-4 h-4 ml-1" />
+                      </Link>
+                    </Button>
+                  ) : (index === 1 || index === 2 || index === 3) ? (
+                    // Water Features, Landscapes, Sinks & Countertops - Coming Soon
+                    <Button variant="outline" disabled className="w-full">
+                      Coming Soon
+                    </Button>
+                  ) : (
+                    // Default for any other services
+                    <Link to="/services" className="inline-flex items-center text-primary hover:text-primary/80 transition-colors">
+                      Learn More <ArrowRight className="w-4 h-4 ml-1" />
+                    </Link>
+                  )}
                 </CardContent>
               </Card>
             ))}
