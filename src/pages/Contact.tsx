@@ -270,7 +270,7 @@ const Contact = () => {
                     </li>
                     <li className="flex items-center gap-2">
                       <div className="w-2 h-2 bg-primary rounded-full"></div>
-                      <span>10-year warranty</span>
+                      <span>5 years warranty</span>
                     </li>
                     <li className="flex items-center gap-2">
                       <div className="w-2 h-2 bg-primary rounded-full"></div>
@@ -330,10 +330,10 @@ const Contact = () => {
       <section className="brown-gradient py-16 px-6">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-2xl md:text-3xl font-bold mb-4 text-primary-foreground">
-            Emergency Stone Installation Services
+            Contact Our Stone Specialists
           </h2>
           <p className="text-primary-foreground/80 mb-6">
-            Need urgent stone installation or repair services? We offer 24/7 emergency response for stone-related emergencies.
+            Ready to discuss your stone installation project? Get in touch with our expert team for consultation and quotes.
           </p>
           <Button 
             size="lg" 
@@ -341,7 +341,7 @@ const Contact = () => {
             onClick={() => window.open('tel:+254729304190', '_self')}
           >
             <Phone className="w-4 h-4 mr-2" />
-            Call Emergency: +254 729 304 190
+            Call: +254 729 304 190
           </Button>
         </div>
       </section>

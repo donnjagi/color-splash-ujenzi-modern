@@ -143,7 +143,7 @@ const Projects = () => {
               <div className="text-muted-foreground">Happy Clients</div>
             </div>
             <div>
-              <div className="text-3xl font-bold text-primary mb-2">47</div>
+              <div className="text-3xl font-bold text-primary mb-2">15+</div>
               <div className="text-muted-foreground">Counties Served</div>
             </div>
           </div>

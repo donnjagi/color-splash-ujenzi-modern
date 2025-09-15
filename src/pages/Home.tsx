@@ -138,7 +138,7 @@ const Home = () => {
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button size="lg" className="text-lg px-8 py-6" asChild>
-                  <Link to="/contact">Get Free Quote</Link>
+                  <Link to="/contact">Contact Us</Link>
                 </Button>
                 <Button variant="outline" size="lg" className="text-lg px-8 py-6" asChild>
                   <Link to="/products">View Stone Collection</Link>
@@ -296,7 +296,7 @@ const Home = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button size="lg" variant="secondary" asChild>
-              <Link to="/contact">Get Free Quote</Link>
+              <Link to="/contact">Contact Us</Link>
             </Button>
             <Button 
               size="lg" 

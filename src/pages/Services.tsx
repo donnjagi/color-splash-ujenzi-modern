@@ -150,16 +150,48 @@ const Services = () => {
                     ))}
                   </div>
                   <div className="flex gap-2">
-                    <Button variant="outline" className="flex-1" asChild>
-                      <Link to="/contact">Get Quote</Link>
-                    </Button>
-                    <Button 
-                      variant="default" 
-                      className="flex-1 bg-green-500 hover:bg-green-600"
-                      onClick={handleWhatsAppClick}
-                    >
-                      WhatsApp
-                    </Button>
+                    {index === 0 ? (
+                      // Wall Cladding Systems - Show Learn More with better visibility
+                      <>
+                        <Button 
+                          variant="default" 
+                          className="flex-1 bg-primary hover:bg-primary/90 text-primary-foreground"
+                          asChild
+                        >
+                          <Link to="/contact">Learn More</Link>
+                        </Button>
+                        <Button 
+                          variant="outline" 
+                          className="flex-1 bg-green-500 hover:bg-green-600 text-white border-green-500"
+                          onClick={handleWhatsAppClick}
+                        >
+                          WhatsApp
+                        </Button>
+                      </>
+                    ) : (index === 2 || index === 4 || index === 5) ? (
+                      // Water Features, Sinks & Countertops, Landscapes - Coming Soon
+                      <Button 
+                        variant="outline" 
+                        className="flex-1" 
+                        disabled
+                      >
+                        Coming Soon
+                      </Button>
+                    ) : (
+                      // Other services - Original buttons
+                      <>
+                        <Button variant="outline" className="flex-1" asChild>
+                          <Link to="/contact">Get Quote</Link>
+                        </Button>
+                        <Button 
+                          variant="default" 
+                          className="flex-1 bg-green-500 hover:bg-green-600"
+                          onClick={handleWhatsAppClick}
+                        >
+                          WhatsApp
+                        </Button>
+                      </>
+                    )}
                   </div>
                 </CardContent>
               </Card>
