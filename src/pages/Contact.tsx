@@ -225,17 +225,21 @@ const Contact = () => {
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <div className="aspect-video bg-muted rounded-lg overflow-hidden mb-4">
-                    <iframe
-                      src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBFw0Qbyq9zTFTd-tUY6dO-BJ5vKbHyU1s&q=Western+Heights,+Karuna+Rd,+Nairobi,Kenya&zoom=16&maptype=roadmap"
-                      width="100%"
-                      height="100%"
-                      style={{ border: 0 }}
-                      allowFullScreen
-                      loading="lazy"
-                      referrerPolicy="no-referrer-when-downgrade"
-                      title="Afristone Office Location - Western Heights, Karuna Rd"
-                    />
+                  <div className="aspect-video bg-muted rounded-lg overflow-hidden mb-4 relative">
+                    <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-accent/10 flex items-center justify-center">
+                      <div className="text-center p-6">
+                        <MapPin className="w-12 h-12 text-primary mx-auto mb-4" />
+                        <h3 className="font-semibold text-lg mb-2">Visit Our Office</h3>
+                        <p className="text-muted-foreground mb-4">Western Heights, Karuna Rd, Nairobi</p>
+                        <Button 
+                          variant="outline" 
+                          onClick={() => window.open('https://www.google.com/maps/place/Western+Heights,+Karuna+Rd,+Nairobi', '_blank')}
+                        >
+                          <MapPin className="w-4 h-4 mr-2" />
+                          View on Google Maps
+                        </Button>
+                      </div>
+                    </div>
                   </div>
                   <div className="space-y-2">
                     <p className="font-semibold">Address:</p>
