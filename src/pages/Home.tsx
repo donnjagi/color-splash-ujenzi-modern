@@ -192,7 +192,11 @@ const Home = () => {
           
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {services.map((service, index) => (
-              <Card key={index} className="border-2 hover:shadow-xl transition-all duration-300 hover-optimized">
+              <Card key={index} className={`border-2 hover:shadow-xl transition-all duration-300 hover-optimized ${
+                index === 1 || index === 2 || index === 3 
+                  ? 'glassmorphism coming-soon-gradient shadow-lg' 
+                  : ''
+              }`}>
                 <CardHeader>
                   <div className="w-12 h-12 bg-primary rounded-xl mb-4 flex items-center justify-center">
                     <service.icon className="w-6 h-6 text-primary-foreground" />
@@ -208,13 +212,17 @@ const Home = () => {
                       className="bg-gradient-to-r from-primary to-accent hover:from-primary/90 hover:to-accent/90 text-primary-foreground shadow-lg"
                       asChild
                     >
-                      <Link to="/services" className="inline-flex items-center">
+                      <Link to="/products" className="inline-flex items-center">
                         Learn More <ArrowRight className="w-4 h-4 ml-1" />
                       </Link>
                     </Button>
                   ) : (index === 1 || index === 2 || index === 3) ? (
                     // Water Features, Landscapes, Sinks & Countertops - Coming Soon
-                    <Button variant="outline" disabled className="w-full">
+                    <Button 
+                      variant="outline" 
+                      disabled 
+                      className="w-full bg-gradient-to-r from-primary/10 to-accent/10 border-primary/30 text-primary"
+                    >
                       Coming Soon
                     </Button>
                   ) : (
