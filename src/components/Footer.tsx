@@ -17,13 +17,11 @@ const Footer = () => {
           {/* Company Info */}
           <div>
             <div className="flex items-center space-x-2 mb-4">
-              <div className="w-8 h-8 bg-primary-foreground rounded-lg flex items-center justify-center">
-                <span className="text-primary font-bold">A</span>
-              </div>
-              <div>
-                <h3 className="font-bold">Afristone</h3>
-                <p className="text-xs opacity-80">All Things Stone</p>
-              </div>
+              <img 
+                src="/afristone-logo.png" 
+                alt="Afristone Logo" 
+                className="w-16 h-16 object-contain"
+              />
             </div>
             <p className="text-sm opacity-80 mb-4">
               Leading natural stone supplier and installer in Kenya, specializing in wall cladding, floor finishes, water features, and architectural stone elements since 2010.

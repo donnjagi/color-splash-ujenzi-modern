@@ -53,13 +53,11 @@ const Header = () => {
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
           <div className="flex items-center justify-between h-16">
             <Link to="/" className="flex items-center space-x-2">
-              <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
-                <span className="text-primary-foreground font-bold text-xl">A</span>
-              </div>
-              <div>
-                <h1 className="text-xl font-bold text-primary">Afristone</h1>
-                <p className="text-xs text-muted-foreground">ALL THINGS STONE</p>
-              </div>
+              <img 
+                src="/afristone-logo.png" 
+                alt="Afristone Logo" 
+                className="w-12 h-12 object-contain"
+              />
             </Link>
 
             {/* Desktop Navigation */}

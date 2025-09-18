@@ -114,7 +114,7 @@ const QuotationCalculator = () => {
           <div class="invoice-container">
             <div class="invoice-header">
               <div class="company-info">
-                <img src="/logo.png" alt="Afristone Logo" style="height: 60px; width: auto; margin-bottom: 10px;">
+                <img src="/afristone-logo.png" alt="Afristone Logo" style="height: 60px; width: auto; margin-bottom: 10px;">
                 <h1>AFRISTONE</h1>
                 <p>All Things Stone</p>
                 <div class="contact-info">
@@ -327,11 +327,11 @@ const QuotationCalculator = () => {
               <CardContent>
                 <div className="space-y-4">
                   <div className="text-center">
-                    <div className="w-12 h-12 bg-primary rounded-lg flex items-center justify-center mx-auto mb-2">
-                      <span className="text-primary-foreground font-bold text-xl">A</span>
-                    </div>
-                    <h2 className="text-xl font-bold text-primary">Afristone</h2>
-                    <p className="text-sm text-muted-foreground">ALL THINGS STONE</p>
+                    <img 
+                      src="/afristone-logo.png" 
+                      alt="Afristone Logo" 
+                      className="w-20 h-20 object-contain mx-auto mb-2"
+                    />
                   </div>
 
                   <Separator />
