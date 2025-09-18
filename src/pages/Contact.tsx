@@ -310,7 +310,7 @@ const Contact = () => {
               },
               {
                 question: "What is included in your construction warranty?",
-                answer: "We provide a comprehensive 10-year structural warranty and 2-year warranty on finishes. This covers any defects in materials or workmanship under normal use."
+                answer: "We provide a comprehensive 5-year structural warranty and 2-year warranty on finishes. This covers any defects in materials or workmanship under normal use."
               },
               {
                 question: "Can you work within my budget?",

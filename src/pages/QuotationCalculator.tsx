@@ -114,6 +114,7 @@ const QuotationCalculator = () => {
           <div class="invoice-container">
             <div class="invoice-header">
               <div class="company-info">
+                <img src="/logo.png" alt="Afristone Logo" style="height: 60px; width: auto; margin-bottom: 10px;">
                 <h1>AFRISTONE</h1>
                 <p>All Things Stone</p>
                 <div class="contact-info">

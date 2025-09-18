@@ -5,6 +5,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import { ArrowLeft, CheckCircle, MapPin, Palette, Hammer, Phone, Mail } from "lucide-react";
+import ImageGallery from "@/components/ImageGallery";
 
 const ProductDetail = () => {
   const { productId } = useParams();
@@ -27,7 +28,7 @@ const ProductDetail = () => {
         "Application": "Interior & Exterior",
         "Installation": "Professional required",
         "Maintenance": "Low maintenance",
-        "Warranty": "10 years structural"
+        "Warranty": "5 years structural"
       }
     },
     "silver-stone": {
@@ -47,7 +48,7 @@ const ProductDetail = () => {
         "Application": "Interior & Exterior",
         "Installation": "Professional required",
         "Maintenance": "Low maintenance",
-        "Warranty": "10 years structural"
+        "Warranty": "5 years structural"
       }
     },
     "half-facing-red-bricks": {
@@ -67,7 +68,7 @@ const ProductDetail = () => {
         "Application": "Interior & Exterior",
         "Installation": "Easy installation",
         "Maintenance": "Low maintenance",
-        "Warranty": "10 years structural"
+        "Warranty": "5 years structural"
       }
     },
     "stacked-mosaic-pattern-stone": {
@@ -87,7 +88,7 @@ const ProductDetail = () => {
         "Application": "Interior & Exterior",
         "Installation": "Professional required",
         "Maintenance": "Low maintenance",
-        "Warranty": "10 years structural"
+        "Warranty": "5 years structural"
       }
     },
     "grey-stone": {
@@ -107,7 +108,7 @@ const ProductDetail = () => {
         "Application": "Interior & Exterior",
         "Installation": "Professional required",
         "Maintenance": "Low maintenance",
-        "Warranty": "10 years structural"
+        "Warranty": "5 years structural"
       }
     },
     "army-green-stone": {
@@ -127,7 +128,7 @@ const ProductDetail = () => {
         "Application": "Interior & Exterior",
         "Installation": "Professional required",
         "Maintenance": "Low maintenance",
-        "Warranty": "10 years structural"
+        "Warranty": "5 years structural"
       }
     },
     "black-stone": {
@@ -147,7 +148,7 @@ const ProductDetail = () => {
         "Application": "Interior & Exterior",
         "Installation": "Professional required",
         "Maintenance": "Low maintenance",
-        "Warranty": "10 years structural"
+        "Warranty": "5 years structural"
       }
     },
     "blue-stone": {
@@ -167,7 +168,7 @@ const ProductDetail = () => {
         "Application": "Interior & Exterior",
         "Installation": "Professional required",
         "Maintenance": "Low maintenance",
-        "Warranty": "10 years structural"
+        "Warranty": "5 years structural"
       }
     }
   };
@@ -214,24 +215,7 @@ const ProductDetail = () => {
           <div className="grid lg:grid-cols-2 gap-8 md:gap-12">
             {/* Image Gallery */}
             <div className="order-2 lg:order-1">
-              <div className="aspect-square overflow-hidden rounded-2xl mb-4">
-                <img
-                  src={product.images[0]}
-                  alt={product.name}
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <div className="grid grid-cols-3 gap-2">
-                {product.images.slice(1).map((image, index) => (
-                  <div key={index} className="aspect-square overflow-hidden rounded-lg">
-                    <img
-                      src={image}
-                      alt={`${product.name} ${index + 2}`}
-                      className="w-full h-full object-cover hover:scale-105 transition-transform cursor-pointer"
-                    />
-                  </div>
-                ))}
-              </div>
+              <ImageGallery images={product.images} productName={product.name} />
             </div>
 
             {/* Product Information */}
@@ -264,7 +248,7 @@ const ProductDetail = () => {
                   <li>✓ Premium natural stone material</li>
                   <li>✓ Professional installation service</li>
                   <li>✓ Protective sealing treatment</li>
-                  <li>✓ 10-year structural warranty</li>
+                  <li>✓ 5-year structural warranty</li>
                 </ul>
               </div>
             </div>

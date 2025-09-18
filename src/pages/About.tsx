@@ -226,7 +226,7 @@ const About = () => {
                   "State-of-the-art equipment and technology",
                   "Environmental sustainability focus",
                   "24/7 customer support",
-                  "10-year structural warranty"
+                  "5-year structural warranty"
                 ].map((item, index) => (
                   <div key={index} className="flex items-center gap-3">
                     <CheckCircle className="w-5 h-5 text-primary" />
