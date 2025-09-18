@@ -10,12 +10,12 @@ const Header = () => {
 
   const navigation = [
     { name: "Home", href: "/" },
-    { name: "About", href: "/about" },
     { name: "Services", href: "/services" },
     { name: "Products", href: "/products" },
     { name: "Projects", href: "/projects" },
     { name: "Quotation", href: "/quotation" },
     { name: "Contact", href: "/contact" },
+    { name: "About", href: "/about" },
   ];
 
   const isActive = (path: string) => location.pathname === path;
