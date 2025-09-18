@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import LazyImage from "./LazyImage";
 
 interface ImageGalleryProps {
   images: string[];
@@ -26,10 +27,12 @@ const ImageGallery = ({ images, productName }: ImageGalleryProps) => {
     <div className="space-y-4">
       {/* Main Image Display */}
       <div className="relative aspect-square overflow-hidden rounded-2xl group">
-        <img
+        <LazyImage
           src={images[currentImageIndex]}
           alt={`${productName} - Image ${currentImageIndex + 1}`}
-          className="w-full h-full object-cover transition-all duration-300"
+          className="w-full h-full transition-all duration-300"
+          priority={currentImageIndex === 0}
+          sizes="(max-width: 768px) 100vw, 50vw"
         />
         
         {/* Navigation Arrows */}
@@ -75,11 +78,12 @@ const ImageGallery = ({ images, productName }: ImageGalleryProps) => {
               }`}
               onClick={() => selectImage(index)}
             >
-              <img
-                src={image}
-                alt={`${productName} thumbnail ${index + 1}`}
-                className="w-full h-full object-cover hover:scale-105 transition-transform"
-              />
+            <LazyImage
+              src={image}
+              alt={`${productName} thumbnail ${index + 1}`}
+              className="w-full h-full hover:scale-105 transition-transform"
+              sizes="(max-width: 768px) 25vw, 12vw"
+            />
             </div>
           ))}
         </div>

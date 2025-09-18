@@ -3,6 +3,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { ArrowRight, MapPin, Palette, Hammer } from "lucide-react";
+import LazyImage from "@/components/LazyImage";
 
 const Products = () => {
   const products = [
@@ -121,10 +122,12 @@ const Products = () => {
             {products.map((product) => (
               <Card key={product.id} className="border-2 hover:shadow-xl transition-all duration-300 group">
                 <div className="aspect-video overflow-hidden rounded-t-lg">
-                  <img
+                  <LazyImage
                     src={product.image}
                     alt={product.name}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    className="w-full h-full group-hover:scale-105 transition-transform duration-300"
+                    priority={product.id === "tanga-yellow-stone"} // Prioritize first product
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   />
                 </div>
                 <CardHeader>

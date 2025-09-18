@@ -4,8 +4,16 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Users, Award, Target, Eye, CheckCircle } from "lucide-react";
 import { Link } from "react-router-dom";
+import LazyImage from "@/components/LazyImage";
+import ImagePreloader from "@/components/ImagePreloader";
 
 const About = () => {
+  // Preload critical images for better performance
+  const criticalImages = [
+    "/Afristone-All things Stone/Tanga Yellow Stone/2025053121292496.jpg",
+    "/Afristone-All things Stone/Black stone/Black Irregular stacked/2025053018334056.jpg"
+  ];
+
   const values = [
     {
       icon: Target,
@@ -46,7 +54,9 @@ const About = () => {
   ];
 
   return (
-    <div className="min-h-screen">
+    <>
+      <ImagePreloader images={criticalImages} />
+      <div className="min-h-screen">
       {/* Hero Section */}
       <section className="modern-gradient py-20 px-6">
         <div className="max-w-6xl mx-auto text-center">
@@ -90,11 +100,13 @@ const About = () => {
               </div>
             </div>
             <div className="space-y-6">
-              <img
+              <LazyImage
                 src="/Afristone-All things Stone/Tanga Yellow Stone/2025053121292496.jpg"
                 alt="Tanga Yellow Stone cladding installation showcase"
-                className="rounded-2xl shadow-xl object-cover"
+                className="rounded-2xl shadow-xl"
                 style={{ width: '600px', height: '300px' }}
+                priority={true}
+                sizes="600px"
               />
               <div className="grid grid-cols-2 gap-4">
                 <div className="bg-card p-4 rounded-xl border text-center">
@@ -208,11 +220,12 @@ const About = () => {
         <div className="max-w-6xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
-              <img
+              <LazyImage
                 src="/Afristone-All things Stone/Black stone/Black Irregular stacked/2025053018334056.jpg"
                 alt="Black stone mechanical fixing installation"
-                className="rounded-2xl shadow-xl object-cover"
+                className="rounded-2xl shadow-xl"
                 style={{ width: '600px', height: '400px' }}
+                sizes="600px"
               />
             </div>
             <div>
@@ -254,6 +267,7 @@ const About = () => {
         </div>
       </section>
     </div>
+    </>
   );
 };
 
