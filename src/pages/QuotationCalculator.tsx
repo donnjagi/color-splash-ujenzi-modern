@@ -6,8 +6,10 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Separator } from "@/components/ui/separator";
-import { Download, Calculator, FileText } from "lucide-react";
+import { Download, Calculator, FileText, Save } from "lucide-react";
 import { format } from "date-fns";
+import { supabase } from '@/integrations/supabase/client';
+import { useToast } from '@/hooks/use-toast';
 
 interface QuotationData {
   date: string;
@@ -33,6 +35,9 @@ const QuotationCalculator = () => {
   });
 
   const [showQuotation, setShowQuotation] = useState(false);
+  const [saving, setSaving] = useState(false);
+  const [quotationNumber, setQuotationNumber] = useState('');
+  const { toast } = useToast();
 
   const products = {
     "tanga-yellow-stone": { name: "Tanga Yellow Stone", price: 5500 },
@@ -59,11 +64,70 @@ const QuotationCalculator = () => {
   };
 
   const generateQuotation = () => {
-    if (!quotationData.clientName || !quotationData.productType) {
-      alert('Please fill in all required fields');
+    if (!quotationData.clientName || !quotationData.productType || quotationData.quantity <= 0) {
+      toast({
+        title: "Validation Error",
+        description: "Please fill in all required fields and ensure quantity is greater than 0",
+        variant: "destructive",
+      });
       return;
     }
+    
+    const newQuotationNumber = Math.random().toString(36).substr(2, 9).toUpperCase();
+    setQuotationNumber(newQuotationNumber);
     setShowQuotation(true);
+  };
+
+  const saveQuotation = async () => {
+    setSaving(true);
+    try {
+      const subtotal = calculateTotal();
+      
+      // Insert quotation
+      const { data: quotation, error: quotationError } = await supabase
+        .from('quotations')
+        .insert({
+          quotation_number: quotationNumber,
+          customer_name: quotationData.clientName,
+          customer_email: quotationData.clientEmail,
+          customer_phone: quotationData.clientPhone,
+          subtotal,
+          discount: 0,
+          logistics_cost: 0,
+          total: subtotal
+        })
+        .select()
+        .single();
+
+      if (quotationError) throw quotationError;
+
+      // Insert quotation items
+      const { error: itemsError } = await supabase
+        .from('quotation_items')
+        .insert({
+          quotation_id: quotation.id,
+          product_name: quotationData.productType,
+          quantity: quotationData.quantity,
+          unit_price: quotationData.unitPrice,
+          total_price: subtotal
+        });
+
+      if (itemsError) throw itemsError;
+
+      toast({
+        title: "Success",
+        description: `Quotation ${quotationNumber} saved successfully`,
+      });
+    } catch (error) {
+      console.error('Error saving quotation:', error);
+      toast({
+        title: "Error",
+        description: "Failed to save quotation",
+        variant: "destructive",
+      });
+    } finally {
+      setSaving(false);
+    }
   };
 
   const downloadPDF = () => {
@@ -128,7 +192,7 @@ const QuotationCalculator = () => {
               <div class="quote-info">
                 <h2>QUOTATION</h2>
                 <p>Call/whatsapp: (+254) 729 304 190</p>
-                <p>QUOTE #: ${Math.random().toString(36).substr(2, 9).toUpperCase()}</p>
+                <p>QUOTE #: ${quotationNumber}</p>
                 <p>DATE: ${new Date().toLocaleDateString()}</p>
               </div>
             </div>
@@ -294,16 +358,17 @@ const QuotationCalculator = () => {
                 </Select>
               </div>
 
-              <div>
-                <Label htmlFor="quantity">Quantity (M²)</Label>
-                <Input
-                  id="quantity"
-                  type="number"
-                  min="1"
-                  value={quotationData.quantity}
-                  onChange={(e) => setQuotationData(prev => ({ ...prev, quantity: parseInt(e.target.value) || 1 }))}
-                />
-              </div>
+                <div>
+                  <Label htmlFor="quantity">Quantity (M²)</Label>
+                  <Input
+                    id="quantity"
+                    type="number"
+                    min="1"
+                    value={quotationData.quantity || ''}
+                    onChange={(e) => setQuotationData(prev => ({ ...prev, quantity: parseInt(e.target.value) || 0 }))}
+                    placeholder="Enter quantity"
+                  />
+                </div>
 
               <Button onClick={generateQuotation} className="w-full" size="lg">
                 <FileText className="w-4 h-4 mr-2" />
@@ -318,10 +383,16 @@ const QuotationCalculator = () => {
               <CardHeader>
                 <CardTitle className="flex items-center justify-between">
                   <span>Quotation Preview</span>
-                  <Button onClick={downloadPDF} variant="outline" size="sm">
-                    <Download className="w-4 h-4 mr-2" />
-                    Download PDF
-                  </Button>
+                  <div className="flex gap-2">
+                    <Button onClick={saveQuotation} variant="default" size="sm" disabled={saving}>
+                      <Save className="w-4 h-4 mr-2" />
+                      {saving ? 'Saving...' : 'Save'}
+                    </Button>
+                    <Button onClick={downloadPDF} variant="outline" size="sm">
+                      <Download className="w-4 h-4 mr-2" />
+                      Download PDF
+                    </Button>
+                  </div>
                 </CardTitle>
               </CardHeader>
               <CardContent>
