@@ -27,7 +27,7 @@ const QuotationCalculator = () => {
     clientPhone: '',
     clientEmail: '',
     projectLocation: '',
-    quantity: 1,
+    quantity: 0,
     productType: '',
     unitPrice: 0,
   });
