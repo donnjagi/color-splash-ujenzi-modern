@@ -26,6 +26,7 @@ import { useAdmin } from '@/contexts/AdminContext';
 import { supabase } from '@/integrations/supabase/client';
 import { format } from 'date-fns';
 import { useToast } from '@/hooks/use-toast';
+import CreateQuotationModal from '@/components/CreateQuotationModal';
 
 interface Quotation {
   id: string;
@@ -171,7 +172,10 @@ const AdminDashboard = () => {
         {/* Search and Filter */}
         <Card className="mb-6">
           <CardHeader>
-            <CardTitle>Quotations Management</CardTitle>
+            <CardTitle className="flex justify-between items-center">
+              Quotations Management
+              <CreateQuotationModal onQuotationCreated={fetchQuotations} />
+            </CardTitle>
           </CardHeader>
           <CardContent>
             <div className="flex items-center space-x-4 mb-4">

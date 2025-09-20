@@ -1,15 +1,15 @@
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Separator } from "@/components/ui/separator";
-import { Download, Calculator, FileText, Save } from "lucide-react";
+import { Download, Calculator, FileText } from "lucide-react";
 import { format } from "date-fns";
 import { supabase } from '@/integrations/supabase/client';
 import { useToast } from '@/hooks/use-toast';
+import StoneSelector from '@/components/StoneSelector';
 
 interface QuotationData {
   date: string;
@@ -35,9 +35,16 @@ const QuotationCalculator = () => {
   });
 
   const [showQuotation, setShowQuotation] = useState(false);
-  const [saving, setSaving] = useState(false);
   const [quotationNumber, setQuotationNumber] = useState('');
+  const [selectedStoneKey, setSelectedStoneKey] = useState('');
   const { toast } = useToast();
+
+  // Auto-save quotation when generated
+  useEffect(() => {
+    if (showQuotation && quotationNumber) {
+      autoSaveQuotation();
+    }
+  }, [showQuotation, quotationNumber]);
 
   const products = {
     "tanga-yellow-stone": { name: "Tanga Yellow Stone", price: 5500 },
@@ -50,8 +57,9 @@ const QuotationCalculator = () => {
     "blue-stone": { name: "Sky Blue Stone", price: 4200 }
   };
 
-  const handleProductChange = (productKey: string) => {
-    const product = products[productKey as keyof typeof products];
+  const handleStoneSelect = (stoneKey: string) => {
+    setSelectedStoneKey(stoneKey);
+    const product = products[stoneKey as keyof typeof products];
     setQuotationData(prev => ({
       ...prev,
       productType: product.name,
@@ -78,8 +86,7 @@ const QuotationCalculator = () => {
     setShowQuotation(true);
   };
 
-  const saveQuotation = async () => {
-    setSaving(true);
+  const autoSaveQuotation = async () => {
     try {
       const subtotal = calculateTotal();
       
@@ -115,18 +122,16 @@ const QuotationCalculator = () => {
       if (itemsError) throw itemsError;
 
       toast({
-        title: "Success",
-        description: `Quotation ${quotationNumber} saved successfully`,
+        title: "Auto-saved",
+        description: `Quotation ${quotationNumber} saved automatically`,
       });
     } catch (error) {
-      console.error('Error saving quotation:', error);
+      console.error('Error auto-saving quotation:', error);
       toast({
         title: "Error",
-        description: "Failed to save quotation",
+        description: "Failed to auto-save quotation",
         variant: "destructive",
       });
-    } finally {
-      setSaving(false);
     }
   };
 
@@ -342,21 +347,11 @@ const QuotationCalculator = () => {
                 />
               </div>
 
-              <div>
-                <Label htmlFor="productType">Product Type *</Label>
-                <Select onValueChange={handleProductChange}>
-                  <SelectTrigger>
-                    <SelectValue placeholder="Select a product" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    {Object.entries(products).map(([key, product]) => (
-                      <SelectItem key={key} value={key}>
-                        {product.name} - Ksh {product.price.toLocaleString()}/M²
-                      </SelectItem>
-                    ))}
-                  </SelectContent>
-                </Select>
-              </div>
+              <StoneSelector
+                stones={products}
+                selectedStone={selectedStoneKey}
+                onStoneSelect={handleStoneSelect}
+              />
 
                 <div>
                   <Label htmlFor="quantity">Quantity (M²)</Label>
@@ -383,16 +378,10 @@ const QuotationCalculator = () => {
               <CardHeader>
                 <CardTitle className="flex items-center justify-between">
                   <span>Quotation Preview</span>
-                  <div className="flex gap-2">
-                    <Button onClick={saveQuotation} variant="default" size="sm" disabled={saving}>
-                      <Save className="w-4 h-4 mr-2" />
-                      {saving ? 'Saving...' : 'Save'}
-                    </Button>
-                    <Button onClick={downloadPDF} variant="outline" size="sm">
-                      <Download className="w-4 h-4 mr-2" />
-                      Download PDF
-                    </Button>
-                  </div>
+                  <Button onClick={downloadPDF} variant="outline" size="sm">
+                    <Download className="w-4 h-4 mr-2" />
+                    Download PDF
+                  </Button>
                 </CardTitle>
               </CardHeader>
               <CardContent>
