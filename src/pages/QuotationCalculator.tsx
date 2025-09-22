@@ -4,22 +4,12 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Separator } from "@/components/ui/separator";
-import { Download, Calculator, FileText, Plus, Trash2 } from "lucide-react";
+import { Download, Calculator, FileText } from "lucide-react";
 import { format } from "date-fns";
 import { supabase } from '@/integrations/supabase/client';
 import { useToast } from '@/hooks/use-toast';
-import SEOHead from '@/components/SEOHead';
-
-interface StoneItem {
-  id: string;
-  stoneType: string;
-  stoneName: string;
-  quantity: number;
-  unitPrice: number;
-  totalPrice: number;
-}
+import StoneSelector from '@/components/StoneSelector';
 
 interface QuotationData {
   date: string;
@@ -27,6 +17,9 @@ interface QuotationData {
   clientPhone: string;
   clientEmail: string;
   projectLocation: string;
+  quantity: number;
+  productType: string;
+  unitPrice: number;
 }
 
 const QuotationCalculator = () => {
@@ -36,15 +29,14 @@ const QuotationCalculator = () => {
     clientPhone: '',
     clientEmail: '',
     projectLocation: '',
+    quantity: 0,
+    productType: '',
+    unitPrice: 0,
   });
 
-  const [stoneItems, setStoneItems] = useState<StoneItem[]>([]);
-  const [selectedStone, setSelectedStone] = useState('');
-  const [quantity, setQuantity] = useState<number>(0);
-  const [discount, setDiscount] = useState<number>(0);
-  const [logisticsCost, setLogisticsCost] = useState<number>(0);
   const [showQuotation, setShowQuotation] = useState(false);
   const [quotationNumber, setQuotationNumber] = useState('');
+  const [selectedStoneKey, setSelectedStoneKey] = useState('');
   const { toast } = useToast();
 
   // Auto-save quotation when generated
@@ -65,48 +57,25 @@ const QuotationCalculator = () => {
     "blue-stone": { name: "Sky Blue Stone", price: 4200 }
   };
 
-  const addStoneItem = () => {
-    if (!selectedStone || quantity <= 0) {
-      toast({
-        title: "Validation Error",
-        description: "Please select a stone type and enter quantity",
-        variant: "destructive",
-      });
-      return;
-    }
-
-    const product = products[selectedStone as keyof typeof products];
-    const newItem: StoneItem = {
-      id: Math.random().toString(36).substr(2, 9),
-      stoneType: selectedStone,
-      stoneName: product.name,
-      quantity,
-      unitPrice: product.price,
-      totalPrice: quantity * product.price
-    };
-
-    setStoneItems(prev => [...prev, newItem]);
-    setSelectedStone('');
-    setQuantity(0);
-  };
-
-  const removeStoneItem = (id: string) => {
-    setStoneItems(prev => prev.filter(item => item.id !== id));
-  };
-
-  const calculateSubtotal = () => {
-    return stoneItems.reduce((sum, item) => sum + item.totalPrice, 0);
+  const handleStoneSelect = (stoneKey: string) => {
+    setSelectedStoneKey(stoneKey);
+    const product = products[stoneKey as keyof typeof products];
+    setQuotationData(prev => ({
+      ...prev,
+      productType: product.name,
+      unitPrice: product.price
+    }));
   };
 
   const calculateTotal = () => {
-    return calculateSubtotal() - discount + logisticsCost;
+    return quotationData.quantity * quotationData.unitPrice;
   };
 
   const generateQuotation = () => {
-    if (!quotationData.clientName || stoneItems.length === 0) {
+    if (!quotationData.clientName || !quotationData.productType || quotationData.quantity <= 0) {
       toast({
         title: "Validation Error",
-        description: "Please fill client name and add at least one stone item",
+        description: "Please fill in all required fields and ensure quantity is greater than 0",
         variant: "destructive",
       });
       return;
