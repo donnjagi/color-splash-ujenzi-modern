@@ -5,11 +5,17 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Separator } from "@/components/ui/separator";
-import { Download, Calculator, FileText } from "lucide-react";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { Download, Calculator, FileText, Plus, Trash2 } from "lucide-react";
 import { format } from "date-fns";
 import { supabase } from '@/integrations/supabase/client';
 import { useToast } from '@/hooks/use-toast';
-import StoneSelector from '@/components/StoneSelector';
+
+interface StoneItem {
+  productType: string;
+  quantity: number;
+  unitPrice: number;
+}
 
 interface QuotationData {
   date: string;
@@ -17,9 +23,7 @@ interface QuotationData {
   clientPhone: string;
   clientEmail: string;
   projectLocation: string;
-  quantity: number;
-  productType: string;
-  unitPrice: number;
+  items: StoneItem[];
 }
 
 const QuotationCalculator = () => {
@@ -29,14 +33,13 @@ const QuotationCalculator = () => {
     clientPhone: '',
     clientEmail: '',
     projectLocation: '',
-    quantity: 0,
-    productType: '',
-    unitPrice: 0,
+    items: [],
   });
 
   const [showQuotation, setShowQuotation] = useState(false);
   const [quotationNumber, setQuotationNumber] = useState('');
-  const [selectedStoneKey, setSelectedStoneKey] = useState('');
+  const [selectedStone, setSelectedStone] = useState('');
+  const [currentQuantity, setCurrentQuantity] = useState<number>(0);
   const { toast } = useToast();
 
   // Auto-save quotation when generated
@@ -57,25 +60,48 @@ const QuotationCalculator = () => {
     "blue-stone": { name: "Sky Blue Stone", price: 4200 }
   };
 
-  const handleStoneSelect = (stoneKey: string) => {
-    setSelectedStoneKey(stoneKey);
-    const product = products[stoneKey as keyof typeof products];
+  const addStoneItem = () => {
+    if (!selectedStone || currentQuantity <= 0) {
+      toast({
+        title: "Validation Error",
+        description: "Please select a stone type and enter quantity",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    const product = products[selectedStone as keyof typeof products];
+    const newItem: StoneItem = {
+      productType: product.name,
+      quantity: currentQuantity,
+      unitPrice: product.price
+    };
+
     setQuotationData(prev => ({
       ...prev,
-      productType: product.name,
-      unitPrice: product.price
+      items: [...prev.items, newItem]
+    }));
+
+    setSelectedStone('');
+    setCurrentQuantity(0);
+  };
+
+  const removeStoneItem = (index: number) => {
+    setQuotationData(prev => ({
+      ...prev,
+      items: prev.items.filter((_, i) => i !== index)
     }));
   };
 
   const calculateTotal = () => {
-    return quotationData.quantity * quotationData.unitPrice;
+    return quotationData.items.reduce((sum, item) => sum + (item.quantity * item.unitPrice), 0);
   };
 
   const generateQuotation = () => {
-    if (!quotationData.clientName || !quotationData.productType || quotationData.quantity <= 0) {
+    if (!quotationData.clientName || quotationData.items.length === 0) {
       toast({
         title: "Validation Error",
-        description: "Please fill in all required fields and ensure quantity is greater than 0",
+        description: "Please fill in client name and add at least one stone item",
         variant: "destructive",
       });
       return;
@@ -109,15 +135,17 @@ const QuotationCalculator = () => {
       if (quotationError) throw quotationError;
 
       // Insert quotation items
+      const itemsToInsert = quotationData.items.map(item => ({
+        quotation_id: quotation.id,
+        product_name: item.productType,
+        quantity: item.quantity,
+        unit_price: item.unitPrice,
+        total_price: item.quantity * item.unitPrice
+      }));
+
       const { error: itemsError } = await supabase
         .from('quotation_items')
-        .insert({
-          quotation_id: quotation.id,
-          product_name: quotationData.productType,
-          quantity: quotationData.quantity,
-          unit_price: quotationData.unitPrice,
-          total_price: subtotal
-        });
+        .insert(itemsToInsert);
 
       if (itemsError) throw itemsError;
 
@@ -223,15 +251,17 @@ const QuotationCalculator = () => {
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <td>A.</td>
-                  <td>SUPPLY & INSTALLATION</td>
-                  <td>${quotationData.productType.toUpperCase()}</td>
-                  <td>${quotationData.quantity}</td>
-                  <td>Sqm</td>
-                  <td>KES ${quotationData.unitPrice.toLocaleString()}</td>
-                  <td>KES ${calculateTotal().toLocaleString()}</td>
-                </tr>
+                ${quotationData.items.map((item, index) => `
+                  <tr>
+                    <td>${String.fromCharCode(65 + index)}.</td>
+                    <td>SUPPLY & INSTALLATION</td>
+                    <td>${item.productType.toUpperCase()}</td>
+                    <td>${item.quantity}</td>
+                    <td>Sqm</td>
+                    <td>KES ${item.unitPrice.toLocaleString()}</td>
+                    <td>KES ${(item.quantity * item.unitPrice).toLocaleString()}</td>
+                  </tr>
+                `).join('')}
               </tbody>
             </table>
 
@@ -347,23 +377,63 @@ const QuotationCalculator = () => {
                 />
               </div>
 
-              <StoneSelector
-                stones={products}
-                selectedStone={selectedStoneKey}
-                onStoneSelect={handleStoneSelect}
-              />
-
-                <div>
-                  <Label htmlFor="quantity">Quantity (M²)</Label>
-                  <Input
-                    id="quantity"
-                    type="number"
-                    min="1"
-                    value={quotationData.quantity || ''}
-                    onChange={(e) => setQuotationData(prev => ({ ...prev, quantity: parseInt(e.target.value) || 0 }))}
-                    placeholder="Enter quantity"
-                  />
+              <div className="space-y-4">
+                <div className="grid grid-cols-2 gap-4">
+                  <div>
+                    <Label htmlFor="stoneType">Stone Type *</Label>
+                    <Select value={selectedStone} onValueChange={setSelectedStone}>
+                      <SelectTrigger>
+                        <SelectValue placeholder="Select stone type" />
+                      </SelectTrigger>
+                      <SelectContent>
+                        {Object.entries(products).map(([key, product]) => (
+                          <SelectItem key={key} value={key}>
+                            {product.name} - Ksh {product.price.toLocaleString()}/M²
+                          </SelectItem>
+                        ))}
+                      </SelectContent>
+                    </Select>
+                  </div>
+                  <div>
+                    <Label htmlFor="quantity">Quantity (M²) *</Label>
+                    <Input
+                      id="quantity"
+                      type="number"
+                      min="1"
+                      value={currentQuantity || ''}
+                      onChange={(e) => setCurrentQuantity(parseInt(e.target.value) || 0)}
+                      placeholder="Enter quantity"
+                    />
+                  </div>
                 </div>
+                <Button onClick={addStoneItem} variant="outline" className="w-full">
+                  <Plus className="w-4 h-4 mr-2" />
+                  Add Stone Item
+                </Button>
+              </div>
+
+              {quotationData.items.length > 0 && (
+                <div className="space-y-2">
+                  <Label>Added Items</Label>
+                  {quotationData.items.map((item, index) => (
+                    <div key={index} className="flex items-center justify-between p-3 bg-muted rounded-lg">
+                      <div className="flex-1">
+                        <p className="font-medium text-sm">{item.productType}</p>
+                        <p className="text-xs text-muted-foreground">
+                          {item.quantity} M² × Ksh {item.unitPrice.toLocaleString()} = Ksh {(item.quantity * item.unitPrice).toLocaleString()}
+                        </p>
+                      </div>
+                      <Button
+                        onClick={() => removeStoneItem(index)}
+                        variant="ghost"
+                        size="sm"
+                      >
+                        <Trash2 className="w-4 h-4" />
+                      </Button>
+                    </div>
+                  ))}
+                </div>
+              )}
 
               <Button onClick={generateQuotation} className="w-full" size="lg">
                 <FileText className="w-4 h-4 mr-2" />
@@ -413,19 +483,19 @@ const QuotationCalculator = () => {
 
                   <Separator />
 
-                  <div className="space-y-2">
-                    <div className="flex justify-between">
-                      <span className="font-medium">Product:</span>
-                      <span>{quotationData.productType}</span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span className="font-medium">Quantity:</span>
-                      <span>{quotationData.quantity} M²</span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span className="font-medium">Unit Price:</span>
-                      <span>Ksh {quotationData.unitPrice.toLocaleString()}</span>
-                    </div>
+                  <div className="space-y-3">
+                    <Label className="font-medium">Items:</Label>
+                    {quotationData.items.map((item, index) => (
+                      <div key={index} className="p-3 bg-muted rounded-lg space-y-1">
+                        <div className="flex justify-between">
+                          <span className="font-medium text-sm">{item.productType}</span>
+                          <span className="text-sm">Ksh {(item.quantity * item.unitPrice).toLocaleString()}</span>
+                        </div>
+                        <div className="text-xs text-muted-foreground">
+                          {item.quantity} M² × Ksh {item.unitPrice.toLocaleString()}/M²
+                        </div>
+                      </div>
+                    ))}
                   </div>
 
                   <Separator />
