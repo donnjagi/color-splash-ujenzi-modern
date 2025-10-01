@@ -122,6 +122,10 @@ const CreateQuotationModal = ({ onQuotationCreated }: { onQuotationCreated: () =
       const subtotal = calculateSubtotal();
       const total = calculateTotal();
 
+      // Get current admin user
+      const adminSession = localStorage.getItem('adminSession');
+      const username = adminSession ? JSON.parse(adminSession).username : 'Unknown';
+
       // Insert quotation
       const { data: quotation, error: quotationError } = await supabase
         .from('quotations')
@@ -133,7 +137,8 @@ const CreateQuotationModal = ({ onQuotationCreated }: { onQuotationCreated: () =
           subtotal,
           discount: formData.discount,
           logistics_cost: formData.logisticsCost,
-          total
+          total,
+          created_by: username
         })
         .select()
         .single();

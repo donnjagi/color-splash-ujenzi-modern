@@ -55,6 +55,7 @@ export type Database = {
       quotations: {
         Row: {
           created_at: string
+          created_by: string | null
           customer_email: string | null
           customer_name: string | null
           customer_phone: string | null
@@ -68,6 +69,7 @@ export type Database = {
         }
         Insert: {
           created_at?: string
+          created_by?: string | null
           customer_email?: string | null
           customer_name?: string | null
           customer_phone?: string | null
@@ -81,6 +83,7 @@ export type Database = {
         }
         Update: {
           created_at?: string
+          created_by?: string | null
           customer_email?: string | null
           customer_name?: string | null
           customer_phone?: string | null

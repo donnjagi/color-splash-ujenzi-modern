@@ -37,6 +37,7 @@ interface QuotationDetail {
   logistics_cost: number;
   total: number;
   created_at: string;
+  created_by: string;
   quotation_items: QuotationItem[];
 }
 
@@ -274,6 +275,7 @@ const AdminQuotationDetail = () => {
             <div class="contact-footer">
               <p>If you have any questions about this quotation, please contact</p>
               <p>Collins Githinji, +254 729 304 190, githinjicollins@travauxlimited.com</p>
+              <p style="margin-top: 10px; font-style: italic;">Quotation created by: ${quotation.created_by || 'Unknown'}</p>
             </div>
           </div>
         </body>
