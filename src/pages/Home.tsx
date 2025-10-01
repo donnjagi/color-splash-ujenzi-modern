@@ -6,8 +6,18 @@ import { Building, Users, Award, CheckCircle, ArrowRight, Hammer, Wrench, Drople
 import { Link } from "react-router-dom";
 import SEOHead from "@/components/SEOHead";
 import LazyImage from "@/components/LazyImage";
+import { useState, useEffect } from "react";
 
 const Home = () => {
+  const [scrollY, setScrollY] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrollY(window.scrollY);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
   const services = [
     {
       icon: Building2,
@@ -146,12 +156,19 @@ const Home = () => {
               </div>
             </div>
             <div className="relative">
-              <LazyImage
-                src="/Afristone-All things Stone/Tanga Yellow Stone/2025053121292496.jpg"
-                alt="Premium Tanga Yellow natural stone wall cladding installation by Afristone Kenya - showcasing expert craftsmanship in stone supply and installation services"
-                className="rounded-2xl shadow-2xl w-full max-w-full h-auto aspect-[3/2] object-cover"
-                loading="eager"
-              />
+              <div 
+                style={{ 
+                  transform: `translateY(${scrollY * 0.15}px)`,
+                  transition: 'transform 0.1s ease-out'
+                }}
+              >
+                <LazyImage
+                  src="/Afristone-All things Stone/Tanga Yellow Stone/2025053121292496.jpg"
+                  alt="Premium Tanga Yellow natural stone wall cladding installation by Afristone Kenya - showcasing expert craftsmanship in stone supply and installation services"
+                  className="rounded-2xl shadow-2xl w-full max-w-full h-auto aspect-[3/2] object-cover"
+                  loading="eager"
+                />
+              </div>
               <div className="absolute -bottom-6 -left-6 bg-card p-6 rounded-xl shadow-lg border">
                 <div className="flex items-center gap-3">
                   <Award className="w-8 h-8 text-primary" />

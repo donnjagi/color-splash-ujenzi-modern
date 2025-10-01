@@ -309,14 +309,14 @@ const QuotationCalculator = () => {
   };
 
   return (
-    <div className="min-h-screen bg-muted/50 py-8 px-6">
-      <div className="max-w-4xl mx-auto">
-        <div className="text-center mb-8">
-          <h1 className="text-3xl font-bold mb-2">Quotation Calculator</h1>
-          <p className="text-muted-foreground">Generate custom quotations for your clients</p>
+    <div className="min-h-screen bg-muted/50 py-4 md:py-8 px-4 md:px-6">
+      <div className="max-w-6xl mx-auto">
+        <div className="text-center mb-6 md:mb-8">
+          <h1 className="text-2xl md:text-3xl font-bold mb-2">Quotation Calculator</h1>
+          <p className="text-sm md:text-base text-muted-foreground">Generate custom quotations for your clients</p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-8">
+        <div className="grid lg:grid-cols-2 gap-6 md:gap-8">
           {/* Calculator Form */}
           <Card>
             <CardHeader>
@@ -325,69 +325,78 @@ const QuotationCalculator = () => {
                 Quotation Details
               </CardTitle>
             </CardHeader>
-            <CardContent className="space-y-6">
-              <div className="grid grid-cols-2 gap-4">
+            <CardContent className="space-y-4 md:space-y-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
-                  <Label htmlFor="date">Date</Label>
+                  <Label htmlFor="date" className="text-base">Date</Label>
                   <Input
                     id="date"
                     type="date"
                     value={quotationData.date}
                     onChange={(e) => setQuotationData(prev => ({ ...prev, date: e.target.value }))}
+                    className="h-12 text-base"
                   />
                 </div>
                 <div>
-                  <Label htmlFor="clientName">Client Name *</Label>
+                  <Label htmlFor="clientName" className="text-base">Client Name *</Label>
                   <Input
                     id="clientName"
                     value={quotationData.clientName}
                     onChange={(e) => setQuotationData(prev => ({ ...prev, clientName: e.target.value }))}
                     placeholder="Enter client name"
+                    className="h-12 text-base"
                   />
                 </div>
               </div>
 
               <div>
-                <Label htmlFor="clientPhone">Client Phone</Label>
+                <Label htmlFor="clientPhone" className="text-base">Client Phone</Label>
                 <Input
                   id="clientPhone"
+                  type="tel"
+                  inputMode="tel"
                   value={quotationData.clientPhone}
                   onChange={(e) => setQuotationData(prev => ({ ...prev, clientPhone: e.target.value }))}
-                  placeholder="Enter client phone"
+                  placeholder="+254 XXX XXX XXX"
+                  className="h-12 text-base"
                 />
               </div>
 
               <div>
-                <Label htmlFor="clientEmail">Client Email</Label>
+                <Label htmlFor="clientEmail" className="text-base">Client Email</Label>
                 <Input
                   id="clientEmail"
+                  type="email"
+                  inputMode="email"
                   value={quotationData.clientEmail}
                   onChange={(e) => setQuotationData(prev => ({ ...prev, clientEmail: e.target.value }))}
-                  placeholder="Enter client email"
+                  placeholder="client@example.com"
+                  className="h-12 text-base"
                 />
               </div>
 
               <div>
-                <Label htmlFor="projectLocation">Project Location</Label>
+                <Label htmlFor="projectLocation" className="text-base">Project Location</Label>
                 <Input
                   id="projectLocation"
                   value={quotationData.projectLocation}
                   onChange={(e) => setQuotationData(prev => ({ ...prev, projectLocation: e.target.value }))}
                   placeholder="Enter project location"
+                  className="h-12 text-base"
                 />
               </div>
 
               <div className="space-y-4">
-                <div className="grid grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
-                    <Label htmlFor="stoneType">Stone Type *</Label>
+                    <Label htmlFor="stoneType" className="text-base">Stone Type *</Label>
                     <Select value={selectedStone} onValueChange={setSelectedStone}>
-                      <SelectTrigger>
+                      <SelectTrigger className="h-12 text-base">
                         <SelectValue placeholder="Select stone type" />
                       </SelectTrigger>
-                      <SelectContent>
+                      <SelectContent className="max-h-[60vh]">
                         {Object.entries(products).map(([key, product]) => (
-                          <SelectItem key={key} value={key}>
+                          <SelectItem key={key} value={key} className="text-base py-3">
                             {product.name} - Ksh {product.price.toLocaleString()}/M²
                           </SelectItem>
                         ))}
@@ -395,48 +404,52 @@ const QuotationCalculator = () => {
                     </Select>
                   </div>
                   <div>
-                    <Label htmlFor="quantity">Quantity (M²) *</Label>
+                    <Label htmlFor="quantity" className="text-base">Quantity (M²) *</Label>
                     <Input
                       id="quantity"
                       type="number"
+                      inputMode="decimal"
                       min="1"
+                      step="0.1"
                       value={currentQuantity || ''}
-                      onChange={(e) => setCurrentQuantity(parseInt(e.target.value) || 0)}
+                      onChange={(e) => setCurrentQuantity(parseFloat(e.target.value) || 0)}
                       placeholder="Enter quantity"
+                      className="h-12 text-base"
                     />
                   </div>
                 </div>
-                <Button onClick={addStoneItem} variant="outline" className="w-full">
-                  <Plus className="w-4 h-4 mr-2" />
+                <Button onClick={addStoneItem} variant="outline" className="w-full h-12 text-base">
+                  <Plus className="w-5 h-5 mr-2" />
                   Add Stone Item
                 </Button>
               </div>
 
               {quotationData.items.length > 0 && (
                 <div className="space-y-2">
-                  <Label>Added Items</Label>
+                  <Label className="text-base">Added Items</Label>
                   {quotationData.items.map((item, index) => (
-                    <div key={index} className="flex items-center justify-between p-3 bg-muted rounded-lg">
-                      <div className="flex-1">
-                        <p className="font-medium text-sm">{item.productType}</p>
-                        <p className="text-xs text-muted-foreground">
+                    <div key={index} className="flex items-center justify-between p-4 bg-muted rounded-lg gap-3">
+                      <div className="flex-1 min-w-0">
+                        <p className="font-medium text-sm md:text-base truncate">{item.productType}</p>
+                        <p className="text-xs md:text-sm text-muted-foreground">
                           {item.quantity} M² × Ksh {item.unitPrice.toLocaleString()} = Ksh {(item.quantity * item.unitPrice).toLocaleString()}
                         </p>
                       </div>
                       <Button
                         onClick={() => removeStoneItem(index)}
                         variant="ghost"
-                        size="sm"
+                        size="icon"
+                        className="h-10 w-10 flex-shrink-0"
                       >
-                        <Trash2 className="w-4 h-4" />
+                        <Trash2 className="w-5 h-5" />
                       </Button>
                     </div>
                   ))}
                 </div>
               )}
 
-              <Button onClick={generateQuotation} className="w-full" size="lg">
-                <FileText className="w-4 h-4 mr-2" />
+              <Button onClick={generateQuotation} className="w-full h-12 text-base" size="lg">
+                <FileText className="w-5 h-5 mr-2" />
                 Generate Quotation
               </Button>
             </CardContent>
