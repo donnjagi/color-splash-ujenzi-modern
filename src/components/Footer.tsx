@@ -76,7 +76,11 @@ const Footer = () => {
         </div>
 
         <div className="border-t border-primary-foreground/20 mt-8 pt-8 text-center text-sm opacity-80">
-          <p>&copy; 2024 Afristone. All rights reserved. | Privacy Policy | Terms of Service</p>
+          <p>
+            &copy; 2024 Afristone. All rights reserved. | 
+            <Link to="/privacy-policy" className="hover:opacity-100 mx-1">Privacy Policy</Link> | 
+            Terms of Service
+          </p>
         </div>
       </div>
     </footer>
