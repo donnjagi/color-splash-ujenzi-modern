@@ -17,6 +17,7 @@ import Products from "./pages/Products";
 import ProductDetail from "./pages/ProductDetail";
 import Contact from "./pages/Contact";
 import QuotationCalculator from "./pages/QuotationCalculator";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
 import AdminLogin from "./pages/AdminLogin";
 import AdminDashboard from "./pages/AdminDashboard";
 import AdminQuotationDetail from "./pages/AdminQuotationDetail";
@@ -62,6 +63,7 @@ const App = () => (
                       <Route path="/products/:productId" element={<ProductDetail />} />
                       <Route path="/contact" element={<Contact />} />
                       <Route path="/quotation" element={<QuotationCalculator />} />
+                      <Route path="/privacy-policy" element={<PrivacyPolicy />} />
                       <Route path="*" element={<NotFound />} />
                     </Routes>
                   </main>
