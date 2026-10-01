@@ -4,6 +4,8 @@ import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { ArrowRight, MapPin, Palette, Hammer } from "lucide-react";
 import LazyImage from "@/components/LazyImage";
+import waterFallSpheres from "@/assets/water-fall-stone-spheres.asset.json";
+import { productAssetUrl } from "@/lib/productAssetUrl";
 
 const Products = () => {
   const products = [
@@ -78,6 +80,15 @@ const Products = () => {
       image: "/Afristone-All things Stone/Blue Stone/2025061307282178.jpg",
       category: "Coastal Natural Stone",
       color: "blue"
+    },
+    {
+      id: "water-fall",
+      name: "Water Fall",
+      price: "Price on Request",
+      shortDescription: "Water features for indoor spaces and outdoor settings, from fountains to stone-sphere installations.",
+      image: productAssetUrl(waterFallSpheres),
+      category: "Water Features",
+      color: "blue"
     }
   ];
 
@@ -94,16 +105,16 @@ const Products = () => {
       <section className="modern-gradient py-20 px-6">
         <div className="max-w-6xl mx-auto text-center">
           <Badge variant="secondary" className="mb-6">
-            Natural Stone Products
+            Natural Stone & Water Features
           </Badge>
           <h1 className="text-4xl md:text-6xl font-bold mb-6 text-foreground">
             Premium
             <span className="block bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-              Natural Stone Collection
+              Natural Stone & Water Features
             </span>
           </h1>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            Discover our extensive range of natural stones and bricks, perfect for wall cladding, facades, and architectural features. Each product includes material, installation, and sealing.
+            Explore natural stones, bricks, and water features for your space.
           </p>
         </div>
       </section>
@@ -114,7 +125,7 @@ const Products = () => {
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Our Product Range</h2>
             <p className="text-lg text-muted-foreground">
-              Premium natural stones for every architectural vision
+              Natural stones and water features for every architectural vision
             </p>
           </div>
 
@@ -131,7 +142,7 @@ const Products = () => {
                   />
                 </div>
                 <CardHeader>
-                  <div className="flex items-center justify-between mb-2">
+                   <div className="flex flex-wrap items-center justify-between gap-2 mb-2">
                     <Badge variant="outline" className="text-xs">
                       {product.category}
                     </Badge>
@@ -142,14 +153,16 @@ const Products = () => {
                 </CardHeader>
                 <CardContent>
                   <div className="flex gap-2 mb-4">
-                    <div className="flex items-center gap-1 text-xs text-muted-foreground">
+                     <div className="flex items-center gap-1 text-xs text-muted-foreground">
                       <MapPin className="w-3 h-3" />
                       <span>Interior & Exterior</span>
                     </div>
-                    <div className="flex items-center gap-1 text-xs text-muted-foreground">
-                      <Palette className="w-3 h-3" />
-                      <span>Natural Finish</span>
-                    </div>
+                     {product.id !== "water-fall" && (
+                       <div className="flex items-center gap-1 text-xs text-muted-foreground">
+                         <Palette className="w-3 h-3" />
+                         <span>Natural Finish</span>
+                       </div>
+                     )}
                   </div>
                   <div className="flex gap-2">
                     <Button variant="outline" className="flex-1" asChild>
