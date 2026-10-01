@@ -6,6 +6,9 @@ import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import { ArrowLeft, CheckCircle, MapPin, Palette, Hammer, Phone, Mail } from "lucide-react";
 import ImageGallery from "@/components/ImageGallery";
+import waterFallSpheres from "@/assets/water-fall-stone-spheres.asset.json";
+import waterFallChannel from "@/assets/water-fall-channel.asset.json";
+import waterFallBowl from "@/assets/water-fall-bowl.asset.json";
 
 const ProductDetail = () => {
   const { productId } = useParams();
@@ -170,6 +173,20 @@ const ProductDetail = () => {
         "Maintenance": "Low maintenance",
         "Warranty": "5 years structural"
       }
+    },
+    "water-fall": {
+      name: "Water Fall",
+      price: "Price on Request",
+      category: "Water Features",
+      description: "Explore water features for indoor and outdoor spaces. From a round mosaic fountain and a linear indoor water channel to a trio of textured stone spheres, these installations bring movement and a focal point to their surroundings. Contact us to discuss a design and quotation for your space.",
+      uses: ["Indoor water features", "Outdoor fountains", "Courtyard focal points", "Decorative water channels"],
+      features: ["Round mosaic fountain", "Linear indoor water channel", "Textured stone-sphere feature", "Indoor and outdoor inspiration"],
+      images: [waterFallSpheres.url, waterFallChannel.url, waterFallBowl.url],
+      specifications: {
+        "Type": "Water feature",
+        "Application": "Interior & Exterior",
+        "Pricing": "Price on Request"
+      }
     }
   };
 
@@ -239,7 +256,7 @@ const ProductDetail = () => {
                 </Button>
               </div>
 
-              <div className="bg-muted p-6 rounded-lg">
+               {productId !== "water-fall" && <div className="bg-muted p-6 rounded-lg">
                 <h3 className="font-semibold mb-3 flex items-center">
                   <CheckCircle className="w-5 h-5 text-green-500 mr-2" />
                   What's Included
@@ -250,7 +267,7 @@ const ProductDetail = () => {
                   <li>✓ Protective sealing treatment</li>
                   <li>✓ 5-year structural warranty</li>
                 </ul>
-              </div>
+               </div>}
             </div>
           </div>
         </div>
