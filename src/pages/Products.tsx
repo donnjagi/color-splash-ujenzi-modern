@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import { ArrowRight, MapPin, Palette, Hammer } from "lucide-react";
 import LazyImage from "@/components/LazyImage";
 import waterFallSpheres from "@/assets/water-fall-stone-spheres.asset.json";
+import { productAssetUrl } from "@/lib/productAssetUrl";
 
 const Products = () => {
   const products = [
@@ -85,7 +86,7 @@ const Products = () => {
       name: "Water Fall",
       price: "Price on Request",
       shortDescription: "Water features for indoor spaces and outdoor settings, from fountains to stone-sphere installations.",
-      image: waterFallSpheres.url,
+      image: productAssetUrl(waterFallSpheres),
       category: "Water Features",
       color: "blue"
     }

@@ -9,6 +9,7 @@ import ImageGallery from "@/components/ImageGallery";
 import waterFallSpheres from "@/assets/water-fall-stone-spheres.asset.json";
 import waterFallChannel from "@/assets/water-fall-channel.asset.json";
 import waterFallBowl from "@/assets/water-fall-bowl.asset.json";
+import { productAssetUrl } from "@/lib/productAssetUrl";
 
 const ProductDetail = () => {
   const { productId } = useParams();
@@ -181,7 +182,7 @@ const ProductDetail = () => {
       description: "Explore water features for indoor and outdoor spaces. From a round mosaic fountain and a linear indoor water channel to a trio of textured stone spheres, these installations bring movement and a focal point to their surroundings. Contact us to discuss a design and quotation for your space.",
       uses: ["Indoor water features", "Outdoor fountains", "Courtyard focal points", "Decorative water channels"],
       features: ["Round mosaic fountain", "Linear indoor water channel", "Textured stone-sphere feature", "Indoor and outdoor inspiration"],
-      images: [waterFallSpheres.url, waterFallChannel.url, waterFallBowl.url],
+      images: [productAssetUrl(waterFallSpheres), productAssetUrl(waterFallChannel), productAssetUrl(waterFallBowl)],
       specifications: {
         "Type": "Water feature",
         "Application": "Interior & Exterior",
@@ -207,7 +208,9 @@ const ProductDetail = () => {
 
   const handleWhatsAppClick = () => {
     const phoneNumber = "254729304190";
-    const message = `Hello Afristone! I'm interested in ${product.name} at ${product.price}. Could you provide a detailed quote including installation?`;
+    const message = productId === "water-fall"
+      ? "Hello Afristone! I'm interested in the Water Fall water feature. Could you provide a quotation for my space?"
+      : `Hello Afristone! I'm interested in ${product.name} at ${product.price}. Could you provide a detailed quote including installation?`;
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
   };

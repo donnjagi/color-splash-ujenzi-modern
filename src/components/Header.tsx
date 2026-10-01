@@ -12,6 +12,7 @@ const Header = () => {
     { name: "Home", href: "/" },
     { name: "Services", href: "/services" },
     { name: "Products", href: "/products" },
+    { name: "Water Fall", href: "/products/water-fall" },
     { name: "Projects", href: "/projects" },
     { name: "Quotation", href: "/quotation" },
     { name: "Contact", href: "/contact" },
@@ -61,7 +62,7 @@ const Header = () => {
             </Link>
 
             {/* Desktop Navigation */}
-            <nav className="hidden md:flex items-center space-x-8">
+            <nav className="hidden md:flex items-center gap-3 lg:gap-5">
               {navigation.map((item) => (
                 <Link
                   key={item.name}
