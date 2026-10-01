@@ -1,0 +1,1 @@
+Use Lovable asset pointers under `src/assets` for uploaded product photos, because the CDN keeps project media available without bundling raw uploads.
