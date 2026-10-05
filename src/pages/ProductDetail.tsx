@@ -209,7 +209,7 @@ const ProductDetail = () => {
   const handleWhatsAppClick = () => {
     const phoneNumber = "254729304190";
     const message = productId === "water-fall"
-      ? "Hello Afristone! I'm interested in the Water Fall water feature. Could you provide a quotation for my space?"
+      ? "Hello Afristone! I'm interested in the Water Fountains water feature. Could you provide a quotation for my space?"
       : `Hello Afristone! I'm interested in ${product.name} at ${product.price}. Could you provide a detailed quote including installation?`;
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
