@@ -83,11 +83,11 @@ const Products = () => {
     },
     {
       id: "water-fall",
-      name: "Water Fall",
+      name: "Water Fountains",
       price: "Price on Request",
-      shortDescription: "Water features for indoor spaces and outdoor settings, from fountains to stone-sphere installations.",
+      shortDescription: "Water fountains for indoor spaces and outdoor settings, from fountains to stone-sphere installations.",
       image: productAssetUrl(waterFallSpheres),
-      category: "Water Features",
+      category: "Water Fountains",
       color: "blue"
     }
   ];
