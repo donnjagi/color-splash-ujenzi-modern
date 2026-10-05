@@ -176,15 +176,15 @@ const ProductDetail = () => {
       }
     },
     "water-fall": {
-      name: "Water Fall",
+      name: "Water Fountains",
       price: "Price on Request",
-      category: "Water Features",
-      description: "Explore water features for indoor and outdoor spaces. From a round mosaic fountain and a linear indoor water channel to a trio of textured stone spheres, these installations bring movement and a focal point to their surroundings. Contact us to discuss a design and quotation for your space.",
-      uses: ["Indoor water features", "Outdoor fountains", "Courtyard focal points", "Decorative water channels"],
+      category: "Water Fountains",
+      description: "Explore water fountains for indoor and outdoor spaces. From a round mosaic fountain and a linear indoor water channel to a trio of textured stone spheres, these installations bring movement and a focal point to their surroundings. Contact us to discuss a design and quotation for your space.",
+      uses: ["Indoor water fountains", "Outdoor fountains", "Courtyard focal points", "Decorative water channels"],
       features: ["Round mosaic fountain", "Linear indoor water channel", "Textured stone-sphere feature", "Indoor and outdoor inspiration"],
       images: [productAssetUrl(waterFallSpheres), productAssetUrl(waterFallChannel), productAssetUrl(waterFallBowl)],
       specifications: {
-        "Type": "Water feature",
+        "Type": "Water fountain",
         "Application": "Interior & Exterior",
         "Pricing": "Price on Request"
       }
@@ -209,7 +209,7 @@ const ProductDetail = () => {
   const handleWhatsAppClick = () => {
     const phoneNumber = "254729304190";
     const message = productId === "water-fall"
-      ? "Hello Afristone! I'm interested in the Water Fall water feature. Could you provide a quotation for my space?"
+      ? "Hello Afristone! I'm interested in the Water Fountains water feature. Could you provide a quotation for my space?"
       : `Hello Afristone! I'm interested in ${product.name} at ${product.price}. Could you provide a detailed quote including installation?`;
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
