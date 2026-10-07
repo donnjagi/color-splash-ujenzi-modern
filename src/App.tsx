@@ -15,6 +15,8 @@ import Services from "./pages/Services";
 import Projects from "./pages/Projects";
 import Products from "./pages/Products";
 import ProductDetail from "./pages/ProductDetail";
+import WaterFountains from "./pages/WaterFountains";
+import WaterFountainDetail from "./pages/WaterFountainDetail";
 import Contact from "./pages/Contact";
 import QuotationCalculator from "./pages/QuotationCalculator";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
@@ -60,6 +62,8 @@ const App = () => (
                       <Route path="/services" element={<Services />} />
                       <Route path="/projects" element={<Projects />} />
                       <Route path="/products" element={<Products />} />
+                       <Route path="/products/water-fall" element={<WaterFountains />} />
+                       <Route path="/products/water-fall/:fountainId" element={<WaterFountainDetail />} />
                       <Route path="/products/:productId" element={<ProductDetail />} />
                       <Route path="/contact" element={<Contact />} />
                       <Route path="/quotation" element={<QuotationCalculator />} />
