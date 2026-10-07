@@ -1,2 +1,4 @@
 - [x] Verify Water Fall listing and three-photo gallery with Price on Request.
 - [x] Add Water Fall to the site menu.
+- [ ] Add the nine uploaded water-feature types under Water Fountains.
+- [ ] Create an individual page for each water-feature type.
