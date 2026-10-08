@@ -20,7 +20,7 @@ const WaterFountains = () => {
           <div className="max-w-3xl">
             <h1 className="mb-5 text-4xl font-bold md:text-6xl">Water Fountains</h1>
             <p className="text-lg leading-relaxed text-muted-foreground">
-              Explore nine water-feature styles for gardens, courtyards, entrances, pools, and interior spaces. Each design is tailored and priced for your site.
+              Explore {waterFountains.length} water-feature styles for gardens, courtyards, entrances, pools, and interior spaces. Each design is tailored and priced for your site.
             </p>
           </div>
         </div>
