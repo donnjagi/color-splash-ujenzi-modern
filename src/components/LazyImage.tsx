@@ -81,7 +81,6 @@ const LazyImage = ({
               isLoaded ? "opacity-100 scale-100" : "opacity-0 scale-105"
             )}
             decoding="async"
-            fetchPriority={priority ? 'high' : 'auto'}
           />
         </>
       ) : error ? (
