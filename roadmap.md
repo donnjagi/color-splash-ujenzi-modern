@@ -2,4 +2,4 @@
 - [x] Add Water Fall to the site menu.
 - [x] Add the nine uploaded water-feature types under Water Fountains.
 - [x] Create an individual page for each water-feature type.
-- [ ] Add the three missing guide designs and verify all twelve fountain pages and photos.
+- [x] Add the three missing guide designs and verify all twelve fountain pages and photos.
