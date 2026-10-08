@@ -7,6 +7,9 @@ import spillway from "@/assets/water-features/spillway.jpg.asset.json";
 import bubblingFountain from "@/assets/water-features/bubbling-fountain.jpg.asset.json";
 import jetFountain from "@/assets/water-features/jet-fountain.jpg.asset.json";
 import sheetFlowWater from "@/assets/water-features/sheet-flow-water.jpg.asset.json";
+import infinityPool from "@/assets/water-features/infinity-pool.jpg.asset.json";
+import naturalisticPond from "@/assets/water-features/naturalistic-pond.jpg.asset.json";
+import koiPond from "@/assets/water-features/koi-pond.jpg.asset.json";
 import { productAssetUrl } from "@/lib/productAssetUrl";
 
 export interface WaterFountain {
@@ -90,6 +93,30 @@ export const waterFountains: WaterFountain[] = [
     benefit: "Adds a clean, contemporary architectural detail.",
     image: productAssetUrl(sheetFlowWater),
     applications: ["Modern gardens", "Pool edges", "Feature walls", "Linear water channels"],
+  },
+  {
+    id: "infinity-pool",
+    name: "Infinity Pool",
+    description: "A pool with an edge that visually disappears into the horizon.",
+    benefit: "Extends the perceived boundary of the landscape.",
+    image: productAssetUrl(infinityPool),
+    applications: ["Hillside properties", "Scenic terraces", "Resorts", "Contemporary outdoor spaces"],
+  },
+  {
+    id: "naturalistic-pond",
+    name: "Naturalistic Pond",
+    description: "An organic water body with irregular edges and natural planting.",
+    benefit: "Softens built forms and connects architecture with nature.",
+    image: productAssetUrl(naturalisticPond),
+    applications: ["Landscaped gardens", "Courtyards", "Natural outdoor spaces", "Hospitality gardens"],
+  },
+  {
+    id: "koi-pond",
+    name: "Koi Pond",
+    description: "An ornamental pond designed to support koi and aquatic planting.",
+    benefit: "Creates a calm, contemplative landscape element.",
+    image: productAssetUrl(koiPond),
+    applications: ["Courtyards", "Residential gardens", "Quiet relaxation spaces", "Ornamental landscapes"],
   },
 ];
 
