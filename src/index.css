@@ -99,6 +99,22 @@
     text-rendering: optimizeLegibility;
   }
 
+  /* Keep long product names and contact details within narrow layouts. */
+  h1, h2, h3, h4, p {
+    overflow-wrap: break-word;
+  }
+
+  img, video {
+    max-width: 100%;
+  }
+
+  @media (max-width: 767px) {
+    /* Avoid automatic phone-browser zoom when entering a quotation. */
+    input, select, textarea, [role="combobox"] {
+      font-size: 16px !important;
+    }
+  }
+
   /* Performance optimizations for images */
   img {
     content-visibility: auto;
