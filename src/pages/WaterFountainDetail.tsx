@@ -21,10 +21,9 @@ const WaterFountainDetail = () => {
   }
 
   const related = waterFountains.filter((item) => item.id !== fountain.id).slice(0, 3);
-  const handleWhatsApp = () => {
-    const message = `Hello Afristone! I'm interested in the ${fountain.name}. Could you provide a quotation for my space?`;
-    window.open(`https://wa.me/254729304190?text=${encodeURIComponent(message)}`, "_blank");
-  };
+  const whatsappUrl = `https://wa.me/254729304190?text=${encodeURIComponent(
+    `Hello Afristone! I'm interested in the ${fountain.name}. Could you provide a quotation for my space?`
+  )}`;
 
   return (
     <div className="min-h-screen">
@@ -48,7 +47,12 @@ const WaterFountainDetail = () => {
             <p className="mb-4 text-lg leading-relaxed text-muted-foreground">{fountain.description}</p>
             <p className="mb-8 leading-relaxed">{fountain.benefit}</p>
             <div className="flex flex-col gap-3 sm:flex-row">
-              <Button size="lg" onClick={handleWhatsApp}><MessageCircle className="h-5 w-5" />Get a quotation</Button>
+              <Button size="lg" asChild>
+                <a href={whatsappUrl} target="_blank" rel="noopener noreferrer">
+                  <MessageCircle className="h-5 w-5" />
+                  Get a quotation
+                </a>
+              </Button>
               <Button size="lg" variant="outline" asChild><Link to="/contact">Request a site visit</Link></Button>
             </div>
           </div>
