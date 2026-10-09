@@ -13,11 +13,11 @@ const WaterFountains = () => {
 
   return (
     <div className="min-h-screen">
-      <section className="modern-gradient px-6 py-16 md:py-20">
+      <section className="modern-gradient px-4 py-10 sm:px-6 md:py-20">
         <div className="mx-auto max-w-6xl">
           <Badge variant="secondary" className="mb-5">Water Fountains</Badge>
           <div className="max-w-3xl">
-            <h1 className="mb-5 text-4xl font-bold md:text-6xl">Water Fountains</h1>
+            <h1 className="mb-5 text-3xl font-bold sm:text-4xl md:text-6xl">Water Fountains</h1>
             <p className="text-lg leading-relaxed text-muted-foreground">
               Explore {waterFountains.length} water-feature styles for gardens, courtyards, entrances, pools, and interior spaces. Each design is tailored and priced for your site.
             </p>
@@ -25,7 +25,7 @@ const WaterFountains = () => {
         </div>
       </section>
 
-      <section className="px-6 py-14 md:py-20">
+      <section className="px-4 py-10 sm:px-6 md:py-20">
         <div className="mx-auto max-w-6xl">
           <div className="mb-10 flex items-end justify-between gap-6">
             <div>
@@ -65,11 +65,11 @@ const WaterFountains = () => {
         </div>
       </section>
 
-      <section className="bg-muted px-6 py-14">
+      <section className="bg-muted px-4 py-10 sm:px-6 md:py-14">
         <div className="mx-auto flex max-w-4xl flex-col items-center text-center">
           <h2 className="mb-4 text-3xl font-bold">Need help selecting a fountain?</h2>
           <p className="mb-7 max-w-2xl text-muted-foreground">Share your site dimensions and preferred style for a tailored recommendation and quotation.</p>
-          <Button size="lg" asChild>
+          <Button size="lg" className="w-full sm:w-auto" asChild>
             <a href={whatsappUrl} target="_blank" rel="noopener noreferrer">
               <MessageCircle className="h-5 w-5" />
               Request a quotation

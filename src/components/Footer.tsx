@@ -12,7 +12,7 @@ const Footer = () => {
 
   return (
     <footer className="bg-primary text-primary-foreground">
-      <div className="max-w-6xl mx-auto px-6 py-12">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 py-10 sm:py-12">
         <div className="grid md:grid-cols-3 gap-8">
           {/* Company Info */}
           <div>
@@ -44,7 +44,7 @@ const Footer = () => {
           {/* Quick Links */}
           <div>
             <h4 className="font-semibold mb-4">Quick Links</h4>
-            <ul className="space-y-2 text-sm">
+            <ul className="grid grid-cols-2 gap-x-4 gap-y-1 text-sm [&_a]:inline-flex [&_a]:min-h-11 [&_a]:items-center md:block md:space-y-2 md:[&_a]:min-h-0">
               <li><Link to="/" className="opacity-80 hover:opacity-100">Home</Link></li>
               <li><Link to="/about" className="opacity-80 hover:opacity-100">About Us</Link></li>
               <li><Link to="/services" className="opacity-80 hover:opacity-100">Services</Link></li>
@@ -60,7 +60,7 @@ const Footer = () => {
             <h4 className="font-semibold mb-4">Contact Info</h4>
             <div className="space-y-3 text-sm">
               <div className="flex items-start space-x-2">
-                <MapPin className="w-4 h-4 mt-1 opacity-80" />
+                <MapPin className="w-4 h-4 shrink-0 mt-1 opacity-80" />
                 <span className="opacity-80">Western Heights, Skyrise Business Center<br />Nairobi, Kenya</span>
               </div>
               <div className="flex items-center space-x-2">
@@ -68,8 +68,8 @@ const Footer = () => {
                 <span className="opacity-80">+254 729 304 190</span>
               </div>
               <div className="flex items-center space-x-2">
-                <Mail className="w-4 h-4 opacity-80" />
-                <span className="opacity-80">travauxlimited@gmail.com</span>
+                <Mail className="w-4 h-4 shrink-0 opacity-80" />
+                <span className="min-w-0 break-all opacity-80">travauxlimited@gmail.com</span>
               </div>
             </div>
           </div>

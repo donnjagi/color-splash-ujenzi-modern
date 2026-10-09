@@ -3,3 +3,5 @@
 - [x] Add the nine uploaded water-feature types under Water Fountains.
 - [x] Create an individual page for each water-feature type.
 - [x] Add the three missing guide designs and verify all twelve fountain pages and photos.
+- [ ] Improve mobile navigation, page layouts, and quotation controls.
+- [ ] Verify phone and tablet layouts and interactions.

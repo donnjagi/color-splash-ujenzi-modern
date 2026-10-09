@@ -33,17 +33,17 @@ const Header = () => {
       {/* Top bar */}
       <div className="bg-primary text-primary-foreground py-2">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 flex justify-between items-center text-sm">
-          <div className="flex items-center gap-3 sm:gap-6">
+          <div className="flex min-w-0 flex-wrap items-center gap-x-3 gap-y-1 sm:gap-x-6">
             <div className="flex items-center gap-2">
               <Phone className="w-4 h-4 flex-shrink-0" />
               <span className="text-xs sm:text-sm">0729 304 190</span>
             </div>
             <div className="flex items-center gap-2">
               <Mail className="w-4 h-4 flex-shrink-0" />
-              <span className="text-xs sm:text-sm truncate">travauxlimited@gmail.com</span>
+              <span className="text-xs sm:text-sm break-all">travauxlimited@gmail.com</span>
             </div>
           </div>
-          <div className="hidden md:block">
+          <div className="hidden lg:block">
             <span>Natural Stone Specialists Since 2010</span>
           </div>
         </div>
@@ -62,7 +62,7 @@ const Header = () => {
             </Link>
 
             {/* Desktop Navigation */}
-            <nav className="hidden md:flex items-center gap-3 lg:gap-5">
+            <nav className="hidden xl:flex items-center gap-5">
               {navigation.map((item) => (
                 <Link
                   key={item.name}
@@ -85,7 +85,10 @@ const Header = () => {
             <Button
               variant="ghost"
               size="icon"
-              className="md:hidden"
+              className="xl:hidden h-11 w-11"
+              aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+              aria-expanded={isMenuOpen}
+              aria-controls="mobile-navigation"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
             >
               {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -94,13 +97,13 @@ const Header = () => {
 
           {/* Mobile Navigation */}
           {isMenuOpen && (
-            <div className="md:hidden border-t bg-background">
-              <nav className="py-4 space-y-2">
+            <div id="mobile-navigation" className="xl:hidden max-h-[calc(100dvh-4rem)] overflow-y-auto overscroll-contain border-t bg-background">
+              <nav aria-label="Main navigation" className="py-3 space-y-1">
                 {navigation.map((item) => (
                   <Link
                     key={item.name}
                     to={item.href}
-                    className={`block px-4 py-2 font-medium transition-colors hover:text-primary ${
+                    className={`flex min-h-11 items-center px-4 py-2 font-medium transition-colors hover:text-primary ${
                       isActive(item.href) ? "text-primary bg-muted" : "text-foreground"
                     }`}
                     onClick={() => setIsMenuOpen(false)}
