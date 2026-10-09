@@ -69,9 +69,11 @@ const WaterFountains = () => {
         <div className="mx-auto flex max-w-4xl flex-col items-center text-center">
           <h2 className="mb-4 text-3xl font-bold">Need help selecting a fountain?</h2>
           <p className="mb-7 max-w-2xl text-muted-foreground">Share your site dimensions and preferred style for a tailored recommendation and quotation.</p>
-          <Button size="lg" onClick={handleWhatsApp}>
-            <MessageCircle className="h-5 w-5" />
-            Request a quotation
+          <Button size="lg" asChild>
+            <a href={whatsappUrl} target="_blank" rel="noopener noreferrer">
+              <MessageCircle className="h-5 w-5" />
+              Request a quotation
+            </a>
           </Button>
         </div>
       </section>
