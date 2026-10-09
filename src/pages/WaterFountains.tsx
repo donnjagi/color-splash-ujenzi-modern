@@ -7,10 +7,9 @@ import LazyImage from "@/components/LazyImage";
 import { waterFountains } from "@/data/waterFountains";
 
 const WaterFountains = () => {
-  const handleWhatsApp = () => {
-    const message = "Hello Afristone! I'm interested in a water fountain. Could you help me choose a suitable design?";
-    window.open(`https://wa.me/254729304190?text=${encodeURIComponent(message)}`, "_blank");
-  };
+  const whatsappUrl = `https://wa.me/254729304190?text=${encodeURIComponent(
+    "Hello Afristone! I'm interested in a water fountain. Could you help me choose a suitable design?"
+  )}`;
 
   return (
     <div className="min-h-screen">

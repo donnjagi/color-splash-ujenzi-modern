@@ -21,10 +21,9 @@ const WaterFountainDetail = () => {
   }
 
   const related = waterFountains.filter((item) => item.id !== fountain.id).slice(0, 3);
-  const handleWhatsApp = () => {
-    const message = `Hello Afristone! I'm interested in the ${fountain.name}. Could you provide a quotation for my space?`;
-    window.open(`https://wa.me/254729304190?text=${encodeURIComponent(message)}`, "_blank");
-  };
+  const whatsappUrl = `https://wa.me/254729304190?text=${encodeURIComponent(
+    `Hello Afristone! I'm interested in the ${fountain.name}. Could you provide a quotation for my space?`
+  )}`;
 
   return (
     <div className="min-h-screen">
