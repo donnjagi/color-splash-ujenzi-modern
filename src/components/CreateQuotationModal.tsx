@@ -286,7 +286,7 @@ const CreateQuotationModal = ({ onQuotationCreated }: { onQuotationCreated: () =
           Create Quotation
         </Button>
       </DialogTrigger>
-      <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto">
+      <DialogContent className="w-[calc(100%-2rem)] max-w-4xl max-h-[90dvh] overflow-y-auto p-4 sm:p-6 [&_input]:min-h-11 [&_button]:min-h-11">
         <DialogHeader>
           <DialogTitle>Create New Quotation</DialogTitle>
         </DialogHeader>
@@ -297,7 +297,7 @@ const CreateQuotationModal = ({ onQuotationCreated }: { onQuotationCreated: () =
             <Card>
               <CardContent className="p-4 space-y-4">
                 <h3 className="font-semibold">Customer Details</h3>
-                <div className="grid grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
                     <Label htmlFor="customerName">Customer Name *</Label>
                     <Input
@@ -345,7 +345,7 @@ const CreateQuotationModal = ({ onQuotationCreated }: { onQuotationCreated: () =
                   onStoneSelect={handleStoneSelect}
                 />
 
-                <div className="grid grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
                     <Label htmlFor="quantity">Quantity (M²)</Label>
                     <Input
@@ -373,7 +373,7 @@ const CreateQuotationModal = ({ onQuotationCreated }: { onQuotationCreated: () =
                   <h3 className="font-semibold mb-4">Items Added</h3>
                   <div className="space-y-2">
                     {items.map((item, index) => (
-                      <div key={index} className="flex justify-between items-center p-2 bg-muted rounded">
+                      <div key={index} className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3 p-2 bg-muted rounded">
                         <div>
                           <span className="font-medium">{item.productName}</span>
                           <span className="text-sm text-muted-foreground ml-2">
@@ -401,7 +401,7 @@ const CreateQuotationModal = ({ onQuotationCreated }: { onQuotationCreated: () =
             <Card>
               <CardContent className="p-4 space-y-4">
                 <h3 className="font-semibold">Additional Costs</h3>
-                <div className="grid grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
                     <Label htmlFor="discount">Discount (Ksh)</Label>
                     <Input
@@ -433,9 +433,9 @@ const CreateQuotationModal = ({ onQuotationCreated }: { onQuotationCreated: () =
           </div>
         ) : (
           <div className="space-y-6">
-            <div className="flex justify-between items-center">
+            <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3">
               <h3 className="text-lg font-semibold">Quotation Preview</h3>
-              <div className="flex gap-2">
+              <div className="flex flex-wrap gap-2">
                 <Button onClick={downloadPDF} variant="outline" size="sm">
                   <Download className="w-4 h-4 mr-2" />
                   Download PDF
@@ -455,13 +455,13 @@ const CreateQuotationModal = ({ onQuotationCreated }: { onQuotationCreated: () =
 
                 <Separator />
 
-                <div className="grid grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
                     <p><strong>Customer:</strong> {formData.customerName}</p>
                     <p><strong>Phone:</strong> {formData.customerPhone}</p>
                     <p><strong>Email:</strong> {formData.customerEmail}</p>
                   </div>
-                  <div className="text-right">
+                  <div className="sm:text-right">
                     <p><strong>Date:</strong> {format(new Date(), 'MMM dd, yyyy')}</p>
                   </div>
                 </div>
@@ -470,7 +470,7 @@ const CreateQuotationModal = ({ onQuotationCreated }: { onQuotationCreated: () =
 
                 <div className="space-y-2">
                   {items.map((item, index) => (
-                    <div key={index} className="flex justify-between">
+                    <div key={index} className="flex flex-col sm:flex-row justify-between gap-1 sm:gap-3">
                       <span>{item.productName} ({item.quantity} M²)</span>
                       <span>Ksh {item.totalPrice.toLocaleString()}</span>
                     </div>

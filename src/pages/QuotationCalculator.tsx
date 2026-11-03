@@ -318,14 +318,14 @@ const QuotationCalculator = () => {
 
         <div className="grid lg:grid-cols-2 gap-6 md:gap-8">
           {/* Calculator Form */}
-          <Card>
-            <CardHeader>
+          <Card className="min-w-0">
+            <CardHeader className="p-4 sm:p-6">
               <CardTitle className="flex items-center gap-2">
                 <Calculator className="w-5 h-5" />
                 Quotation Details
               </CardTitle>
             </CardHeader>
-            <CardContent className="space-y-4 md:space-y-6">
+            <CardContent className="space-y-4 p-4 pt-0 sm:p-6 sm:pt-0 md:space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
                   <Label htmlFor="date" className="text-base">Date</Label>
@@ -391,12 +391,12 @@ const QuotationCalculator = () => {
                   <div>
                     <Label htmlFor="stoneType" className="text-base">Stone Type *</Label>
                     <Select value={selectedStone} onValueChange={setSelectedStone}>
-                      <SelectTrigger className="h-12 text-base">
+                      <SelectTrigger id="stoneType" className="h-12 min-w-0 text-base [&>span]:min-w-0 [&>span]:text-left">
                         <SelectValue placeholder="Select stone type" />
                       </SelectTrigger>
-                      <SelectContent className="max-h-[60vh]">
+                      <SelectContent className="max-h-[60vh] w-[var(--radix-select-trigger-width)] max-w-[calc(100vw-2rem)]">
                         {Object.entries(products).map(([key, product]) => (
-                          <SelectItem key={key} value={key} className="text-base py-3">
+                          <SelectItem key={key} value={key} className="text-base py-3 [&>span:last-child]:whitespace-normal">
                             {product.name} - Ksh {product.price.toLocaleString()}/M²
                           </SelectItem>
                         ))}
@@ -430,7 +430,7 @@ const QuotationCalculator = () => {
                   {quotationData.items.map((item, index) => (
                     <div key={index} className="flex items-center justify-between p-4 bg-muted rounded-lg gap-3">
                       <div className="flex-1 min-w-0">
-                        <p className="font-medium text-sm md:text-base truncate">{item.productType}</p>
+                        <p className="font-medium text-sm md:text-base">{item.productType}</p>
                         <p className="text-xs md:text-sm text-muted-foreground">
                           {item.quantity} M² × Ksh {item.unitPrice.toLocaleString()} = Ksh {(item.quantity * item.unitPrice).toLocaleString()}
                         </p>
@@ -439,7 +439,8 @@ const QuotationCalculator = () => {
                         onClick={() => removeStoneItem(index)}
                         variant="ghost"
                         size="icon"
-                        className="h-10 w-10 flex-shrink-0"
+                        className="h-11 w-11 flex-shrink-0"
+                        aria-label={`Remove ${item.productType}`}
                       >
                         <Trash2 className="w-5 h-5" />
                       </Button>
@@ -457,9 +458,9 @@ const QuotationCalculator = () => {
 
           {/* Quotation Preview */}
           {showQuotation && (
-            <Card>
-              <CardHeader>
-                <CardTitle className="flex items-center justify-between">
+            <Card className="min-w-0">
+              <CardHeader className="p-4 sm:p-6">
+                <CardTitle className="flex flex-col items-start gap-3 sm:flex-row sm:flex-wrap sm:items-center sm:justify-between">
                   <span>Quotation Preview</span>
                   <Button onClick={downloadPDF} variant="outline" size="sm">
                     <Download className="w-4 h-4 mr-2" />
@@ -467,7 +468,7 @@ const QuotationCalculator = () => {
                   </Button>
                 </CardTitle>
               </CardHeader>
-              <CardContent>
+              <CardContent className="p-4 pt-0 sm:p-6 sm:pt-0">
                 <div className="space-y-4">
                   <div className="text-center">
                     <img 
@@ -479,7 +480,7 @@ const QuotationCalculator = () => {
 
                   <Separator />
 
-                  <div className="space-y-2">
+                  <div className="space-y-2 [&>div]:gap-4 [&>div>span:last-child]:min-w-0 [&>div>span:last-child]:break-words [&>div>span:last-child]:text-right">
                     <div className="flex justify-between">
                       <span className="font-medium">Date:</span>
                       <span>{format(new Date(quotationData.date), 'MMM dd, yyyy')}</span>
@@ -500,7 +501,7 @@ const QuotationCalculator = () => {
                     <Label className="font-medium">Items:</Label>
                     {quotationData.items.map((item, index) => (
                       <div key={index} className="p-3 bg-muted rounded-lg space-y-1">
-                        <div className="flex justify-between">
+                        <div className="flex flex-col gap-1 sm:flex-row sm:justify-between sm:gap-3">
                           <span className="font-medium text-sm">{item.productType}</span>
                           <span className="text-sm">Ksh {(item.quantity * item.unitPrice).toLocaleString()}</span>
                         </div>

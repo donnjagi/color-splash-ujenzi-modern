@@ -78,7 +78,7 @@ const About = () => {
       {/* Our Story */}
       <section className="py-20 px-6">
         <div className="max-w-6xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="grid min-w-0 lg:grid-cols-2 gap-8 md:gap-12 items-center">
             <div>
               <h2 className="text-3xl md:text-4xl font-bold mb-6">Our Story</h2>
               <p className="text-muted-foreground mb-6 leading-relaxed">
@@ -99,14 +99,13 @@ const About = () => {
                 </Button>
               </div>
             </div>
-            <div className="space-y-6">
+            <div className="min-w-0 space-y-6">
               <LazyImage
                 src="/Afristone-All things Stone/Tanga Yellow Stone/2025053121292496.jpg"
                 alt="Tanga Yellow Stone cladding installation showcase"
-                className="rounded-2xl shadow-xl"
-                style={{ width: '600px', height: '300px' }}
+                className="w-full aspect-[2/1] rounded-2xl shadow-xl"
                 priority={true}
-                sizes="600px"
+                sizes="(max-width: 1024px) 100vw, 50vw"
               />
               <div className="grid grid-cols-2 gap-4">
                 <div className="bg-card p-4 rounded-xl border text-center">
@@ -218,14 +217,13 @@ const About = () => {
       {/* Why Choose Us */}
       <section className="py-20 px-6">
         <div className="max-w-6xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div>
+          <div className="grid min-w-0 lg:grid-cols-2 gap-8 md:gap-12 items-center">
+            <div className="min-w-0">
               <LazyImage
                 src="/Afristone-All things Stone/Black stone/Black Irregular stacked/2025053018334056.jpg"
                 alt="Black stone mechanical fixing installation"
-                className="rounded-2xl shadow-xl"
-                style={{ width: '600px', height: '400px' }}
-                sizes="600px"
+                className="w-full aspect-[3/2] rounded-2xl shadow-xl"
+                sizes="(max-width: 1024px) 100vw, 50vw"
               />
             </div>
             <div>

@@ -24,7 +24,7 @@ const ImageGallery = ({ images, productName }: ImageGalleryProps) => {
   };
 
   return (
-    <div className="space-y-4">
+    <div className="min-w-0 space-y-4">
       {/* Main Image Display */}
       <div className="relative aspect-square overflow-hidden rounded-2xl group">
         <LazyImage
@@ -41,7 +41,8 @@ const ImageGallery = ({ images, productName }: ImageGalleryProps) => {
             <Button
               variant="outline"
               size="icon"
-              className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white opacity-0 group-hover:opacity-100 transition-opacity"
+              className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 h-11 w-11 bg-background/90 hover:bg-background transition-opacity"
+              aria-label="Previous photo"
               onClick={prevImage}
             >
               <ChevronLeft className="w-4 h-4" />
@@ -49,7 +50,8 @@ const ImageGallery = ({ images, productName }: ImageGalleryProps) => {
             <Button
               variant="outline"
               size="icon"
-              className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white opacity-0 group-hover:opacity-100 transition-opacity"
+              className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 h-11 w-11 bg-background/90 hover:bg-background transition-opacity"
+              aria-label="Next photo"
               onClick={nextImage}
             >
               <ChevronRight className="w-4 h-4" />
@@ -59,7 +61,7 @@ const ImageGallery = ({ images, productName }: ImageGalleryProps) => {
 
         {/* Image Counter */}
         {images.length > 1 && (
-          <div className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-black/50 text-white px-3 py-1 rounded-full text-sm">
+          <div className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-foreground/70 text-background px-3 py-1 rounded-full text-sm">
             {currentImageIndex + 1} / {images.length}
           </div>
         )}

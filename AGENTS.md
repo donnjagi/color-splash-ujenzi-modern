@@ -1,3 +1,4 @@
 Use Lovable asset pointers under `src/assets` for uploaded product photos, because the CDN keeps project media available without bundling raw uploads.
 Resolve uploaded product asset paths against the public site origin for local previews, because the local Vite server does not serve the hosted asset route.
 Keep Water Fountains catalogue content in one shared data module so listing and detail pages stay consistent.
+Use the compact navigation below the extra-large breakpoint so the complete catalogue menu never crowds tablet screens.
