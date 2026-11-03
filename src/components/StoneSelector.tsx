@@ -100,7 +100,7 @@ const StoneSelector: React.FC<StoneSelectorProps> = ({
                 />
               </div>
               <div className="space-y-2">
-                <div className="flex items-center justify-between">
+                <div className="flex flex-wrap items-center justify-between gap-2">
                   <h3 className="font-medium text-sm">{stone.name}</h3>
                   <Badge variant="secondary" className="text-xs">
                     Ksh {stone.price.toLocaleString()}/M²
