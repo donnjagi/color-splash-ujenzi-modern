@@ -10,117 +10,11 @@ export type Database = {
   // Allows to automatically instantiate createClient with right options
   // instead of createClient<Database, { PostgrestVersion: 'XX' }>(URL, KEY)
   __InternalSupabase: {
-    PostgrestVersion: "14.5"
+    PostgrestVersion: "14.18"
   }
   public: {
     Tables: {
-      quotation_items: {
-        Row: {
-          created_at: string
-          id: string
-          product_name: string
-          quantity: number
-          quotation_id: string
-          total_price: number
-          unit_price: number
-        }
-        Insert: {
-          created_at?: string
-          id?: string
-          product_name: string
-          quantity: number
-          quotation_id: string
-          total_price: number
-          unit_price: number
-        }
-        Update: {
-          created_at?: string
-          id?: string
-          product_name?: string
-          quantity?: number
-          quotation_id?: string
-          total_price?: number
-          unit_price?: number
-        }
-        Relationships: [
-          {
-            foreignKeyName: "quotation_items_quotation_id_fkey"
-            columns: ["quotation_id"]
-            isOneToOne: false
-            referencedRelation: "quotations"
-            referencedColumns: ["id"]
-          },
-        ]
-      }
-      quotations: {
-        Row: {
-          created_at: string
-          created_by: string | null
-          customer_email: string | null
-          customer_name: string | null
-          customer_phone: string | null
-          discount: number
-          id: string
-          logistics_cost: number
-          quotation_number: string
-          subtotal: number
-          total: number
-          updated_at: string
-        }
-        Insert: {
-          created_at?: string
-          created_by?: string | null
-          customer_email?: string | null
-          customer_name?: string | null
-          customer_phone?: string | null
-          discount?: number
-          id?: string
-          logistics_cost?: number
-          quotation_number: string
-          subtotal?: number
-          total?: number
-          updated_at?: string
-        }
-        Update: {
-          created_at?: string
-          created_by?: string | null
-          customer_email?: string | null
-          customer_name?: string | null
-          customer_phone?: string | null
-          discount?: number
-          id?: string
-          logistics_cost?: number
-          quotation_number?: string
-          subtotal?: number
-          total?: number
-          updated_at?: string
-        }
-        Relationships: []
-      }
-      users: {
-        Row: {
-          created_at: string
-          id: string
-          password: string
-          role: string
-          username: string
-        }
-        Insert: {
-          created_at?: string
-          id?: string
-          password: string
-          role?: string
-          username: string
-        }
-        Update: {
-          created_at?: string
-          id?: string
-          password?: string
-          role?: string
-          username?: string
-        }
-        Relationships: []
-      }
+      [_ in never]: never
     }
     Views: {
       [_ in never]: never
